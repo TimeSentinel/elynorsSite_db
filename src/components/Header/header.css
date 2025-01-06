@@ -1,0 +1,206 @@
+/* ---------------------------------------
+src/components/Header/header.css
+PROJECT: elynors;
+
+(c) 2025 Lance Stubblefield 
+--------------------------------------- */
+
+/* header.css
+################################### Restaurant Functional Module ###################################
+/src/layout/Header/header.css    ::: Main header style sheet
+REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
+(c)2024 Lance Stubblefield
+####################################################################################################
+*/
+
+
+/* ################################ Header ################################ */
+.header {
+    @apply align-text-bottom border-b-4;
+
+    .titleRow {
+        @apply flex;
+
+        .headerLeft {
+            @apply text-left w-2/6;
+
+            .logo {
+                @apply bg-no-repeat bg-contain;
+                @apply cursor-pointer;
+            }
+        }
+
+        .headerRight {
+            @apply text-right content-center;
+
+            .cartCorner {
+                @apply float-right cursor-pointer;
+
+            }
+        }
+    }
+}
+
+/* --------------- END -- Header -- END --------------- */
+
+/* ########################### Media Selector ########################### */
+/* ------------ Small View ------------ */
+@media (max-width: 529px) {
+    .header {
+        @apply m-0 h-fit;
+    }
+
+    .titleRow {
+        @apply h-24 px-2 pt-2;
+
+        .headerLeft {
+            @apply absolute overflow-visible;
+
+            .logo {
+                @apply w-32 h-24 ml-2 mt-16;
+            }
+        }
+
+        .headerCenter {
+            @apply w-10/12 h-full pl-2;
+
+            h1 {
+                font-size: .9em;
+            }
+
+            h5 {
+                font-size: .7em;
+            }
+        }
+
+        .headerRight {
+            @apply w-1/12 h-full mr-2;
+        }
+    }
+}
+
+/* ------------ End small ------------ */
+
+@media (min-width: 530px) and (max-width: 667px) {
+    .header {
+        @apply m-0 h-fit;
+    }
+
+    .titleRow {
+        @apply h-24 px-2 pt-2;
+
+        .headerLeft {
+            @apply w-3/12 h-fit;
+
+            .logo {
+                @apply w-full max-h-32 h-32 ml-2 ;
+            }
+        }
+
+        .headerCenter {
+            @apply w-7/12 h-full pl-2 ml-2;
+
+            h1 {
+                font-size: 1em;
+            }
+
+            h5 {
+                font-size: .8em;
+            }
+        }
+
+        .headerRight {
+            @apply w-1/12 h-full mr-4;
+
+            .cartCorner {
+                @apply w-full;
+            }
+        }
+    }
+}
+
+/* ------------ End Mobile ------------ */
+
+/* ------------ Tablet View ------------ */
+@media (min-width: 668px) and (max-width: 991px) {
+    .header {
+        @apply m-1;
+        height: 150px;
+    }
+
+    .titleRow {
+        @apply h-24 px-2 pt-2;
+
+        .headerLeft {
+            @apply flex w-1/6 h-full;
+
+            .logo {
+                @apply w-full h-32;
+            }
+        }
+
+        .headerCenter {
+            @apply w-4/6 h-full pl-2 text-center;
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h5 {
+                font-size: 1em;
+            }
+        }
+
+        .headerRight {
+            @apply w-1/6 h-full mr-4;
+
+            .cartCorner {
+                @apply w-32;
+            }
+        }
+    }
+}
+
+/* ------------ End Tablet ------------ */
+
+/* ------------ Desktop View ------------ */
+@media (min-width: 992px) {
+    .header {
+        @apply m-2;
+        height: 150px;
+    }
+
+
+    .headerLeft {
+        @apply w-1/4 h-full;
+
+        .logo {
+            @apply w-full h-32 ;
+        }
+    }
+
+    .headerCenter {
+        @apply w-4/6 h-full pl-2 text-left;
+
+        h1 {
+            font-size: 1.5em;
+        }
+
+        h5 {
+            font-size: 1em;
+        }
+    }
+
+    .headerRight {
+        @apply w-1/4 h-full mr-4;
+
+        .cartCorner {
+            @apply w-32;
+        }
+    }
+}
+
+
+/* ------------ End Desktop ------------ */
+
+/* ##########------------ End Media ------------########## */

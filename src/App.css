@@ -1,4 +1,23 @@
-#root {
+/* APP.CSS
+################################### elynor's Module ###################################
+/src/App.css    ::: App.tsx style sheet
+REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
+(c)2024 Lance Stubblefield
+####################################################################################################
+*/
 
+@tailwind utilities;
+@tailwind components;
+@tailwind base;
+
+#root {
+    @apply w-screen;
 }
 
+main {
+    @apply w-full h-full mb-36;
+}
+
+.App {
+    @apply w-full;
+}

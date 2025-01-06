@@ -1,0 +1,32 @@
+/* ---------------------------------------
+src/layout/layout.css
+PROJECT: elynors;
+
+(c) 2025 Lance Stubblefield 
+--------------------------------------- */
+
+.container {
+    @apply flex flex-wrap w-full;
+}
+
+.sidebar {
+    @apply w-48 h-full fixed top-0 left-0 z-50 ;
+}
+
+.header {
+    @apply h-32 p-2 m-0;
+}
+
+.mainBody {
+    @apply w-full ml-48;
+
+    .pageData {
+        @apply w-full min-h-64;
+    }
+
+    .footer {
+        @apply w-full h-32 mt-4 p-2 relative bottom-0 text-center align-middle;
+        opacity: 0.9;
+    }
+
+}
