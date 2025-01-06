@@ -1,0 +1,235 @@
+/* pages.css
+################################### Restaurant Functional Module ###################################
+/src/pages/pages.css    ::: navbar style sheet for Navbar.css
+REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
+(c)2024 Lance Stubblefield
+####################################################################################################
+*/
+
+.hrDivider {
+    @apply w-5/12 mx-auto border-t-8 border-dotted my-8;
+}
+
+.quote {
+    @apply font-light italic;
+}
+
+.mainPage {
+    @apply w-11/12 mx-auto mt-4 px-4 pt-4 pb-24;
+
+    h1 {
+        @apply text-4xl font-bold leading-tight mb-3;
+    }
+
+    h2 {
+        @apply text-3xl;
+    }
+
+    p {
+        @apply text-lg leading-tight;
+    }
+}
+
+.bodyHead {
+    @apply mx-auto mb-4;
+}
+
+.bodyMain {
+    @apply mx-auto my-4;
+}
+
+.bodyFoot {
+    @apply mx-auto mt-8 pb-4;
+}
+
+/* ###################### HOME ###################### */
+.imageCard {
+    @apply w-fit mx-auto p-4 h-96;
+    @apply border-2 rounded-lg;
+    @apply shadow-lg shadow-gray-500;
+
+    img {
+        @apply w-11/12 max-h-72 max-w-full mx-auto mb-2;
+        object-fit: fill;
+    }
+
+    p {
+        @apply w-11/12 mx-auto;
+        font-size: .8em;
+    }
+}
+
+/* ---------------------- END HOME ---------------------- */
+
+/* ###################### ABOUT ###################### */
+table {
+    @apply border-2 w-full mt-4 mx-auto;
+    /*font-family: arial, sans-serif;*/
+}
+
+td, th {
+    @apply px-2 py-2 text-left;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(70, 70, 70, .2);
+}
+
+.title, .description, .details {
+    vertical-align: top;
+}
+
+.theadrow {
+    @apply border-b-2 tracking-wider ;
+    vertical-align: bottom;
+}
+
+/* ---------------------- END ABOUT ---------------------- */
+
+/* ###################### CONTACT ###################### */
+
+.contactCard {
+    @apply py-8 content-center;
+    @apply border-2 rounded-3xl ;
+    @apply shadow-lg shadow-gray-500;
+}
+
+.formInput {
+    @apply block w-9/12 mx-auto my-1 p-2 cursor-text text-lg tracking-wider;
+    @apply bg-amber-50 border-2 rounded-lg ;
+}
+
+#formMessage {
+    @apply block w-9/12 mx-auto my-1 p-2 cursor-text text-base tracking-wider;
+    @apply border-2 bg-amber-50 rounded-lg;
+}
+
+.buttonRow {
+    @apply flex justify-around px-2;
+}
+
+#formButton {
+    @apply w-24 h-12 text-lg border-2 shadow-lg shadow-gray-500;
+    @apply border-green-700 bg-green-200 text-green-600 rounded-lg;
+}
+
+#clearButton {
+    @apply w-24 h-12 text-lg border-2 shadow-lg shadow-gray-500;
+    @apply border-orange-700 bg-orange-200 text-orange-600 rounded-lg;
+}
+
+#formButton:hover {
+    @apply shadow-2xl;
+    transform: scale(1.1);
+}
+
+#clearButton:hover {
+    @apply shadow-2xl;
+    transform: scale(1.1);
+}
+
+.errorMsg {
+    @apply text-red-600 font-bold text-sm mt-0;
+}
+
+/* ---------------------- END CONTACT ---------------------- */
+
+
+/* ########################### Media Selector ########################### */
+/* ------------ Mobile View ------------ */
+@media (max-width: 667px) {
+    .bodyHead, .bodyMain, .bodyFoot {
+        @apply w-full;
+    }
+
+    .theadrow {
+        @apply text-base;
+    }
+
+    .title {
+        @apply text-base font-normal;
+    }
+
+    .description {
+        @apply text-base italic leading-tight;
+    }
+
+    .details {
+        @apply font-normal text-base;
+    }
+
+    .contactContainer, .contactCard {
+        @apply w-full;
+    }
+
+}
+
+/* ------------ End Mobile ------------ */
+
+/* ------------ Tablet View ------------ */
+@media (min-width: 668px) and (max-width: 991px) {
+    .bodyHead, .bodyMain, .bodyFoot {
+        @apply w-11/12;
+    }
+
+    .theadrow {
+        @apply text-lg;
+    }
+
+    .title {
+        @apply text-base font-semibold;
+    }
+
+    .description {
+        @apply text-base italic leading-tight;
+    }
+
+    .details {
+        @apply font-normal text-base;
+    }
+
+    .contactContainer {
+        @apply w-9/12 mx-auto;
+    }
+
+    .contactCard {
+        @apply w-full;
+    }
+}
+
+/* ------------ End Tablet ------------ */
+
+/* ------------ Desktop View ------------ */
+@media (min-width: 992px) {
+    .bodyHead, .bodyMain, .bodyFoot {
+        @apply w-11/12;
+    }
+
+    .theadrow {
+        @apply text-xl;
+    }
+
+    .title {
+        @apply text-lg font-semibold;
+    }
+
+    .description {
+        @apply text-base italic leading-tight;
+    }
+
+    .details {
+        @apply font-normal text-lg;
+    }
+
+    .contactContainer {
+        @apply w-6/12 mx-auto;
+    }
+
+    .contactCard {
+        @apply w-full;
+    }
+}
+
+/* ------------ End Desktop ------------ */
+
+/* ##########------------ End Media ------------########## */

@@ -1,0 +1,108 @@
+{
+  "images": [
+    {
+      "uuid": "e60ebdb5-6232-4b4e-b0c1-7f168d38fab2\n\n",
+      "title": "Banana Leaf",
+      "description": "Tropical dipping sauces and rice",
+      "category": "Food",
+      "imagePath": "/gallery/images/bananaLeaf.webp",
+      "imageAlt": "Banana leaf with rice, bread and dipping sauces."
+    },
+    {
+      "uuid": "db40ad77-62cf-4437-940b-bc285a5e62fd",
+      "title": "Bread",
+      "description": "Everyone knows what bread is.",
+      "category": "Food",
+      "imagePath": "/gallery/images/bread.jpg",
+      "imageAlt": "Fresh baked bread, sliced."
+    },
+    {
+      "uuid": "a74add47-016e-4708-8a9a-5916a3f4d7d8",
+      "title": "Vegan Burrito",
+      "description": "Even the sour cream and cheese is plant-based!",
+      "category": "Food",
+      "imagePath": "/gallery/images/burrito.jpg",
+      "imageAlt": "A heavenly burrito cut in half and drizzled with sauce."
+    },
+    {
+      "uuid": "961abad5-2085-48b9-9821-89c9d6bd7aaa",
+      "title": "Chinese Soup",
+      "description": "We basically put all our favorite Chinese flavors into a single bowl. Fried pork, teriyaki chicken, tofu, noodles, salad, rice, bamboo, and more.",
+      "category": "Food",
+      "imagePath": "/gallery/images/chineseSoup.jpg",
+      "imageAlt": "A very decorative Chinese soup."
+    },
+    {
+      "uuid": "846b5281-5980-45c5-b6ea-cac9704ce11b",
+      "title": "Chips, Salsa, and Guac",
+      "description": "The salsa will melt the paint off your illegible quandary. The guac is heavenly, smooth and exotic.",
+      "category": "Food",
+      "imagePath": "/gallery/images/chipsSalsa.jpg",
+      "imageAlt": "Tortilla chips, sour cream and guacamole."
+    },
+    {
+      "uuid": "ea37aedb-777e-45b7-9a46-3b504d901031",
+      "title": "Thai Appetizer Plate",
+      "description": "Heavenly collection of food for a large group.",
+      "category": "Food",
+      "imagePath": "/gallery/images/thaiAppetizer.jpg",
+      "imageAlt": "Thai appetizers."
+    },
+    {
+      "uuid": "7f70f43f-75e4-42b0-a8b8-877eea09835a\n\n",
+      "title": "Cocktails!!!",
+      "description": "Don't these look delightful?! Well, after a couple sips, you won't likely care.",
+      "category": "Food",
+      "imagePath": "/gallery/images/cocktails2.jpg",
+      "imageAlt": "Colorful cocktails"
+    },
+    {
+      "uuid": "d108195a-9f43-41e3-ad67-6703e403a37b",
+      "title": "Naan and Marsala",
+      "description": "A classic Indian flatbread with the best saucy bowl.",
+      "category": "Food",
+      "imagePath": "/gallery/images/naan-flatbread.webp",
+      "imageAlt": "Naan bread and a bowl of tika marsala."
+    },
+    {
+      "uuid": "d3688e9c-595f-4b62-8f15-dc3e7f4bedb4",
+      "title": "Indian Party Service",
+      "description": "Hosting a party? Try our Indian package. All the best flavors.",
+      "category": "Food",
+      "imagePath": "/gallery/images/indianCuisine.jpg",
+      "imageAlt": "Many bowls of Indian foods."
+    },
+    {
+      "uuid": "b17f7707-4499-4ca8-91eb-7eb9aaf9a70f",
+      "title": "Mexican Street Tacos",
+      "description": "These are seriously hard to stop eating. I gained 20lbs the last time I made them!",
+      "category": "Food",
+      "imagePath": "/gallery/images/tacos.jpg",
+      "imageAlt": "A plate of Mexican street tacos."
+    },
+    {
+      "uuid": "696dee99-cbf5-49da-8fa7-399422769af2",
+      "title": "PASTA!!",
+      "description": "Who doesn't love Italian?",
+      "category": "Food",
+      "imagePath": "/gallery/images/pasta.jpg",
+      "imageAlt": "A bowl of Italian pasta."
+    },
+    {
+      "uuid": "5b097d13-7c8b-4366-972b-3694a9e7e87f",
+      "title": "Potatoes",
+      "description": "There are a million different ways to prepare and serve potatoes. We offer around 13.",
+      "category": "Food",
+      "imagePath": "/gallery/images/potatoes.jpg",
+      "imageAlt": "Diced, roasted, and seasoned potatoes."
+    },
+    {
+      "uuid": "135968fc-9cf3-4853-a450-255e74822d61",
+      "title": "Glorious Sandwich",
+      "description": "A Sandwich. A Great Sandwich.",
+      "category": "Food",
+      "imagePath": "/gallery/images/sandwich.jpg",
+      "imageAlt": "The best sandwich!"
+    }
+  ]
+}

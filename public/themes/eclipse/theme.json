@@ -1,0 +1,33 @@
+{
+  "theme": "Eclipse",
+  "colors": {
+    "lightColor": "#202325",
+    "softColor": "#3b5165",
+    "mediumColor": "#60778c",
+    "darkColor": "#2578cb",
+    "veryDarkColor": "#89c2fa",
+    "brightColor": "#011629",
+    "okColor": "#0e5103",
+    "highlightColor": "#701f5e",
+    "alertColor": "#6a4517",
+    "lightShade": "#323232",
+    "mediumShade": "#787c80",
+    "darkShade": "#a7b4bf",
+    "veryDarkShade": "#cbd9e6"
+  },
+  "settings": {
+    "logoUrl": "/themes/eclipse/logo.webp"
+  },
+  "root": {
+    "body": " padding: 0px;  margin: 0px; background-color: #000910;",
+    "h1": "fontSize: 2.5rem; line-height: 2rem; font-weight: 600; color: #89c2fa",
+    "h2": "fontSize: 1.25rem; line-height: 1.75rem; font-weight: 600; color: #2578cb",
+    "h3": "fontSize: 1.25rem; line-height: 1.75rem; color: #2578cb",
+    "h4": "fontSize: 1.125rem; line-height: 1.75rem; color: #2578cb",
+    "h5": "fontStyle: italic; color: #2578cb;",
+    "font": "'Charm', fantasy, Arial, sans-serif",
+    "fontSize": "24px;",
+    "button": "",
+    "p": ""
+  }
+}
