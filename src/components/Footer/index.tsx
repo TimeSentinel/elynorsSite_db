@@ -6,13 +6,24 @@ PROJECT: elynors;
 --------------------------------------- */
 
 import './footer.css'
+import Themes from "src/modules/Themes";
 
 function Footer () {
 
     return (
-        <>
-            Footer goes here.
-        </>
+        <div className="footerContainer">
+            <div className="footerLeft">
+                <div className="theme">
+                    <Themes/>
+                </div>
+            </div>
+            <div className="footerCenter">
+
+            </div>
+            <div className="footerRight">
+
+            </div>
+        </div>
     )
 }
 export default Footer;

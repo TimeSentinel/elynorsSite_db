@@ -68,7 +68,7 @@ function Navigation() {
     }, [])
 
     return (
-        <>
+        <div className="navbar">
             <ul>
                 {navbarElements.map((item, i) => {
                     return (
@@ -100,7 +100,7 @@ function Navigation() {
                     )
                 })}
             </ul>
-        </>
+        </div>
     )
 }
 

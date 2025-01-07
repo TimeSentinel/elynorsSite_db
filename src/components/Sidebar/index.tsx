@@ -5,7 +5,6 @@ PROJECT: elynors;
 (c) 2025 Lance Stubblefield 
 --------------------------------------- */
 import './sidebar.css'
-import Themes from "src/modules/Themes";
 import Navigation from "src/components/Navigation";
 
 function Sidebar() {
@@ -21,9 +20,7 @@ function Sidebar() {
                 <Navigation />
 
             </div>
-            <div className="theme">
-                <Themes />
-            </div>
+
         </div>
     )
 

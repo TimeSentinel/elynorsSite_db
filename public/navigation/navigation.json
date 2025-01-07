@@ -13,43 +13,7 @@
       "link": "/menu",
       "alt": "Browse our delightful selections",
       "enabled" : "yes",
-      "level2" : [
-        {
-          "title": "Breakfast",
-          "link": "/menu",
-          "alt": "First meal of the day!",
-          "enabled" : "yes",
-          "level3" : []
-        },
-        {
-          "title": "Lunch",
-          "link": "/menu",
-          "alt": "Lunch menu",
-          "enabled" : "yes",
-          "level3" : []
-        },
-        {
-          "title": "Dinner",
-          "link": "/menu",
-          "alt": "Sit down to a nice relaxing meal at the end of the day",
-          "enabled" : "yes",
-          "level3" : []
-        },
-        {
-          "title": "Beverages",
-          "link": "/menu",
-          "alt": "Thirsty?",
-          "enabled" : "no",
-          "level3" : []
-        },
-        {
-          "title": "Dessert",
-          "link": "/menu",
-          "alt": "Something sweet to punctuate your meal",
-          "enabled" : "yes",
-          "level3" : []
-        }
-      ]
+      "level2" : []
     },
     {
       "title": "Reservation",

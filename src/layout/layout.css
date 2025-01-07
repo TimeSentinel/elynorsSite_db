@@ -10,7 +10,7 @@ PROJECT: elynors;
 }
 
 .sidebar {
-    @apply w-48 h-full fixed top-0 left-0 z-50 ;
+
 }
 
 .header {
@@ -18,7 +18,7 @@ PROJECT: elynors;
 }
 
 .mainBody {
-    @apply w-full ml-48;
+    @apply w-full ;
 
     .pageData {
         @apply w-full min-h-64;
@@ -30,3 +30,53 @@ PROJECT: elynors;
     }
 
 }
+
+
+/* ########################### Media Selector ########################### */
+/* ------------ Mobile View ------------ */
+@media (max-width: 567px) {
+    .sidebar {
+        display: none;
+    }
+}
+
+/* ------------ End Mobile ------------ */
+
+/* ------------ Mini View ------------ */
+@media (min-width: 568px) and (max-width: 719px) {
+    .sidebar {
+        @apply w-36 h-full fixed top-0 left-0;
+    }
+    .mainBody {
+        @apply ml-36;
+    }
+}
+
+/* ------------ End Mini ------------ */
+
+/* ------------ Tablet View ------------ */
+@media (min-width: 720px) and (max-width: 991px) {
+    .sidebar {
+        @apply w-52 h-full fixed top-0 left-0;
+    }
+    .mainBody {
+        @apply ml-52;
+    }
+}
+
+/* ------------ End Tablet ------------ */
+
+/* ------------ Desktop View ------------ */
+@media (min-width: 992px) {
+    .sidebar {
+        @apply w-64 h-full fixed top-0 left-0;
+    }
+    .mainBody {
+        @apply ml-64;
+    }
+}
+
+/* ------------ End Desktop ------------ */
+
+/* ##########------------ End Media ------------########## */
+

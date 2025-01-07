@@ -4,15 +4,17 @@ PROJECT: elynors;
 
 (c) 2025 Lance Stubblefield 
 --------------------------------------- */
-
+.navbar {
+    @apply m-0 p-0;
+}
 
 .level1 {
-    @apply w-10/12 h-full mx-4 text-left px-2 text-2xl font-bold;
+    @apply text-left font-bold;
     overflow: hidden;
 }
 
 .level2 {
-    @apply text-left ml-12 mr-2 my-1 px-1 cursor-pointer text-xl font-semibold;
+    @apply text-left cursor-pointer font-semibold;
     overflow: hidden;
 }
 
@@ -29,3 +31,62 @@ PROJECT: elynors;
 .navHR {
     @apply w-11/12 mx-auto my-2;
 }
+
+
+/* ########################### Media Selector ########################### */
+/* ------------ Mobile View ------------ */
+@media (max-width: 510px) {
+    .navbar {
+        display: none !important;
+    }
+}
+
+/* ------------ End Mobile ------------ */
+
+/* ------------ Mini View ------------ */
+@media (min-width: 511px) and (max-width: 719px) {
+    .level1. .level2 {
+        @apply w-full h-full my-1 px-1 text-xl;
+    }
+    .level2 {
+        @apply ml-6;
+    }
+
+    .navbar {
+        @apply w-full h-full;
+        transform: scale(.9);
+    }
+}
+
+/* ------------ End Mini ------------ */
+
+/* ------------ Tablet View ------------ */
+@media (min-width: 720px) and (max-width: 991px) {
+    .level1 {
+        @apply w-11/12 h-full mx-2 px-2 text-xl;
+    }
+
+    .level2 {
+        @apply ml-8 my-1 px-1  text-lg;
+    }
+}
+
+/* ------------ End Tablet ------------ */
+
+/* ------------ Desktop View ------------ */
+@media (min-width: 992px) {
+    .level1 {
+        @apply w-10/12 h-full mx-4 px-2 text-2xl;
+    }
+
+    .level2 {
+        @apply ml-12 mr-2 my-1 px-1  text-xl;
+    }
+}
+
+/* ------------ End Desktop ------------ */
+
+/* ##########------------ End Media ------------########## */
+
+
+

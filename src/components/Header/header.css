@@ -22,7 +22,7 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
         @apply flex;
 
         .headerLeft {
-            @apply text-left w-2/6;
+            @apply text-left ;
 
             .logo {
                 @apply bg-no-repeat bg-contain;
@@ -51,30 +51,22 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
     }
 
     .titleRow {
-        @apply h-24 px-2 pt-2;
+        @apply h-24 px-1 pt-1;
 
         .headerLeft {
-            @apply absolute overflow-visible;
+            @apply w-1/2 overflow-visible;
 
             .logo {
-                @apply w-32 h-24 ml-2 mt-16;
+                @apply w-32 h-24 ml-2;
             }
         }
 
         .headerCenter {
-            @apply w-10/12 h-full pl-2;
-
-            h1 {
-                font-size: .9em;
-            }
-
-            h5 {
-                font-size: .7em;
-            }
+            display: none;
         }
 
         .headerRight {
-            @apply w-1/12 h-full mr-2;
+            @apply w-1/2 h-full mr-2;
         }
     }
 }
@@ -90,7 +82,7 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
         @apply h-24 px-2 pt-2;
 
         .headerLeft {
-            @apply w-3/12 h-fit;
+            @apply w-64 h-fit;
 
             .logo {
                 @apply w-full max-h-32 h-32 ml-2 ;
@@ -128,37 +120,34 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
         height: 150px;
     }
 
-    .titleRow {
-        @apply h-24 px-2 pt-2;
+    .headerLeft {
+        @apply flex w-72 h-full;
 
-        .headerLeft {
-            @apply flex w-1/6 h-full;
-
-            .logo {
-                @apply w-full h-32;
-            }
-        }
-
-        .headerCenter {
-            @apply w-4/6 h-full pl-2 text-center;
-
-            h1 {
-                font-size: 1.5em;
-            }
-
-            h5 {
-                font-size: 1em;
-            }
-        }
-
-        .headerRight {
-            @apply w-1/6 h-full mr-4;
-
-            .cartCorner {
-                @apply w-32;
-            }
+        .logo {
+            @apply w-full h-32;
         }
     }
+
+    .headerCenter {
+        @apply w-4/6 h-full pl-2 text-center;
+
+        h1 {
+            font-size: 1.5em;
+        }
+
+        h5 {
+            font-size: 1em;
+        }
+    }
+
+    .headerRight {
+        @apply w-1/6 h-full mr-4;
+
+        .cartCorner {
+            @apply w-32;
+        }
+    }
+
 }
 
 /* ------------ End Tablet ------------ */
@@ -172,7 +161,7 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
 
 
     .headerLeft {
-        @apply w-1/4 h-full;
+        @apply w-72 h-full;
 
         .logo {
             @apply w-full h-32 ;
