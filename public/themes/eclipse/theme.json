@@ -1,9 +1,9 @@
 {
   "theme": "Eclipse",
   "colors": {
-    "lightColor": "#202325",
-    "softColor": "#3b5165",
-    "mediumColor": "#60778c",
+    "lightColor": "#010d18",
+    "softColor": "#333300",
+    "mediumColor": "#184d81",
     "darkColor": "#2578cb",
     "veryDarkColor": "#89c2fa",
     "brightColor": "#011629",

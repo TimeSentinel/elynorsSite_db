@@ -1,12 +1,12 @@
 {
   "theme": "Surf",
   "colors": {
-    "lightColor": "#dbedff",
-    "softColor": "#8bc0f1",
-    "mediumColor": "#7c9bb8",
-    "darkColor": "#124374",
-    "veryDarkColor": "#091f34",
-    "brightColor": "#0381f4",
+    "lightColor": "e6ffe6",
+    "softColor": "#00cccc",
+    "mediumColor": "#ff99ff",
+    "darkColor": "#004d00",
+    "veryDarkColor": "#001a00",
+    "brightColor": "#66ffff",
     "okColor": "#25e507",
     "highlightColor": "#ed42c7",
     "alertColor": "#ef9e39",

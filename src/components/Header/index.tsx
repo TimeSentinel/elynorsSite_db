@@ -14,7 +14,7 @@ function Header() {
                 <div className="logo"></div>
             </div>
             <div className="headerCenter text-medium-color">
-                header.
+
             </div>
             <div className="headerRight">
 

@@ -1,9 +1,9 @@
 {
   "theme": "Paper",
   "colors": {
-    "lightColor": "#dbedff",
-    "softColor": "#8bc0f1",
-    "mediumColor": "#7c9bb8",
+    "lightColor": "#f1f2f3",
+    "softColor": "#8ec1f1",
+    "mediumColor": "#9494b8",
     "darkColor": "#124374",
     "veryDarkColor": "#091f34",
     "brightColor": "#0381f4",

@@ -8,17 +8,21 @@ PROJECT: elynors;
 @apply h-full border-r-2;
 }
 .sideHeader {
-    @apply h-1/4 pt-44 text-center align-middle;
+    @apply h-1/6 pt-44 text-center align-middle;
 }
 
 h2 {
     @apply underline font-bold text-2xl;
 }
 .navbar {
-    @apply h-2/4 min-h-72 py-8 pr-6 text-right;
+    @apply h-2/4 min-h-72 py-8;
     @apply font-light text-lg;
 }
 
 .theme {
     @apply fixed bottom-0 h-24 pb-8;
+}
+
+.sideHR {
+    @apply w-3/4 border-2 mx-auto mb-8;
 }

@@ -1,12 +1,12 @@
 {
   "theme": "Sunset",
   "colors": {
-    "lightColor": "#fff2db",
-    "softColor": "#f1be8b",
-    "mediumColor": "#b8937c",
-    "darkColor": "#743812",
-    "veryDarkColor": "#341909",
-    "brightColor": "#ff8d46",
+    "lightColor": "#e6ffff",
+    "softColor": "#ff471a",
+    "mediumColor": "#ffcc00",
+    "darkColor": "#806600",
+    "veryDarkColor": "#1a1400",
+    "brightColor": "#ff6200",
     "okColor": "#25e507",
     "highlightColor": "#fde907",
     "alertColor": "#fa295a",

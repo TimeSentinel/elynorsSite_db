@@ -1,0 +1,106 @@
+{
+  "menutitle": "Elynor's",
+  "level1": [
+    {
+      "title": "Home",
+      "link": "/",
+      "alt": "Elynor's Home Page",
+      "enabled" : "yes",
+      "level2" : []
+    },
+    {
+      "title": "Menu",
+      "link": "/menu",
+      "alt": "Browse our delightful selections",
+      "enabled" : "yes",
+      "level2" : [
+        {
+          "title": "Breakfast",
+          "link": "/menu",
+          "alt": "First meal of the day!",
+          "enabled" : "yes",
+          "level3" : []
+        },
+        {
+          "title": "Lunch",
+          "link": "/menu",
+          "alt": "Lunch menu",
+          "enabled" : "yes",
+          "level3" : []
+        },
+        {
+          "title": "Dinner",
+          "link": "/menu",
+          "alt": "Sit down to a nice relaxing meal at the end of the day",
+          "enabled" : "yes",
+          "level3" : []
+        },
+        {
+          "title": "Beverages",
+          "link": "/menu",
+          "alt": "Thirsty?",
+          "enabled" : "no",
+          "level3" : []
+        },
+        {
+          "title": "Dessert",
+          "link": "/menu",
+          "alt": "Something sweet to punctuate your meal",
+          "enabled" : "yes",
+          "level3" : []
+        }
+      ]
+    },
+    {
+      "title": "Reservation",
+      "link": "/reservation",
+      "alt": "Make reservations for dinner",
+      "enabled" : "no",
+      "level2" : []
+    },
+    {
+      "title": "About",
+      "link": "/about",
+      "alt": "Learn more about us",
+      "enabled" : "yes",
+      "level2" : []
+    },
+    {
+      "title": "Contact",
+      "link": "/contact",
+      "alt": "Get ahold of us",
+      "enabled" : "no",
+      "level2" : []
+    },
+    {
+      "title": "Media",
+      "link": "#",
+      "alt": "Learn more about us and what we do!",
+      "enabled" : "yes",
+      "level2" : [
+        {
+          "title": "News/Blog",
+          "link": "/blog",
+          "alt": "Find recipes, tips and news!",
+          "enabled" : "no",
+          "level3" : []
+        },
+        {
+          "title": "Gallery",
+          "link": "/gallery",
+          "alt": "Photos of events, dishes, and our establishment",
+          "enabled" : "no",
+          "level3" : []
+        }
+      ]
+    },
+
+    {
+      "title": "Cart",
+      "link": "/cart",
+      "alt": "See and edit your shopping cart",
+      "enabled" : "yes",
+      "level2" : []
+    }
+  ]
+}

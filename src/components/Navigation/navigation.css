@@ -1,0 +1,31 @@
+/* ---------------------------------------
+src/components/Navigation/navigation.css
+PROJECT: elynors;
+
+(c) 2025 Lance Stubblefield 
+--------------------------------------- */
+
+
+.level1 {
+    @apply w-10/12 h-full mx-4 text-left px-2 text-2xl font-bold;
+    overflow: hidden;
+}
+
+.level2 {
+    @apply text-left ml-12 mr-2 my-1 px-1 cursor-pointer text-xl font-semibold;
+    overflow: hidden;
+}
+
+.enabled:hover {
+    @apply bg-yellow-400;
+    @apply shadow-md shadow-gray-500;
+}
+
+.disabled, .disabled:hover {
+    @apply cursor-not-allowed font-thin;
+    @apply shadow-none;
+}
+
+.navHR {
+    @apply w-11/12 mx-auto my-2;
+}
