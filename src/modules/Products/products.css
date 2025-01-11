@@ -5,3 +5,22 @@ PROJECT: elynors;
 (c) 2025 Lance Stubblefield 
 --------------------------------------- */
 
+.test {
+    @apply block w-full h-full p-4;
+    .dataRow {
+        display: flex;
+        .dataCell {
+            @apply border-b-2 border-gray-800;
+        }
+    }
+}
+.failed {
+    @apply block w-1/2 h-full p-12 mx-auto;
+    @apply bg-gray-700 border-gray-200 border-8;
+    @apply shadow-lg shadow-red-300;
+    @apply text-red-500 uppercase font-bold text-center text-2xl;
+}
+.loading {
+    @apply block w-1/2 h-full p-12 mx-auto;
+    @apply text-black uppercase font-bold text-center;
+}
