@@ -7,56 +7,62 @@ PROJECT: elynors;
 import useSWR from "swr";
 import "./products.css"
 
-fetch("/themes/themes.json", {
-    method: "POST",
-    body: JSON.stringify({username: "example"}),
-}) //     <---!!!Path to themes list json file!!!
-    .then(res => res.json())
-
+interface ProductInteface {
+    productid: string;
+    productname: string;
+    productshort: string;
+    productdesc: string;
+    productprice: number;
+    productimage: string;
+    producttags: string;
+    catname: string;
+    subcatname: string;
+}
 
 function Test() {
     const fetcher =
-        ({url, init}: { url: RequestInfo | URL, init?: RequestInit }) => fetch(url, init).then((res) => res.json());
+        ({url, init}: { url: RequestInfo | URL, init?: RequestInit }) =>
+            fetch(url, init).then((res) => res.json());
     const request = "/products";
 
     const {
         data,
         error,
         isValidating,
-    } = useSWR(["http://localhost:3001" + request, {method: "GET"}], fetcher);
+    } = useSWR({url: "http://localhost:3001" + request,init: {method: "GET"}}, fetcher);
+    if (error) return <div className="failed">Failed to load the menu</div>;
+    if (isValidating) return <div className="loading">Loading menu items...</div>;
 
-    if (error) return <div className="failed">failed to load</div>;
-    if (isValidating) return <div className="loading">Loading...</div>;
-
+    console.log(data);
     return (
         <div className="test">
             This is a database test!
 
             <div>
                 {data &&
-                    data.map(() => {
+                    data.map((product:ProductInteface) => {
                         return (
                             <div className="dataRow">
-                                <div className="dataCell">
-                                    {data.productName}
+                                <div className="dataCellSm">
+                                    {product.productname}
                                 </div>
-                                <div className="dataCell">
-                                    {data.productDesc}
+                                <div className="dataCellMd">
+                                    {product.productdesc}
                                 </div>
-                                <div className="dataCell">
-                                    {data.productPrice}
+                                <div className="dataCellSm">
+                                    {product.productprice}
                                 </div>
-                                <div className="dataCell">
-                                    {data.productImage}
+                                <div className="dataCellSm">
+                                    {product.productimage}
                                 </div>
-                                <div className="dataCell">
-                                    {data.productTags}
+                                <div className="dataCellSm">
+                                    {product.producttags}
                                 </div>
-                                <div className="dataCell">
-                                    {data.catName}
+                                <div className="dataCellSm">
+                                    {product.catname}
                                 </div>
-                                <div className="dataCell">
-                                    {data.subcatName}
+                                <div className="dataCellSm">
+                                    {product.subcatname}
                                 </div>
                             </div>
                         )

@@ -8,9 +8,17 @@ PROJECT: elynors;
 .test {
     @apply block w-full h-full p-4;
     .dataRow {
+        @apply w-full my-2;
         display: flex;
-        .dataCell {
-            @apply border-b-2 border-gray-800;
+        .dataCellMd {
+            @apply w-2/12 text-nowrap px-2 mx-2;
+            @apply text-sm font-light leading-snug;
+            @apply overflow-hidden;
+        }
+        .dataCellSm {
+            @apply w-1/12 text-nowrap px-2 mx-2;
+            @apply text-sm font-light leading-snug;
+            @apply overflow-hidden;
         }
     }
 }
