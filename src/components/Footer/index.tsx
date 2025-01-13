@@ -11,14 +11,14 @@ import Themes from "src/modules/Themes";
 function Footer () {
 
     return (
-        <div className="footerContainer">
+        <div className="footerContainer background-soft-color border-medium-color">
             <div className="footerLeft">
                 <div className="theme">
                     <Themes/>
                 </div>
             </div>
             <div className="footerCenter">
-
+                <p>&copy;2025 Lance Stubblefield</p>
             </div>
             <div className="footerRight">
 

@@ -6,7 +6,7 @@ PROJECT: elynors;
 --------------------------------------- */
 
 .container {
-    @apply flex flex-wrap w-full;
+    @apply flex flex-wrap w-full h-full;
 }
 
 .sidebar {
@@ -18,15 +18,15 @@ PROJECT: elynors;
 }
 
 .mainBody {
-    @apply w-full ;
+    @apply w-full h-full;
 
     .pageData {
         @apply w-full min-h-64;
     }
 
     .footer {
-        @apply w-full h-32 mt-4 p-2 relative bottom-0 text-center align-middle;
-        opacity: 0.9;
+        @apply fixed w-10/12 h-24 mt-4 bottom-0 text-center align-middle;
+        opacity: 0.8;
     }
 
 }

@@ -8,7 +8,7 @@ REQ: Vite-React.js+TypeScript, react-router-dom, react-hot-toast,
 */
 
 import "src/pages/pages.css"
-import diningRoom from "/public/images/diningroom1.jpg"
+import diningRoom from "src/assets/diningroom1.jpg"
 
 function Home() {
 

@@ -23,7 +23,7 @@ import Home from "./pages/Home";
 // import Cart from "./modules/Cart/pages/Cart";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Test from "src/modules/Products/Test.tsx";
+import ProductsMenu from "src/modules/Products/ProductsMenu.tsx";
 // import News from "src/modules/News";
 // import Gallery from "src/modules/Gallery";
 
@@ -41,7 +41,7 @@ function App() {
           <Layout>
             <Routes>
               <Route path='/' element={<Home />}/>
-              <Route path='menu' element={<Test />}/>  {/* <--------  TEMPORARY ---o */}
+              <Route path='menu' element={<ProductsMenu />}/>  {/* <--------  TEMPORARY ---o */}
               {/*<Route path='products/:title' element={<ProductDetail />}/>*/}
               <Route path='about' element={<About />}/>  {/* <--------  TEMPORARY ---o */}
               <Route path='gallery' element={<Home />}/>  {/* <--------  TEMPORARY ---o */}

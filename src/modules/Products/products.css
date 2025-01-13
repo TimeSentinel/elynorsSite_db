@@ -5,30 +5,77 @@ PROJECT: elynors;
 (c) 2025 Lance Stubblefield 
 --------------------------------------- */
 
-.test {
+.productsContainer {
     @apply block w-full h-full p-4;
-    .dataRow {
-        @apply w-full my-2;
-        display: flex;
-        .dataCellMd {
-            @apply w-2/12 text-nowrap px-2 mx-2;
-            @apply text-sm font-light leading-snug;
-            @apply overflow-hidden;
+
+    .productCategory {
+        @apply block w-full mx-auto mt-20 mb-2;
+        @apply border-t-2 border-b-2 text-center font-bold text-2xl uppercase tracking-wide;
+
+        .catAvail {
+            @apply pl-12 text-left font-light text-lg italic;
         }
-        .dataCellSm {
-            @apply w-1/12 text-nowrap px-2 mx-2;
-            @apply text-sm font-light leading-snug;
-            @apply overflow-hidden;
+    }
+
+    .productSubcat {
+        @apply block w-11/12 mx-auto mt-16 mb-4 text-center text-lg font-bold uppercase tracking-wide;
+        @apply border-b-2;
+    }
+    .productCard {
+        @apply flex w-10/12 mx-auto border-b-2 py-2;
+
+        .productThumb {
+            @apply w-32 h-20 m-2;
+
+            img {
+                @apply w-full h-full;
+                @apply border-2 rounded-2xl;
+                @apply shadow-lg shadow-gray-500;
+            }
+            img:hover {
+                transform: scale(3);
+            }
+        }
+
+        .productInfo {
+            @apply w-full mt-2 pl-2;
+
+            .productTitleRow {
+                @apply flex;
+
+                .productTitle {
+                    @apply w-5/12 text-left text-xl font-bold;
+                }
+
+                .productShort {
+                    @apply w-5/12 font-normal leading-tight;
+                }
+
+                .productPrice {
+                    @apply w-2/12 pr-2 float-right text-right font-semibold text-xl;
+                }
+            }
+
+            .productDesc {
+                @apply w-full text-left text-lg tracking-tight font-normal;
+
+                .productTags {
+                    @apply w-full text-left text-sm italic;
+                }
+            }
         }
     }
 }
+
 .failed {
     @apply block w-1/2 h-full p-12 mx-auto;
     @apply bg-gray-700 border-gray-200 border-8;
     @apply shadow-lg shadow-red-300;
     @apply text-red-500 uppercase font-bold text-center text-2xl;
 }
+
 .loading {
     @apply block w-1/2 h-full p-12 mx-auto;
     @apply text-black uppercase font-bold text-center;
 }
+
