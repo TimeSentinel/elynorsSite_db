@@ -7,16 +7,81 @@ PROJECT: elynors;
 
 .footerContainer {
     @apply flex w-full h-full border-t-2;
+}
+
+
+/* ########################### Media Selector ########################### */
+/* ------------ Mobile View ------------ */
+@media (max-width: 567px) {
+    .footerCenter {
+        @apply font-light text-xs;
+        @apply w-5/12 h-full pt-2 ;
+    }
 
     .footerLeft {
         @apply w-4/12 ;
     }
 
+    .footerRight {
+        @apply w-3/12;
+    }
+}
+
+/* ------------ End Mobile ------------ */
+
+/* ------------ Mini View ------------ */
+@media (min-width: 568px) and (max-width: 719px) {
     .footerCenter {
-        @apply w-4/12 h-full pt-5 text-sm;
+        @apply font-light text-sm;
+        @apply w-5/12 h-full pt-3 ;
+    }
+
+    .footerLeft {
+        @apply w-4/12 ;
+    }
+
+    .footerRight {
+        @apply w-3/12;
+    }
+}
+
+/* ------------ End Mini ------------ */
+
+/* ------------ Tablet View ------------ */
+@media (min-width: 720px) and (max-width: 991px) {
+    .footerCenter {
+        @apply font-light text-sm;
+        @apply w-5/12 h-full pt-4 ;
+    }
+
+    .footerLeft {
+        @apply w-5/12 ;
+    }
+
+    .footerRight {
+        @apply w-2/12;
+    }
+}
+
+/* ------------ End Tablet ------------ */
+
+/* ------------ Desktop View ------------ */
+@media (min-width: 992px) {
+    .footerCenter {
+        @apply font-light text-lg;
+        @apply w-4/12 h-full pt-4;
+    }
+
+    .footerLeft {
+        @apply w-4/12 ;
     }
 
     .footerRight {
         @apply w-4/12;
     }
 }
+
+/* ------------ End Desktop ------------ */
+
+/* ##########------------ End Media ------------########## */
+

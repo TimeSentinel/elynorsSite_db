@@ -12,80 +12,87 @@ accompanies index.tsx
 
 
 .ThemeSelector {
-    @apply block p-2 h-fit bg-transparent text-left;
+    @apply block bg-transparent text-left;
     select {
-        @apply min-w-36 w-fit h-fit p-1 ml-4 my-0.5 bg-gray-300 cursor-pointer ;
-        @apply text-xs text-gray-950 leading-tight font-bold font-sans;
+        @apply bg-gray-300 cursor-pointer ;
+        @apply text-gray-950 leading-tight font-sans;
         @apply rounded-md shadow-sm shadow-gray-700;
     }
 }
 
 .error {
     background-color: #f8ec65;
-    @apply h-fit text-red-600 leading-tight font-bold py-2 px-4;
+    @apply h-fit text-red-600 leading-tight;
     @apply border-b-2 border-red-700;
 }
 
-:root {
 
-    /* ######################## Theme1:Blue Styles ######################## */
-    /*--light-color: #dbedff;*/
-    /*--soft-color: #8bc0f1;*/
-    /*--medium-color: #7c9bb8;*/
-    /*--darkBlue-color: #124374;*/
-    /*--very-darkBlue-color: #091f34;*/
-    /*--bright-color: #0381f4;*/
+/* ########################### Media Selector ########################### */
+/* ------------ Mobile View ------------ */
+@media (max-width: 567px) {
+    .ThemeSelector {
+        @apply p-1 ;
+        select {
+            @apply w-20 h-fit p-1 ml-1 mt-10 ;
+            @apply text-xs ;
+        }
+    }
 
-    /*--ok-color: #25e507;*/
-    /*--highlight-color: #ed42c7;*/
-    /*--alert-color: #ef9e39;*/
-
-
-    /* ######################## Theme2:Green Styles ######################## */
-    /*--light-color: #ddffdb;*/
-    /*--soft-color: #b0f18b;*/
-    /*--medium-color: #87b87c;*/
-    /*--darkBlue-color: #2b7412;*/
-    /*--very-darkBlue-color: #0a3409;*/
-    /*--bright-color: #25e507;*/
-
-    /*--ok-color: #25e507;*/
-    /*--highlight-color: #fde907;*/
-    /*--alert-color: #fa295a;*/
-
-
-    /* ######################## Theme3:Orange Styles ######################## */
-    /*--light-color: #fff2db;*/
-    /*--soft-color: #f1be8b;*/
-    /*--medium-color: #b8937c;*/
-    /*--dark-color: #743812;*/
-    /*--very-dark-color: #341909;*/
-    /*--bright-color: #ff8d46;*/
-
-    /*--ok-color: #25e507;*/
-    /*--highlight-color: #fde907;*/
-    /*--alert-color: #fa295a;*/
-
-
-    /* ######################## Theme4:Purple Styles ######################## */
-    /*--light-color: #efdbff;*/
-    /*--soft-color: #d48bff;*/
-    /*--medium-color: #8c51a8;*/
-    /*--darkBlue-color: #460f61;*/
-    /*--very-darkBlue-color: #290934;*/
-    /*--bright-color: #be34f4;*/
-
-    /*--ok-color: #25e507;*/
-    /*--highlight-color: #07fde8;*/
-    /*--alert-color: #fa29d7;*/
-
-
-    /* ######################## General Theme Styles ######################## */
-
-    /*--light-shade: #dddfe1;*/
-    /*--medium-shade: #aeb4b9;*/
-    /*--dark-shade: #596066;*/
-    /*--very-dark-shade: #272a2d;*/
-
-
+    .error {
+        @apply h-fit py-1 px-1;
+    }
 }
+
+/* ------------ End Mobile ------------ */
+
+/* ------------ Mini View ------------ */
+@media (min-width: 568px) and (max-width: 719px) {
+    .ThemeSelector {
+        @apply p-1 h-full;
+        select {
+            @apply w-28 h-fit p-1 ml-2 mt-8;
+            @apply text-xs ;
+        }
+    }
+
+    .error {
+        @apply h-fit py-1 px-1;
+    }
+}
+
+/* ------------ End Mini ------------ */
+
+/* ------------ Tablet View ------------ */
+@media (min-width: 720px) and (max-width: 991px) {
+    .ThemeSelector {
+        @apply p-1 h-full;
+        select {
+            @apply min-w-36 w-fit h-fit p-1 ml-2 my-0.5;
+            @apply text-xs font-semibold ;
+        }
+    }
+
+    .error {
+        @apply h-fit font-semibold py-1 px-2;
+    }
+}
+
+/* ------------ End Tablet ------------ */
+
+/* ------------ Desktop View ------------ */
+@media (min-width: 992px) {
+
+    .ThemeSelector {
+        @apply p-2 h-fit;
+        select {
+            @apply min-w-36 w-fit h-fit p-1 ml-4 my-0.5;
+            @apply text-xs font-bold ;
+        }
+    }
+
+    .error {
+        @apply h-fit font-bold py-2 px-4;
+    }
+}
+
+/* ------------ End Desktop ------------ */
