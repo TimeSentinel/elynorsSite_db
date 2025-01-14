@@ -7,6 +7,7 @@ PROJECT: elynors;
 
 .container {
     @apply flex flex-wrap w-full h-full;
+    @apply border-2 border-orange-400;
 }
 
 .sidebar {
@@ -25,7 +26,7 @@ PROJECT: elynors;
     }
 
     .footer {
-        @apply fixed w-10/12 h-24 mt-4 bottom-0 text-center align-middle;
+        @apply fixed w-full h-24 mt-4 bottom-0 text-center align-middle;
         opacity: 0.8;
     }
 
@@ -59,7 +60,7 @@ PROJECT: elynors;
     .sidebar {
         @apply w-52 h-full fixed top-0 left-0;
     }
-    .mainBody {
+    .container {
         @apply ml-52;
     }
 }
@@ -71,7 +72,7 @@ PROJECT: elynors;
     .sidebar {
         @apply w-64 h-full fixed top-0 left-0;
     }
-    .mainBody {
+    .container {
         @apply ml-64;
     }
 }

@@ -22,9 +22,8 @@ const Layout = ({children}: Props) => {
         <main>
             <div className="container">
                 <div className="sidebar"><Sidebar/></div>
-
                 <div className="mainBody background-light-color">
-                    <div className="header border-soft-color"><Header /></div>
+                    <div className="header border-soft-color background-light-color"><Header/></div>
                     <div className="pageData">
                         <section>
                             {children}

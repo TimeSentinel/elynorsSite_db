@@ -1,0 +1,264 @@
+/* cartPages.css
+################################### Restaurant Functional Module ###################################
+Module: Cart
+/modules/Cart/pages/cartPages.css    ::: cart module style sheet
+REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
+(c)2024 Lance Stubblefield
+####################################################################################################
+*/
+
+
+/* ################################ CART ################################ */
+
+
+/* *********** CART PAGE *********** */
+.cartHeader {
+
+
+    .cartLeft {
+        @apply float-left w-5/12 text-left;
+    }
+
+    .cartCenter {
+        @apply w-2/12;
+    }
+
+    .cartRight {
+        @apply float-right w-5/12 text-right;
+
+        button {
+            @apply p-1 border-2 rounded-md border-red-500 text-red-500 bg-red-200;
+            @apply float-right;
+        }
+
+        .enabled {
+            @apply cursor-pointer border-red-500 text-red-500 bg-red-200;
+        }
+
+        .enabled:hover {
+            @apply border-red-200 text-red-100 bg-red-600;
+            @apply shadow-lg shadow-gray-700;
+            transform: scale(1.1);
+        }
+
+        .disabled {
+            @apply cursor-not-allowed border-gray-500 text-gray-500 bg-gray-200;
+        }
+    }
+}
+
+.cartLineTop {
+    @apply w-5/12 mx-auto mb-16 border-b-2 ;
+}
+
+.cartLineBottom {
+    @apply w-5/12 mx-auto mt-16 border-b-2 ;
+}
+
+.cartTotal {
+    @apply w-9/12 pt-2 mx-auto text-right text-xl font-bold ;
+}
+
+.cartFooter {
+    @apply w-11/12 mx-auto p-4 text-right;
+
+    button {
+        @apply py-2 mx-auto border-2 rounded-full border-green-300 text-green-300 bg-green-800;;
+    }
+
+    .enabled {
+        @apply cursor-pointer border-green-300 text-green-300 bg-green-800;
+    }
+
+    .enabled:hover {
+        @apply border-green-800 bg-green-300 text-green-800 ;
+        @apply rounded-full shadow-md shadow-gray-700;
+        transform: scale(1.3)
+    }
+
+    .disabled {
+        @apply cursor-not-allowed border-gray-500 text-gray-500 bg-gray-200;
+    }
+}
+
+/* *********** CART CONTAINER *********** */
+.cartHeader {
+    @apply w-11/12 my-4 mx-auto min-h-20 ;
+}
+
+.cartTable {
+    @apply block w-9/12 mx-auto border-double border-b-2 ;
+
+    h3 {
+        @apply text-gray-600 mx-2;
+    }
+
+    .cartTableHeader {
+
+        .cartTableHeaderItem {
+            @apply font-bold;
+        }
+
+        .column0 {
+            @apply font-bold ;
+        }
+
+        .column1 {
+            @apply pl-3;
+        }
+
+        .column2 {
+            @apply px-2 text-center;
+        }
+
+        .column3 {
+            @apply text-right;
+        }
+
+        .column5 {
+            @apply text-center;
+        }
+
+        .column6 {
+            @apply text-right;
+        }
+
+    }
+}
+
+/* ########################### Media Selector ########################### */
+/* ------------ Mobile View ------------ */
+@media (max-width: 667px) {
+    .cartFooter button {
+        @apply w-1/2 font-normal text-sm;
+    }
+    .cartRight button{
+        @apply w-3/6 font-normal text-sm;
+    }
+
+    .cartTableHeader {
+        @apply flex w-full border-b-2 px-2 pt-1 justify-between content-between;
+        @apply text-sm font-semibold;
+
+        .column0 {
+            @apply w-4;
+        }
+
+        .column1 {
+            @apply w-64;
+        }
+
+        .column2 {
+            @apply hidden;
+        }
+
+        .column3 {
+            @apply w-24;
+        }
+
+        .column4 {
+            @apply hidden;
+        }
+
+        .column5 {
+            @apply w-32;
+        }
+
+        .column6 {
+            @apply w-28;
+        }
+    }
+}
+
+/* ------------ End Mobile ------------ */
+
+/* ------------ Tablet View ------------ */
+@media (min-width: 668px) and (max-width: 991px) {
+    .cartRight button {
+        @apply w-1/3 font-normal ;
+    }
+    .cartFooter button {
+        @apply w-1/3 text-lg;
+    }
+    .cartTableHeader {
+        @apply flex w-full border-b-2 px-2 pt-1 justify-between content-between;
+
+        .column0 {
+            @apply w-6 px-1;
+        }
+
+        .column1 {
+            @apply w-80;
+        }
+
+        .column2 {
+            @apply hidden;
+        }
+
+        .column3 {
+            @apply w-24 mr-2;
+        }
+
+        .column4 {
+            @apply hidden;
+        }
+
+        .column5 {
+            @apply w-32;
+        }
+
+        .column6 {
+            @apply w-28;
+        }
+    }
+}
+
+/* ------------ End Tablet ------------ */
+
+/* ------------ Desktop View ------------ */
+@media (min-width: 992px) {
+    .cartRight button, .cartFooter button {
+        @apply w-1/4;
+    }
+    .cartFooter button {
+        @apply text-lg shadow-sm shadow-green-600;
+    }
+
+    .cartTableHeader {
+        @apply flex w-full border-b-2 px-2 pt-1 justify-between content-between;
+
+        .column0 {
+            @apply w-6 px-1;
+        }
+
+        .column1 {
+            @apply w-80;
+        }
+
+        .column2 {
+            @apply w-32;
+        }
+
+        .column3 {
+            @apply w-36;
+        }
+
+        .column4 {
+            @apply w-12;
+        }
+
+        .column5 {
+            @apply w-32;
+        }
+
+        .column6 {
+            @apply w-32;
+        }
+    }
+}
+
+/* ------------ End Desktop ------------ */
+
+/* ##########------------ End Media ------------########## */
+
+

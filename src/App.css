@@ -11,7 +11,7 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
 @tailwind base;
 
 #root {
-    @apply w-screen;
+    @apply w-full;
 }
 
 main {

@@ -11,14 +11,13 @@ function Sidebar() {
 
     return (
         <div className="sidebarContainer background-soft-color  border-medium-color">
+            <div className="logo"></div>
             <div className="sideHeader text-very-dark-color">
 
             </div>
             <div className="navbar">
-                <hr className="sideHR border-medium-color"/>
-
-                <Navigation />
-
+                <hr className="sideHR border-light-color"/>
+                <Navigation/>
             </div>
 
         </div>

@@ -26,20 +26,13 @@ interface navbarInterface {
 
 function Navigation() {
     // ------------------ navigation --------------------------------------------------
-    // const [searchParams, setSearchParams] = useSearchParams();
-    // const [searchQuery, setSearchQuery] = useState<string | null>(searchParams.get('q') || null);
+
     const navigate = useNavigate();
 
     function navClick(page: string) {
         navigate(page);
     }
 
-    // function navClick2(key: string) {
-    //     setSearchParams({q: key})
-    //     setSearchQuery(searchParams.get('q'));
-    //     navigate(`/menu?q=${encodeURIComponent(key)}`);
-    //     console.log(searchQuery);
-    // }
 
     const errorMsg = useRef<string>("");
     const [navbarElements, setNavbarElements] = useState<navbarInterface[]>([{

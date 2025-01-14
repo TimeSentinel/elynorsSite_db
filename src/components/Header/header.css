@@ -19,15 +19,23 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
     @apply align-text-bottom border-b-4;
 
     .titleRow {
-        @apply flex;
+        @apply flex pt-4;
 
         .headerLeft {
-            @apply text-left ;
+            @apply w-1/3 text-left ;
 
-            .logo {
-                @apply bg-no-repeat bg-contain;
-                @apply cursor-pointer;
+        }
+
+        .headerCenter {
+            @apply w-1/3 text-center;
+
+            .location {
+                @apply font-light text-center text-4xl;
             }
+            .pageTitle {
+                @apply font-semibold text-center text-4xl;
+            }
+
         }
 
         .headerRight {
@@ -35,7 +43,6 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
 
             .cartCorner {
                 @apply float-right cursor-pointer;
-
             }
         }
     }
@@ -45,7 +52,7 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
 
 /* ########################### Media Selector ########################### */
 /* ------------ Small View ------------ */
-@media (max-width: 529px) {
+@media (max-width: 567px) {
     .header {
         @apply m-0 h-fit;
     }
@@ -57,6 +64,8 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
             @apply w-1/2 overflow-visible;
 
             .logo {
+                @apply bg-no-repeat bg-contain;
+                @apply cursor-pointer;
                 @apply w-32 h-24 ml-2;
             }
         }
@@ -73,7 +82,7 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
 
 /* ------------ End small ------------ */
 
-@media (min-width: 530px) and (max-width: 667px) {
+@media (min-width: 568px) and (max-width: 667px) {
     .header {
         @apply m-0 h-fit;
     }
@@ -85,7 +94,7 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
             @apply w-64 h-fit;
 
             .logo {
-                @apply w-full max-h-32 h-32 ml-2 ;
+                display: none;
             }
         }
 
@@ -124,7 +133,7 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
         @apply flex w-72 h-full;
 
         .logo {
-            @apply w-full h-32;
+            display: none;
         }
     }
 
@@ -164,7 +173,7 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
         @apply w-72 h-full;
 
         .logo {
-            @apply w-full h-32 ;
+            display: none;
         }
     }
 

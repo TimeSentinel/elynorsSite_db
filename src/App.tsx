@@ -9,7 +9,7 @@ REQ: Vite-React.js+TypeScript, react-router-dom, react-hot-toast,
 // Style Sheets
 import './App.css';
 // Application Elements
-import { useReducer} from "react";
+import {useReducer} from "react";
 import {Route, Routes} from 'react-router-dom';
 import {Toaster} from "react-hot-toast";
 // Classes and Functions
@@ -37,17 +37,18 @@ function App() {
       <ctx.Provider value={{state, dispatch, localState, localDispatch}}>
 
         <div className="App">
-          <Toaster reverseOrder={true} />
+
+          <Toaster reverseOrder={true}/>
           <Layout>
             <Routes>
-              <Route path='/' element={<Home />}/>
-              <Route path='menu' element={<ProductsMenu />}/>  {/* <--------  TEMPORARY ---o */}
+              <Route path='/' element={<Home/>}/>
+              <Route path='menu' element={<ProductsMenu/>}/> {/* <--------  TEMPORARY ---o */}
               {/*<Route path='products/:title' element={<ProductDetail />}/>*/}
-              <Route path='about' element={<About />}/>  {/* <--------  TEMPORARY ---o */}
-              <Route path='gallery' element={<Home />}/>  {/* <--------  TEMPORARY ---o */}
-              <Route path='news' element={<Home />}/>  {/* <--------  TEMPORARY ---o */}
-              <Route path='contact' element={<Contact />}/>  {/* <--------  TEMPORARY ---o */}
-              <Route path='cart' element={<Home />}/>  {/* <--------  TEMPORARY ---o */}
+              <Route path='about' element={<About/>}/> {/* <--------  TEMPORARY ---o */}
+              <Route path='gallery' element={<Home/>}/> {/* <--------  TEMPORARY ---o */}
+              <Route path='news' element={<Home/>}/> {/* <--------  TEMPORARY ---o */}
+              <Route path='contact' element={<Contact/>}/> {/* <--------  TEMPORARY ---o */}
+              <Route path='cart' element={<Home/>}/> {/* <--------  TEMPORARY ---o */}
             </Routes>
           </Layout>
         </div>

@@ -1,0 +1,198 @@
+/* Cart.css
+################################### Restaurant Functional Module ###################################
+Module: Cart
+/module/Cart/containers/Cart/Cart.css    ::: Cart card style sheet
+REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
+(c)2024 Lance Stubblefield
+####################################################################################################
+*/
+
+.cartRow {
+    @apply border-b-2 pt-1;
+
+    .cartDelete {
+        @apply h-fit my-1 p-0 ;
+
+        button {
+            @apply relative -ml-1 w-fit p-1 text-center font-bold text-sm rounded-none;
+            @apply border-2 border-red-500 text-red-500 bg-red-200;
+        }
+
+        button:hover {
+            @apply border-red-200 text-red-100 bg-red-600;
+            @apply shadow-xl shadow-red-700;
+            transform: scale(1.2);
+        }
+    }
+
+    .cartCategory {
+        @apply text-center italic text-sm;
+    }
+
+    .cartPrice {
+        @apply text-right font-light;
+    }
+
+
+    .cartQtyCol {
+        @apply flex h-11 content-around;
+
+        .cartQty {
+            @apply w-1/3 text-center font-semibold ;
+        }
+
+        button {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .cartInc:hover {
+            @apply bg-green-100 border-green-500 text-green-700;
+            @apply shadow-xl shadow-green-700;
+            transform: scale(1.1);
+        }
+
+        .cartDec:hover {
+            @apply bg-red-100 border-red-500 text-red-700;
+            @apply shadow-xl shadow-red-700;
+            transform: scale(1.1);
+        }
+    }
+
+    .cartLineTotal {
+        @apply text-right font-semibold text-lg;
+    }
+
+}
+
+
+/* ########################### Media Selector ########################### */
+/* ------------ Mobile View ------------ */
+@media (max-width: 667px) {
+    .cartRow {
+        @apply flex flex-row h-fit px-2 justify-between content-between;
+
+        .cartDelete {
+            button {
+                @apply font-normal text-sm border-none bg-none;
+            }
+
+            @apply w-6 mr-1;
+        }
+
+        .cartTitle {
+            @apply w-64 text-xs leading-tight;
+        }
+
+        .cartCategory {
+            @apply hidden;
+        }
+
+        .cartPrice {
+            @apply w-20 mt-2 text-xs;
+        }
+
+        .column4 {
+            @apply hidden;
+        }
+
+        .cartQtyCol {
+            @apply w-32 mt-2 text-sm;
+
+            button {
+                @apply w-1/4 h-6 mx-1 mt-0 text-center font-semibold border-none;
+            }
+        }
+
+        .cartLineTotal {
+            @apply w-28 mt-2 text-sm;
+        }
+    }
+
+}
+
+/* ------------ End Mobile ------------ */
+
+/* ------------ Tablet View ------------ */
+@media (min-width: 668px) and (max-width: 991px) {
+    .cartRow {
+        @apply flex flex-row h-fit px-2 justify-between content-between;
+
+        .cartDelete {
+            @apply w-6 px-1;
+        }
+
+        .cartTitle {
+            @apply w-80 font-semibold pl-1 text-sm;
+        }
+
+        .cartCategory {
+            @apply hidden;
+        }
+
+        .cartPrice {
+            @apply w-24 mr-2;
+        }
+
+        .column4 {
+            @apply hidden;
+        }
+
+        .cartQtyCol {
+            @apply w-32;
+
+            button {
+                @apply w-1/3 h-4/5 mx-2 my-1 text-center font-bold border-2;
+            }
+        }
+
+        .cartLineTotal {
+            @apply w-28;
+        }
+    }
+}
+
+/* ------------ End Tablet ------------ */
+
+/* ------------ Desktop View ------------ */
+@media (min-width: 992px) {
+    .cartRow {
+        @apply flex flex-row h-fit px-2 justify-between content-between;
+
+        .cartDelete {
+            @apply w-6 px-1;
+        }
+
+        .cartTitle {
+            @apply w-80 font-bold pl-2;
+        }
+
+        .cartCategory {
+            @apply w-32;
+        }
+
+        .cartPrice {
+            @apply w-36;
+        }
+
+        .column4 {
+            @apply w-12;
+        }
+
+        .cartQtyCol {
+            @apply w-32;
+
+            button {
+                @apply w-1/3 h-4/5 mx-2 my-1 text-center font-bold border-2;
+            }
+        }
+
+        .cartLineTotal {
+            @apply w-32;
+        }
+    }
+}
+
+/* ------------ End Desktop ------------ */
+
+/* ##########------------ End Media ------------########## */
+

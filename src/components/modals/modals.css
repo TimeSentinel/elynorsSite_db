@@ -1,0 +1,49 @@
+/* cartPages.css
+################################### Restaurant Functional Module ###################################
+Module: main
+/src/components/modals.css    ::: modals
+REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
+companion for modals.tsx
+(c)2024 Lance Stubblefield
+####################################################################################################
+*/
+dialog {
+    @apply p-3 mx-auto border-4 rounded-md;
+    box-shadow: 0 0 0 2000px #440202CC;
+}
+.modal {
+    @apply m-4;
+
+    .modalDialog {
+        @apply w-full;
+
+        p {
+            @apply leading-tight text-center font-bold text-xl;
+        }
+    }
+
+    .modalResponse {
+        @apply flex justify-around;
+
+        button {
+            @apply w-32 mt-6 text-center border-2 shadow-sm shadow-gray-400 rounded-md text-xl font-bold;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            @apply shadow-lg shadow-gray-700;
+        }
+        button:active {
+            @apply shadow-inner shadow-gray-500;
+        }
+
+        .cancelButton {
+            @apply border-green-600 text-green-600 bg-green-200;
+        }
+
+        .confirmButton {
+            @apply border-yellow-600 text-yellow-600 bg-yellow-200;
+        }
+    }
+}
+

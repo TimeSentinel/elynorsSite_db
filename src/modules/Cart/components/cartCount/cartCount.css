@@ -1,0 +1,48 @@
+/* cartCount.css
+################################### Restaurant Functional Module ###################################
+Module: Cart
+/modules/Cart/components/cartCount/cartCount.css    ::: cart module style sheet
+REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
+(c)2024 Lance Stubblefield
+####################################################################################################
+*/
+.cartCount {
+    @apply text-green-500 ;
+}
+
+img {
+    @apply float-right;
+}
+
+@media (max-width: 529px) {
+    .cartCount {
+        @apply mx-1 px-0 font-normal;
+        font-size: .9em;
+    }
+
+    img {
+        @apply w-full;
+    }
+}
+
+@media (min-width: 530px) and (max-width: 991px) {
+    .cartCount {
+        @apply mx-1 px-0 font-normal;
+        font-size: 1.1em;
+    }
+
+    img {
+        @apply w-10;
+    }
+}
+
+@media (min-width: 992px) {
+    .cartCount {
+        @apply mx-2 px-2 font-semibold;
+        font-size: 1.3em;
+    }
+
+    img {
+        @apply w-12;
+    }
+}

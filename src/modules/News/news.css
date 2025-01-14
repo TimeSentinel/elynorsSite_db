@@ -1,0 +1,95 @@
+/* news.css
+################################### Restaurant Functional Module ###################################
+/modules/News/news.css    ::: news style sheet
+REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
+(c)2024 Lance Stubblefield
+####################################################################################################
+*/
+
+.newsContainer {
+    @apply w-10/12;
+    @apply mx-auto min-h-96 mt-4 p-4 align-top pb-24;
+    @apply border-2;
+
+    .newsHeader {
+        h1 {
+            @apply text-4xl font-bold;
+        }
+        h2 {
+
+        }
+        p {
+
+        }
+    }
+    .newsReel {
+        .newsCard {
+            @apply border-t-2 my-4 py-4;
+            .newsDate {
+                @apply w-full px-4 text-sm font-normal;
+            }
+            .newsTop {
+                @apply flex flex-row w-full p-2 mb-2;
+                .newsLeft {
+                    @apply w-1/3 h-48;
+
+                    img {
+                        @apply w-full max-h-48 mx-auto ;
+                        @apply border-2 rounded-md shadow-md shadow-gray-500;
+                        object-fit: cover;
+                    }
+                }
+                .newsRight {
+                    @apply w-2/3 h-full px-4 pb-2;
+                    .newsTitle {
+                        @apply block;
+                        h2 {
+                            @apply text-3xl font-bold leading-tight;
+                        }
+                    }
+                    .newsSub {
+                        @apply block text-lg font-normal;
+                    }
+                }
+
+            }
+            .newsDescription {
+                @apply block px-2 pb-2;
+                p {
+                    @apply text-base italic;
+                }
+            }
+            .newsFooter {
+                @apply block px-2 pb-2 text-base font-normal;
+            }
+
+        }
+    }
+}
+.newsMessage {
+    @apply bg-yellow-200 border-t-2 border-b-2 text-center text-base font-bold p-2;
+}
+
+/* ########################### Media Selector ########################### */
+/* ------------ Mobile View ------------ */
+@media (max-width: 667px) {
+
+}
+
+/* ------------ End Mobile ------------ */
+
+/* ------------ Tablet View ------------ */
+@media (min-width: 668px) and (max-width: 991px) {
+
+}
+
+/* ------------ End Tablet ------------ */
+
+/* ------------ Desktop View ------------ */
+@media (min-width: 992px) {
+
+}
+
+/* ------------ End Desktop ------------ */
+
+/* ##########------------ End Media ------------########## */

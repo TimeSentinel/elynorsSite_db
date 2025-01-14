@@ -9,11 +9,11 @@ PROJECT: elynors;
     @apply flex w-full h-full border-t-2;
 
     .footerLeft {
-        @apply w-5/12 ;
+        @apply w-4/12 ;
     }
 
     .footerCenter {
-        @apply w-3/12 h-full pt-5 text-sm;
+        @apply w-4/12 h-full pt-5 text-sm;
     }
 
     .footerRight {
