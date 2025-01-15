@@ -7,6 +7,7 @@ PROJECT: elynors;
 
 import './header.css'
 import {useNavigate} from "react-router";
+import CartCount from "../../modules/Cart/components/cartCount/CartCount.tsx";
 
 
 
@@ -24,7 +25,7 @@ function Header() {
             </div>
             <div className="headerRight">
                 <div className="cartCorner" onClick={() => navigate("/cart")}>
-                    {/*<CartCount/>*/}
+                    <CartCount/>
                 </div>
             </div>
 

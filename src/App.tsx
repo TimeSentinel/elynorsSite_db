@@ -24,10 +24,10 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import ProductsMenu from "src/modules/Products/ProductsMenu.tsx";
+import Cart from "./modules/Cart/pages/Cart";
+import News from "./modules/News";
 // import News from "src/modules/News";
 // import Gallery from "src/modules/Gallery";
-
-//todo: separation of modules
 
 function App() {
   const [state, dispatch] = useReducer(reducerFn, initialState);
@@ -35,20 +35,18 @@ function App() {
 
   return (
       <ctx.Provider value={{state, dispatch, localState, localDispatch}}>
-
         <div className="App">
-
           <Toaster reverseOrder={true}/>
           <Layout>
             <Routes>
               <Route path='/' element={<Home/>}/>
-              <Route path='menu' element={<ProductsMenu/>}/> {/* <--------  TEMPORARY ---o */}
+              <Route path='menu' element={<ProductsMenu/>}/>
               {/*<Route path='products/:title' element={<ProductDetail />}/>*/}
-              <Route path='about' element={<About/>}/> {/* <--------  TEMPORARY ---o */}
-              <Route path='gallery' element={<Home/>}/> {/* <--------  TEMPORARY ---o */}
-              <Route path='news' element={<Home/>}/> {/* <--------  TEMPORARY ---o */}
-              <Route path='contact' element={<Contact/>}/> {/* <--------  TEMPORARY ---o */}
-              <Route path='cart' element={<Home/>}/> {/* <--------  TEMPORARY ---o */}
+              <Route path='about' element={<About/>}/>
+              <Route path='gallery' element={<Home/>}/>
+              <Route path='news' element={<News/>}/>
+              <Route path='contact' element={<Contact />}/>
+              <Route path='cart' element={<Cart />}/>
             </Routes>
           </Layout>
         </div>
