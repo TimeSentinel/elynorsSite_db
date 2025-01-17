@@ -10,6 +10,7 @@ REQ: Vite-React.js+TypeScript, react-router-dom, react-hot-toast,
 import React, {useContext, useEffect, useRef, useState} from "react";
 import {ctx} from "src/context";
 import './themes.css';
+import useSWR from "swr";
 
 // --------------------------------------
 //region vv---------- INTERFACES ----------vv
@@ -81,18 +82,19 @@ function ThemeSelector(): React.JSX.Element {
     }]);
     const errorMsg = useRef<string>("");
 
-    //endregion
-    // --------------------------------------
+    const fetcher =
+        ({url, init}: { url: RequestInfo | URL, init?: RequestInit }) =>
+            fetch(url, init).then((res) => res.json());
+    const {
+        data: themes,
+        error: Error,
+        isValidating: Validate,
+    } = useSWR({url: "http://localhost:3001/products", init: {method: "GET"}}, fetcher);
+    if (Validate) return <div className="loading">Loading themes...</div>;
+    if (Error) return <div className="failed">Failed to load the themes</div>;
 
-    // !!! Load Themes List
-    useEffect(() => {
-        fetch("/themes/themes.json") //     <---!!!Path to themes list json file!!!
-            .then(res => res.json())
-            .then(data => {
-                setThemes(data.data);
-            })
-            .catch(error => errorMsg.current = "themes/themes.json: " + error.message)
-    }, [])
+    setThemes(themes);
+
 
     // !!! Update Theme when cssUUID changes
     useEffect(() => {
