@@ -7,6 +7,8 @@ PROJECT: elynors;
 
 import './header.css'
 import {useNavigate} from "react-router";
+import CartCount from "../../modules/Cart/components/cartCount/CartCount.tsx";
+import Hamburger from "../Navigation/Hamburger.tsx";
 
 
 
@@ -18,13 +20,17 @@ function Header() {
             <div className="headerLeft">
                 <div className="logo"></div>
             </div>
+            <div className="hamburgerMenu">
+                <Hamburger />
+            </div>
             <div className="headerCenter text-medium-color">
                 <span className="location"></span>
                 <span className="pageTitle">Elynor's Fine Dining</span>
             </div>
             <div className="headerRight">
+                <div className="rightCorner"></div>
                 <div className="cartCorner" onClick={() => navigate("/cart")}>
-                    {/*<CartCount/>*/}
+                    <CartCount/>
                 </div>
             </div>
 

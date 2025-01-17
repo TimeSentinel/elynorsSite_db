@@ -7,7 +7,6 @@ PROJECT: elynors;
 
 .container {
     @apply flex flex-wrap w-full h-full;
-    @apply border-2 border-orange-400;
 }
 
 .sidebar {
@@ -26,7 +25,7 @@ PROJECT: elynors;
     }
 
     .footer {
-        @apply fixed w-full h-24 mt-4 bottom-0 text-center align-middle;
+        @apply fixed mt-4 bottom-0 text-center align-middle;
         opacity: 0.8;
     }
 
@@ -39,6 +38,12 @@ PROJECT: elynors;
     .sidebar {
         display: none;
     }
+    .container {
+        @apply w-full;
+    }
+    .footer {
+        @apply w-full h-16;
+    }
 }
 
 /* ------------ End Mobile ------------ */
@@ -46,10 +51,13 @@ PROJECT: elynors;
 /* ------------ Mini View ------------ */
 @media (min-width: 568px) and (max-width: 719px) {
     .sidebar {
-        @apply w-36 h-full fixed top-0 left-0;
+        @apply w-4/12 h-full fixed top-0 left-0;
     }
-    .mainBody {
-        @apply ml-36;
+    .container {
+        @apply  w-8/12 mr-0 ml-auto;
+    }
+    .footer {
+        @apply h-20 w-8/12 ml-auto;
     }
 }
 
@@ -58,10 +66,13 @@ PROJECT: elynors;
 /* ------------ Tablet View ------------ */
 @media (min-width: 720px) and (max-width: 991px) {
     .sidebar {
-        @apply w-52 h-full fixed top-0 left-0;
+        @apply w-3/12 h-full fixed top-0 left-0;
     }
     .container {
-        @apply ml-52;
+        @apply  w-9/12 ml-auto;
+    }
+    .footer {
+        @apply h-24 w-9/12 ml-auto;
     }
 }
 
@@ -70,10 +81,13 @@ PROJECT: elynors;
 /* ------------ Desktop View ------------ */
 @media (min-width: 992px) {
     .sidebar {
-        @apply w-64 h-full fixed top-0 left-0;
+        @apply w-2/12 h-full fixed top-0 left-0;
     }
     .container {
-        @apply ml-64;
+        @apply w-10/12 ml-auto;
+    }
+    .footer {
+        @apply h-24 w-10/12 ml-auto;
     }
 }
 

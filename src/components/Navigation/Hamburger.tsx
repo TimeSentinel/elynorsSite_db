@@ -25,14 +25,22 @@ interface navbarInterface {
 }
 
 
-function Hamburger(){
-    // ------------------ navigation --------------------------------------------------
+function Hamburger() {
+    const [displayMain, setDisplayMain] = useState<boolean>(false);
 
+    function toggleMain() {
+        setDisplayMain(!displayMain);
+    }
+
+    // ------------------ navigation --------------------------------------------------
     const navigate = useNavigate();
 
-    function navClick(page: string) {
-        navigate(page);
+    function navClick(key: string) {
+        navigate(key)
+        setDisplayMain(false);
     }
+
+//---------------------------------------------------------------------------------
 
 
     const errorMsg = useRef<string>("");
@@ -58,41 +66,54 @@ function Hamburger(){
             })
             .catch(error => {
                 errorMsg.current = "navigation/navigation.json: " + error.message;
-                console.log("error: " + errorMsg.current);})
+                console.log("error: " + errorMsg.current);
+            })
     }, [])
 
     return (
+
         <div className="hamburger">
-            <ul>
-                {navbarElements.map((item, i) => {
-                    return (
-                        <div key={i}>
-                            <li >
-                                <button className={
-                                    item.enabled === "no" ? "level1 disabled text-dark-shade" :
-                                        location.pathname === item.link
-                                            ? "level1 Selected text-bright-color background-dark-color"
-                                            : "level1 enabled text-medium-color "
+            <div className="menuRow">
+                <div className="filler"></div>
+                <div id="hamburgerIcon"
+                     onClick={toggleMain}>
+                    <div className="iconBar background-dark-color"></div>
+                    <div className="iconBar background-dark-color"></div>
+                    <div className="iconBar background-dark-color"></div>
+                </div>
+            </div>
+            {displayMain && (
+                <ul className="hamburgerUL background-soft-color text-medium-color">
+                    {navbarElements.map((item, i) => {
+                        return (
+                            <div key={i}>
+                                <li>
+                                    <button className={
+                                        item.enabled === "no" ? "level1 disabled text-medium-shade background-light-shade" :
+                                            location.pathname === item.link
+                                                ? "level1 Selected text-bright-color background-dark-color"
+                                                : "level1 enabled text-medium-color "
+                                    }
+                                            onClick={() => item.enabled === "yes" && navClick(item.link)}>
+                                        {item.title}
+                                    </button>
+                                </li>
+                                {
+                                    item.level2.length > 0 &&
+                                    <ul className="hamburgerUL2 background-soft-color text-light-color">
+                                        {item.level2.map((item2, j) => {
+                                            return <li key={j}
+                                                       className={item2.enabled === "no" ? "level2 disabled text-medium-shade background-light-shade" :
+                                                           "level2 enabled text-medium-color "}>
+                                                {item2.title}</li>
+                                        })}
+                                    </ul>
                                 }
-                                        onClick={() => item.enabled === "yes" && navClick(item.link)}>
-                                    {item.title}
-                                </button>
-                            </li>
-                            {
-                                item.level2.length > 0 &&
-                                <ul>
-                                    {item.level2.map((item2, j) => {
-                                        return <li key={j}
-                                                   className={item2.enabled === "no" ? "level2 disabled text-dark-shade" :
-                                                       "level2 enabled text-medium-color "}>
-                                            {item2.title}</li>
-                                    })}
-                                </ul>
-                            }
-                        </div>
-                    )
-                })}
-            </ul>
+                            </div>
+                        )
+                    })}
+                </ul>
+            )}
         </div>
     )
 }
