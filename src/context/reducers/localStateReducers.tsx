@@ -30,7 +30,7 @@ interface CartInterface {           // Cart Module
 
 export const initialLocalState: LocalStateInterface = {
     shoppingCart: {},  //Cart Module
-    cssUUID: "defaultTheme",
+    cssUUID: "bb070233-683f-43c5-9c9d-d4a0ecefddc7",
 }
 //endregion
 // ------------------------------------------------

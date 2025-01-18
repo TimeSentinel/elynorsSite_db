@@ -9,7 +9,7 @@ REQ: Vite-React.js+TypeScript, react-router-dom, react-hot-toast,
 
 import "./Cart.css"
 import {useContext} from "react";
-import {ProductInterface} from 'src/reducer/stateReducers';
+import {ProductInterface} from 'src/context/reducers/stateReducers.tsx';
 import {ctx} from "src/context";
 import toast from "react-hot-toast";
 

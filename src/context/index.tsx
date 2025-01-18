@@ -7,8 +7,8 @@ REQ: Vite-React.js+TypeScript, react-router-dom, react-hot-toast,
 */
 
 import {createContext, Dispatch} from "react";
-import {initialState, StateInterface, ActionInterface} from "../reducer/stateReducers.tsx";
-import {initialLocalState, LocalStateInterface, LocalActionInterface} from "../reducer/localStateReducers.tsx";
+import {initialState, StateInterface, ActionInterface} from "src/context/reducers/stateReducers.tsx";
+import {initialLocalState, LocalStateInterface, LocalActionInterface} from "src/context/reducers/localStateReducers.tsx";
 
 export const ctx = createContext<{
     state: StateInterface;

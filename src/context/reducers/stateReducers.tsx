@@ -39,11 +39,11 @@ export const reducerFn = (state: StateInterface, action: ActionInterface) => {
                 ...state,
                 products: (payload as ProductInterface[])
             }
-        case "UPDATE_CSS":      // Themes Module
-            return {
-                ...state,
-                cssStyle: (payload as string)
-            }
+        // case "UPDATE_CSS":      // Themes Module
+        //     return {
+        //         ...state,
+        //         cssStyle: (payload as string)
+        //     }
         default:
             return state
     }

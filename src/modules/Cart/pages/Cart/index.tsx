@@ -11,7 +11,7 @@ import {useContext, useEffect, useRef, useState, FC} from "react";
 import {CartItem} from "src/modules/Cart/containers/Cart";
 import {ctx} from "src/context";
 import toast from "react-hot-toast";
-import {ProductInterface} from 'src/reducer/stateReducers';
+import {ProductInterface} from 'src/context/reducers/stateReducers.tsx';
 import "src/modules/Cart/pages/cartPages.css"
 import Confirmation from "src/components/modals/modals.tsx";
 

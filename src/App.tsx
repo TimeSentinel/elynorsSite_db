@@ -15,8 +15,8 @@ import {Toaster} from "react-hot-toast";
 // Classes and Functions
 import {ctx} from './context';
 import {Layout} from "./layout";
-import {initialState, reducerFn} from "./reducer/stateReducers.tsx";
-import {useLocalStorage} from "./reducer/localStateReducers.tsx";
+import {initialState, reducerFn} from "src/context/reducers/stateReducers.tsx";
+import {useLocalStorage} from "src/context/reducers/localStateReducers.tsx";
 import Home from "./pages/Home";
 // import Menu from "./modules/Products/pages/Menu";
 // import {ProductDetail} from "./modules/Products/pages/ProductDetail";
