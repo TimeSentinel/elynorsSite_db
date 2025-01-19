@@ -37,12 +37,14 @@ const ProductCard: FC = (productID) => {
     if (error) return <div className="failed">Failed to load the product info</div>;
 
     return (
-        <div className="productCard" key={productDetails.prodid}>
-            <div className="productCardTitle">{productDetails.prodname}</div>
-            <div className="productCardImage"><img src={productDetails.prodImage} alt={productDetails.prodshort}/></div>
-            <div className="productCardDesc">{productDetails.proddesc}</div>
-            <div className="productCardPrice">{productDetails.prodprice}</div>
+        <div className="productCard">
+            <div className="productCardTitle">{productDetails.productname}</div>
+            <div className="productCardImage"><img src={productDetails.productimage} alt={productDetails.prodshort}/></div>
+            <div className="productCardDesc">{productDetails.productdesc}</div>
+            <div className="productCardPrice">{productDetails.productprice}</div>
             <div className="productCardCats">{productDetails.catname + "/" + productDetails.subcatname}</div>
+            <div className="productCardTags">{productDetails.producttags}</div>
+            <div className="productCardOptions">
             {productDetails.options.map((option: OptionInterface) => {
                     return (
                         <div className="optionFrame" key={option.optid}>
@@ -69,6 +71,7 @@ const ProductCard: FC = (productID) => {
                 }
             )
             }
+            </div>
         </div>
     )
 }
