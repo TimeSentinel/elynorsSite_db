@@ -17,7 +17,6 @@ const LoadCSS = ({themeID}: CSSProps) => {
     let cssStyle: string = ""
     const errorMsg = useRef<string>("");
     const query = `http://localhost:3002/theme/${themeID}`;
-    console.log("query: ", query);
 
     const fetcher =
         ({url, init}: { url: RequestInfo | URL, init?: RequestInit }) =>
@@ -96,7 +95,6 @@ const LoadCSS = ({themeID}: CSSProps) => {
 
     }
 
-    console.log(cssStyle);
     return (
         <>
             <div className="error"

@@ -26,6 +26,7 @@ import Contact from "./pages/Contact";
 import ProductsMenu from "src/modules/Products/ProductsMenu.tsx";
 import Cart from "./modules/Cart/pages/Cart";
 import News from "./modules/News";
+import ProductCard from "src/modules/Products/ProductCard";
 // import News from "src/modules/News";
 // import Gallery from "src/modules/Gallery";
 
@@ -41,7 +42,7 @@ function App() {
             <Routes>
               <Route path='/' element={<Home/>}/>
               <Route path='menu' element={<ProductsMenu/>}/>
-              {/*<Route path='products/:title' element={<ProductDetail />}/>*/}
+              <Route path='products/:productID' element={<ProductCard />}/>
               <Route path='about' element={<About/>}/>
               <Route path='gallery' element={<Home/>}/>
               <Route path='news' element={<News/>}/>

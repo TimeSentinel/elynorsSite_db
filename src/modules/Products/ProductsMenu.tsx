@@ -39,17 +39,17 @@ function ProductsMenu() {
         data: products,
         error: prodError,
         isValidating: prodValidate,
-    } = useSWR({url: "http://localhost:3001/products", init: {method: "GET"}}, fetcher);
+    } = useSWR({url: "http://localhost:3001/?query=products", init: {method: "GET"}}, fetcher);
     const {
         data: categories,
         error: catError,
         isValidating: catValidate,
-    } = useSWR({url: "http://localhost:3001/categories", init: {method: "GET"}}, fetcher);
+    } = useSWR({url: "http://localhost:3001/?query=categories", init: {method: "GET"}}, fetcher);
     const {
         data: subcats,
         error: subError,
         isValidating: subValidate,
-    } = useSWR({url: "http://localhost:3001/subcats", init: {method: "GET"}}, fetcher);
+    } = useSWR({url: "http://localhost:3001/?query=subcats", init: {method: "GET"}}, fetcher);
     if (prodValidate || catValidate || subValidate) return <div className="loading">Loading menu items...</div>;
     if (prodError) return <div className="failed">Failed to load the products</div>;
     if (catError) return <div className="failed">Failed to load the categories</div>;
