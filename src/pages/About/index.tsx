@@ -18,23 +18,21 @@ function About() {
                 <div className="bodyHead ">
                     <h1>About This Site</h1>
                     <p>
-                        This page has been modified to be a representation of technology and design. <br/>
-                        I've taken many the 'modules' I designed, from various projects and put them in this
-                        presentation piece.<br/><br/>
+                        This site is a demonstration of technology and design.<br/><br/>
+                        All of the modules/components of this site are custom designed.
                     </p>
                     <br/>
                     <p className="text-medium-color">
-                        This site has been setup as a database based content system.
+                        This site has been setup primarily as a database based content system. The navigation menus use
+                     a JSON file that can be easily customized.
                     </p>
                 </div>
                 <hr className="hrDivider border-medium-color"/>
                 <div className="bodyMain ">
                     <h2>Modules</h2>
                     <p className="text-medium-color">
-                        These are packages that can be easily incorporated into your site. Think of modules as a
-                        buffet of options you can choose from. Since I have been perfecting the code in
-                        compartmentalized
-                        packages, most of these can be implemented and setup to your design requirements fairly quick.
+                        These are packages that can be easily customized and incorporated into your site.
+                        Below are lists of my current modules and some of their options.
                     </p>
                     <table className="text-medium-color border-medium-color">
                         <tbody>
@@ -50,7 +48,9 @@ function About() {
                             </td>
                             <td className="details">
                                 This sets up the site using React-Router for navigation and React-Context for
-                                information.
+                                information.<br/>
+                                The content for any of these can be managed with a simple admin panel or made to remain
+                                 static.<br/>
                                 Contact form can be configured to update a backend database or send an email. A file
                                 attachment system can be implemented as well.
                             </td>
@@ -59,22 +59,25 @@ function About() {
                             <td className="title">Themes</td>
                             <td className="description">
                                 Using a selection box in the footer, the entire site's theme can be
-                                changed at any time from any page on the site.
+                                changed at any time from any page on the site.<br/>
+
                             </td>
                             <td className="details">
-                                Using admin accessible JSON files, the admin can change the theme
-                                color, fonts, logo, and some layout effects by simply editing a text file.
+                                Using admin accessible JSON files or database tables, the admin can change the theme
+                                color, fonts, logo, and some layout effects by simply editing a text file.<br/>
+                                Themes can be stored in a database, or in JSON file format if database is not available.
                             </td>
                         </tr>
                         <tr className="border-light-color">
                             <td className="title">Products</td>
                             <td className="description">
-                                This is a requirement for most restaurant websites. This is the dipsplay
+                                This is a requirement for most restaurant websites. This is the display
                                 of the products you offer. The 'Menu' is included in this package.
                             </td>
                             <td className="details">
-                                Using JSON files, you can edit the images, descriptions, offerings, and pricing by
-                                editing a text file.
+                                Using database tables or JSON files, you can edit the images, descriptions, offerings, and pricing by
+                                editing a text file.<br/>
+                                You can add custom options to each item and full shopping cart functionality.
                             </td>
                         </tr>
                         <tr className="border-light-color">
@@ -85,7 +88,8 @@ function About() {
                             </td>
                             <td className="details">
                                 Using React-Context and local storage (provided by a user's browser), a shopping
-                                cart can be retained even if a user's browser or computer is restarted.
+                                cart can be retained even if a user's browser or computer is restarted.<br/>
+                                Payment functionality, delivery/pick-up options, and customization can be easily added.
                             </td>
                         </tr>
                         <tr className="border-light-color">
@@ -96,7 +100,9 @@ function About() {
                                 Share recipes, tips, parties you had or events that are coming.
                             </td>
                             <td className="details">
-                                Using a JSON file to make it easy to update, add, and remove articles and images.
+                                Using database tables or JSON files to make it easy to update,
+                                 add, and remove articles and images. <br/>
+                                This is essential for good SEO campaigns.
                             </td>
                         </tr>
                         <tr className="border-light-color">
@@ -107,7 +113,8 @@ function About() {
                                 newsfeed articles.
                             </td>
                             <td className="details">
-                                Stores required information and links in a json file for easy editing.
+                                Stores required information and links in a json file for easy editing. This could be
+                                 made static or changable in an admin console.
                             </td>
                         </tr>
                         <tr className="border-light-color">
@@ -117,7 +124,8 @@ function About() {
                                 employees, and more.
                             </td>
                             <td className="details">
-                                Uses a json file for images and descriptions.
+                                Uses JSON file or database tables. Can be editable in admin console. <br/>
+                                This could be a slide show, grid-layout, or any manner of presentation you would like.
                             </td>
                         </tr>
                         <tr className="border-light-color">
@@ -145,6 +153,24 @@ function About() {
                             <td className="title">HTML and CSS</td>
                             <td className="description">
                                 This is the code your browser uses provide the layout and visual style for the site.
+                            </td>
+                        </tr>
+                        <tr className="border-light-color">
+                            <td className="title">React and React Packages</td>
+                            <td className="description">
+                                This is the main tool used for developing this site. <br/>
+                                It is a Javascript library that
+                                makes it easy to make a site modular.
+                                This allows a much faster site by providing the ability to make code reusable.
+                            </td>
+                        </tr>
+                        <tr className="border-light-color">
+                            <td className="title">Typescript</td>
+                            <td className="description">
+                                Typescript is an alternate version Javascript. It requires Javascript code to be more
+                                specific about each element's usage. <br/>
+                                This means fewer errors and faster processing. It promotes component style programming,
+                                making it easier to compartmentalize code sections for easy reuse.
                             </td>
                         </tr>
                         <tr className="border-light-color">
@@ -176,25 +202,18 @@ function About() {
                             </td>
                         </tr>
                         <tr className="border-light-color">
-                            <td className="title">React and React Packages</td>
+                            <td className="title">Express.js</td>
                             <td className="description">
-                                This is the main tool used for developing this site. <br/>
-                                It is a Javascript library that
-                                makes it easy to make a site modular.
-                                This allows a much faster site by providing the ability to make code reusable.
+                                Javascript library for backend server setup. This is what listens for and handles
+                                 requests from your browser for information from the database.
                             </td>
                         </tr>
                         <tr className="border-light-color">
-                            <td className="title">Typescript</td>
+                            <td className="title">PostgreSQL Database</td>
                             <td className="description">
-                                Typescript is an improvement to Javascript. It requires Javascript code to be more
-                                specific about each element's usage. <br/>
-                                This means fewer errors and faster processing.
+                                Database used on this site. Just about any database will work. <br/>
+                                Postgres is opensource, free software.
                             </td>
-                        </tr>
-                        <tr className="border-light-color">
-                            <td className="title"></td>
-                            <td className="description"></td>
                         </tr>
                         </tbody>
                     </table>

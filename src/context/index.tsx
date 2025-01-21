@@ -11,13 +11,13 @@ import {initialState, StateInterface, ActionInterface} from "src/context/reducer
 import {initialLocalState, LocalStateInterface, LocalActionInterface} from "src/context/reducers/localStateReducers.tsx";
 
 export const ctx = createContext<{
-    state: StateInterface;
-    dispatch: Dispatch<ActionInterface>;
+    // state: StateInterface;
+    // dispatch: Dispatch<ActionInterface>;
     localState: LocalStateInterface;
     localDispatch: Dispatch<LocalActionInterface>;
 }>({
-        state: initialState,
-        dispatch: () => null,
+        // state: initialState,
+        // dispatch: () => null,
         localState: initialLocalState,
         localDispatch: () => null,
     }

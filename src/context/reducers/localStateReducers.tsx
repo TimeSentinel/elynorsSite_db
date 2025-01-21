@@ -20,8 +20,11 @@ export interface LocalActionInterface {
 }
 
 interface CartReducerInterface {    // Cart Module
-    id: number;
+    prodid: string;
     quantity: number;
+    items: [
+        itemid: string
+    ]
 }
 
 interface CartInterface {           // Cart Module
@@ -30,7 +33,7 @@ interface CartInterface {           // Cart Module
 
 export const initialLocalState: LocalStateInterface = {
     shoppingCart: {},  //Cart Module
-    cssUUID: "bb070233-683f-43c5-9c9d-d4a0ecefddc7",
+    cssUUID: "bb070233-683f-43c5-9c9d-d4a0ecefddc7", //update with default UUID for theme
 }
 //endregion
 // ------------------------------------------------

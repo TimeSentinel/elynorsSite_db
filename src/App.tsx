@@ -27,11 +27,11 @@ import ProductCard from "src/modules/Products/ProductCard";
 import Gallery from "src/modules/Gallery";
 
 function App() {
-  const [state, dispatch] = useReducer(reducerFn, initialState);
+  // const [state, dispatch] = useReducer(reducerFn, initialState);
   const [localState, localDispatch] = useLocalStorage("LocalStorage")
 
   return (
-      <ctx.Provider value={{state, dispatch, localState, localDispatch}}>
+      <ctx.Provider value={{ localState, localDispatch}}> {/* state, dispatch, */}
         <div className="App">
           <Toaster reverseOrder={true}/>
           <Layout>
