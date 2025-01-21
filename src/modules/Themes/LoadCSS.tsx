@@ -27,7 +27,7 @@ const LoadCSS = ({themeID}: CSSProps) => {
         error: themeError,
         isLoading: themeLoading,
         isValidating: themeValidate
-    } = useSWR({url: query, init: {method: "GET"}}, fetcher)
+    } = useSWR({url: query, init: {method: "GET"}}, fetcher, {revalidateOnFocus: false})
 
     if (themeLoading || themeValidate) return <div className="loading">Loading theme elements \ | /</div>;
     if (themeError) errorMsg.current = "Failed to load the theme elements";

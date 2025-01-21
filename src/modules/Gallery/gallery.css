@@ -31,15 +31,15 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
         }
 
         .galleryTitle {
-            @apply w-11/12 mx-auto mt-2 h-12 font-bold text-2xl;
-
+            @apply w-11/12 mx-auto mt-2 mb-4 h-fit font-bold text-lg overflow-hidden;
+            @apply border-b-2 border-gray-500;
         }
 
         .galleryDescription {
-            @apply w-11/12 mx-auto h-24 text-lg;
+            @apply w-full mx-auto mt-1 h-24;
 
             p {
-                @apply text-lg font-normal italic leading-tight;
+                @apply font-light italic leading-tight;
             }
         }
     }

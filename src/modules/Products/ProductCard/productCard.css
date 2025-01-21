@@ -5,3 +5,81 @@ PROJECT: elynors;
 (c) 2025 Lance Stubblefield 
 --------------------------------------- */
 
+.productCard {
+    @apply w-10/12 mt-8 mb-24 mx-auto;
+
+    .productCardTitle {
+        @apply my-2 w-full text-2xl font-bold text-center;
+    }
+
+    .productCardImage {
+        @apply w-9/12 h-72 mx-auto mb-6;
+        img {
+            @apply w-full h-72;
+            @apply border-2 shadow-lg shadow-gray-500 rounded-lg;
+            object-fit: cover;
+        }
+    }
+
+    .productCardDesc {
+        @apply text-center;
+    }
+
+    .productCardPrice {
+        @apply text-center text-2xl font-semibold;
+    }
+
+    .productCardCats {
+        @apply w-full text-lg text-center font-light;
+    }
+
+    .productCardTags {
+        @apply w-full text-xs font-light text-center italic;
+    }
+
+    .productCardOptions {
+
+        .optionFrame {
+            @apply w-8/12 mx-auto my-4 border-2 p-2;
+            @apply shadow-lg shadow-gray-500;
+            .optionTitle {
+                @apply text-xl font-bold text-center;
+            }
+
+            .optionDesc {
+                @apply italic text-center;
+            }
+
+            .itemFrame {
+                @apply mt-4 w-11/12 mx-auto;
+
+                .itemElement {
+                    .itemRow {
+                        @apply flex pt-2;
+                        @apply border-t-2;
+                        .itemName {
+                            input {
+                                @apply mr-2 outline-1 ;
+                                transform: scale(1.4);
+                            }
+
+                            @apply w-8/12 text-left mx-2 text-sm;
+                        }
+
+                        .itemCost {
+                            @apply w-4/12 text-right font-semibold mx-2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .cartButton {
+        @apply w-full h-20 py-8 mx-auto text-center;
+        button {
+            @apply m-2 h-12 w-32 cursor-pointer mx-auto;
+            @apply border-2;
+        }
+    }
+}

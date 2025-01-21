@@ -57,7 +57,8 @@ function Navigation() {
             })
             .catch(error => {
                 errorMsg.current = "navigation/navigation.json: " + error.message;
-                console.log("error: " + errorMsg.current);})
+                console.log("error: " + errorMsg.current);
+            })
     }, [])
 
     return (
@@ -67,25 +68,34 @@ function Navigation() {
                     return (
                         <div key={i}>
                             <hr className="navHR border-bright-color"/>
-                            <li >
+                            <li>
                                 <button className={
-                                    item.enabled === "no" ? "level1 disabled text-dark-shade" :
+                                    item.enabled === "no" ? "level1 disabled text-medium-shade" :
                                         location.pathname === item.link
                                             ? "level1 Selected text-bright-color background-dark-color"
-                                            : "level1 enabled text-medium-color "
-                                     }
+                                            : "level1 enabled text-dark-color "
+                                }
                                         onClick={() => item.enabled === "yes" && navClick(item.link)}>
                                     {item.title}
                                 </button>
-                                </li>
+                            </li>
                             {
                                 item.level2.length > 0 &&
                                 <ul>
                                     {item.level2.map((item2, j) => {
-                                        return <li key={j}
-                                                   className={item2.enabled === "no" ? "level2 disabled text-dark-shade" :
-                                                       "level2 enabled text-medium-color "}>
-                                            {item2.title}</li>
+                                        return (
+                                            <li key={j}>
+                                                <button className={
+                                                    item2.enabled === "no" ? "level1 disabled text-medium-shade" :
+                                                        location.pathname === item2.link
+                                                            ? "level1 Selected text-bright-color background-dark-color"
+                                                            : "level1 enabled text-dark-color "
+                                                }
+                                                        onClick={() => item2.enabled === "yes" && navClick(item2.link)}>
+                                                    {item2.title}
+                                                </button>
+                                            </li>
+                                        )
                                     })}
                                 </ul>
                             }

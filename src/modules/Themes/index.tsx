@@ -35,7 +35,7 @@ function ThemeSelector(): React.JSX.Element {
         error: listError,
         isLoading: listLoading,
         isValidating: listValidate
-    } = useSWR({url: "http://localhost:3002/themes", init: {method: "GET"}}, fetcher);
+    } = useSWR({url: "http://localhost:3002/themes", init: {method: "GET"}}, fetcher, {revalidateOnFocus: false});
     if (listError) errorMsg.current = "Failed to load the theme list"
     if (listValidate || listLoading) return (<div className="loading">Loading theme list...</div>)
 

@@ -21,6 +21,7 @@ PROJECT: elynors;
         @apply block w-11/12 mx-auto mt-16 mb-4 text-center text-lg font-bold uppercase tracking-wide;
         @apply border-b-2;
     }
+
     .productCard {
         @apply flex w-10/12 mx-auto border-b-2 py-2;
 
@@ -32,35 +33,55 @@ PROJECT: elynors;
                 @apply border-2 rounded-2xl;
                 @apply shadow-lg shadow-gray-500;
             }
+
             img:hover {
                 transform: scale(3);
             }
         }
 
         .productInfo {
-            @apply w-full mt-2 pl-2;
+            @apply flex w-full mt-2 pl-2;
 
-            .productTitleRow {
-                @apply flex;
+            .productLeft {
+                @apply w-10/12;
+                .productTitleRow {
+                    @apply flex;
 
-                .productTitle {
-                    @apply w-5/12 text-left text-xl font-bold;
+                    .productTitle {
+                        @apply w-6/12 text-left text-xl font-bold;
+                    }
+
+                    .productShort {
+                        @apply w-6/12 font-normal leading-tight;
+                    }
+
+
                 }
 
-                .productShort {
-                    @apply w-5/12 font-normal leading-tight;
-                }
+                .productDesc {
+                    @apply w-full text-left text-lg tracking-tight font-normal;
 
-                .productPrice {
-                    @apply w-2/12 pr-2 float-right text-right font-semibold text-xl;
+                    .productTags {
+                        @apply w-full text-left text-sm italic;
+                    }
                 }
             }
 
-            .productDesc {
-                @apply w-full text-left text-lg tracking-tight font-normal;
+            .productRight {
+                @apply w-2/12 min-w-32 text-right  float-right;
 
-                .productTags {
-                    @apply w-full text-left text-sm italic;
+                .productPrice {
+                    @apply w-full pr-2 text-right font-semibold text-xl;
+                }
+
+                .productDetails {
+                    @apply mt-4 text-right;
+                    button {
+                        @apply w-fit h-fit m-2 px-2;
+                        @apply border-2 rounded-md;
+                        @apply shadow-lg shadow-gray-500;
+                    }
+
                 }
             }
         }

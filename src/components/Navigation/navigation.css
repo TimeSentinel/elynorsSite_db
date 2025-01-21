@@ -69,12 +69,12 @@ PROJECT: elynors;
 }
 
 .enabled:hover {
-    @apply bg-yellow-400;
+    @apply bg-yellow-400 p-1;
     @apply shadow-md shadow-gray-500;
 }
 
 .disabled, .disabled:hover {
-    @apply cursor-not-allowed font-thin;
+    @apply w-full p-1 cursor-not-allowed font-light;
     @apply shadow-none;
 }
 
