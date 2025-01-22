@@ -9,13 +9,11 @@ REQ: Vite-React.js+TypeScript, react-router-dom, react-hot-toast,
 // Style Sheets
 import './App.css';
 // Application Elements
-import {useReducer} from "react";
 import {Route, Routes} from 'react-router-dom';
 import {Toaster} from "react-hot-toast";
 // Classes and Functions
 import {ctx} from './context';
 import {Layout} from "./layout";
-import {initialState, reducerFn} from "src/context/reducers/stateReducers.tsx";
 import {useLocalStorage} from "src/context/reducers/localStateReducers.tsx";
 import Home from "./pages/Home";
 import About from "./pages/About";

@@ -123,7 +123,7 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
 @media (min-width: 668px) and (max-width: 991px) {
     .header {
         @apply m-1;
-        height: 150px;
+        height: 110px;
     }
 
     .headerLeft {
@@ -170,7 +170,7 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
 @media (min-width: 992px) {
     .header {
         @apply m-2;
-        height: 150px;
+        height: 120px;
     }
 
 
