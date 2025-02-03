@@ -6,9 +6,12 @@ PROJECT: elynors;
 --------------------------------------- */
 
 import './productCard.css'
-import {ChangeEvent, FC, useEffect, useState} from "react";
+import {ChangeEvent, FC, useContext, useEffect, useState} from "react";
 import useSWR from "swr";
 import {useParams} from "react-router";
+import toast from "react-hot-toast";
+import {ctx} from "src/context";
+import uuid from 'react-uuid';
 
 interface OptionInterface {
     optid: string;
@@ -31,8 +34,12 @@ interface SelectedInterface {
 }
 
 const ProductCard: FC = () => {
+    const localDispatch = useContext(ctx).localDispatch
+    // const localState = useContext(ctx).localState.shoppingCart
     const {productID} = useParams()
     const [selectedValue, setSelectedValue] = useState<SelectedInterface[]>([])
+    const [targetName, setTargetName] = useState("")
+    const [targetNote, setTargetNote] = useState("")
 
     const fetcher =
         ({url, init}: { url: RequestInfo | URL, init?: RequestInit }) =>
@@ -82,26 +89,24 @@ const ProductCard: FC = () => {
                 value: e.target.value
             }]
         }
-
         setSelectedValue(tempSelection)
     }
 
+    const nameChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setTargetName(e.target.value);
+    }
+    const noteChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setTargetNote(e.target.value);
+    }
+
     const submitCart = () => {
+        console.log(productID)
         console.log(selectedValue)
-        // if (!(row in activeCart)) {
-        //     localDispatch({
-        //         type: "ADD_TO_CART",
-        //         payload: {id: row, quantity: 1}
-        //     })
-        //     toast.success("Added to Cart");
-        // } else {
-        //     const curCount = activeCart[row] || 0
-        //     localDispatch({
-        //         type: "UPDATE_CART",
-        //         payload: {id: row, quantity: (curCount + 1)}
-        //     })
-        //     toast.success("Cart Updated");
-        // }
+        localDispatch({
+            type: "ADD_TO_CART",
+            payload: {targetid: uuid(), prodid: productID, items: selectedValue, name: targetName, note: targetNote}
+        })
+        toast.success(productDetails.productname + " added to Cart");
     }
 
     return (
@@ -150,8 +155,20 @@ const ProductCard: FC = () => {
                 )
                 }
             </div>
+            <div className="nameField">
+                <span className="fieldTitle text-dark-color">Who's this item for? </span>
+                <input className="border-dark-color text-medium-color" type="text" name="targetName" value={targetName}
+                       placeholder="Name for this item"  onChange={nameChange}/>
+                <span className="tagline text-medium-color">(optional)</span>
+            </div>
+            <div className="noteField">
+                <span className="fieldTitle text-dark-color">Notes/Instructions </span> <span
+                className="tagline text-medium-color">(optional)</span>
+                <input className="border-dark-color text-medium-color" type="text" name="targetName" value={targetNote}
+                       placeholder="Instructions or requests"  onChange={noteChange}/>
+            </div>
             <div className="cartButton">
-                <button className="text-dark-color background-alert-color" value="Submit"
+                <button className="text-dark-color background-soft-color border-medium-color" value="Submit"
                         onClick={submitCart}>
                     ADD TO CART
                 </button>

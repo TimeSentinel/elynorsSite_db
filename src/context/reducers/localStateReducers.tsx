@@ -19,16 +19,30 @@ export interface LocalActionInterface {
     payload: unknown;
 }
 
-interface CartReducerInterface {    // Cart Module
+interface CartReducerInterface {
+    targetid: string;
     prodid: string;
-    quantity: number;
+    // quantity: number;
     items: [
-        itemid: string
-    ]
+        {
+            group: string;
+            value: string;
+        }
+    ];
+    name: string;
+    note: string;
 }
 
 interface CartInterface {           // Cart Module
-    [id: string]: number;
+    [targetid: string]: {
+        prodid: string;
+        items: [{
+            group: string;
+            value: string;
+        }];
+        name: string;
+        note: string;
+    }
 }
 
 export const initialLocalState: LocalStateInterface = {
@@ -51,32 +65,34 @@ export const useLocalStorage: (storageKey: string) => [LocalStateInterface, Reac
 };
 
 const localReducerFn = (state: LocalStateInterface, action: LocalActionInterface) => {
-    // console.log("localReducerFN")
     const {type, payload} = action
     switch (type) {
         case "ADD_TO_CART": {                   // Cart Module
             const newCart = state.shoppingCart
-            if (!((payload as CartReducerInterface).prodid in newCart))
-                newCart[(payload as CartReducerInterface).prodid] = 1;
-
+            newCart[(payload as CartReducerInterface).targetid] = {
+                prodid: (payload as CartReducerInterface).prodid,
+                items: (payload as CartReducerInterface).items,
+                name: (payload as CartReducerInterface).name,
+                note: (payload as CartReducerInterface).note
+            };
             return {
                 ...state,
                 shoppingCart: newCart as CartInterface
             }
         }
 
-        case "UPDATE_CART": {                   // Cart Module
-            const newCart = state.shoppingCart
-            if ((payload as CartReducerInterface).prodid in newCart) {
-                newCart[(payload as CartReducerInterface).prodid] = (payload as CartReducerInterface).quantity;
-            } else {
-                newCart[(payload as CartReducerInterface).prodid] = 1;
-            }
-            return {
-                ...state,
-                shoppingCart: (newCart as CartInterface)
-            }
-        }
+        // case "UPDATE_CART": {                   // Cart Module
+        //     const newCart = state.shoppingCart
+        //     // if ((payload as CartReducerInterface).prodid in newCart) {
+        //     //     newCart[(payload as CartReducerInterface).prodid] = (payload as CartReducerInterface).quantity;
+        //     // } else {
+        //     //     newCart[(payload as CartReducerInterface).prodid] = 1;
+        //     // }
+        //     return {
+        //         ...state,
+        //         shoppingCart: (newCart as CartInterface)
+        //     }
+        // }
         case "REMOVE_ITEM": {                   // Cart Module
             const newCart = state.shoppingCart
             delete newCart[(payload as CartReducerInterface).prodid]
@@ -93,7 +109,7 @@ const localReducerFn = (state: LocalStateInterface, action: LocalActionInterface
                 shoppingCart: {}
             }
         case "CSS_UUID":                        // Themes Module
-            return  {
+            return {
                 ...state,
                 cssUUID: (payload as string)
             }

@@ -77,7 +77,7 @@ function ProductsMenu() {
                                         .length > 0) {
                                         return (
                                             <div key={subcat.subcatid}>
-                                                <div className="productSubcat text-bright-color border-bright-color">
+                                                <div className="productSubcat text-medium-color border-medium-color">
                                                     {subcat.subcatname}
                                                 </div>
                                                 {
@@ -86,7 +86,7 @@ function ProductsMenu() {
                                                         if (product.catname === category.catname && product.subcatname === subcat.subcatname) {
                                                             return (
 
-                                                                <div className="productCard border-soft-color" key={product.productid}>
+                                                                <div className="productCard2 border-soft-color" key={product.productid}>
                                                                     <div className="productThumb">
                                                                         <img src={product.productimage}
                                                                              alt="Food Thumbnail"/>

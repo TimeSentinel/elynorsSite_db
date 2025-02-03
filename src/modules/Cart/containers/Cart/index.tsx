@@ -21,7 +21,7 @@ const CartItem = ({id}: CartProps) => {
     const state = useContext(ctx).state
     const localDispatch = useContext(ctx).localDispatch
     const shoppingCart = useContext(ctx).localState.shoppingCart
-    // const setShoppingCart = useContext(ctx).localDispatch
+
     const activeProducts = state?.products || []
     let rowTitle: string;
     let rowCategory: string;

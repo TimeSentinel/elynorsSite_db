@@ -19,10 +19,11 @@ PROJECT: elynors;
 
     .productSubcat {
         @apply block w-11/12 mx-auto mt-16 mb-4 text-center text-lg font-bold uppercase tracking-wide;
-        @apply border-b-2;
+        @apply border-b-4;
+
     }
 
-    .productCard {
+    .productCard2 {
         @apply flex w-10/12 mx-auto border-b-2 py-2;
 
         .productThumb {
@@ -35,7 +36,7 @@ PROJECT: elynors;
             }
 
             img:hover {
-                transform: scale(3);
+                transform: scale(2);
             }
         }
 
@@ -75,11 +76,15 @@ PROJECT: elynors;
                 }
 
                 .productDetails {
-                    @apply mt-4 text-right;
+                    @apply mt-2 text-right;
                     button {
-                        @apply w-fit h-fit m-2 px-2;
+                        @apply w-fit h-fit m-2 px-2 py-1;
                         @apply border-2 rounded-md;
                         @apply shadow-lg shadow-gray-500;
+                    }
+                    button:hover {
+                        @apply bg-blue-500 text-blue-800 border-blue-900;
+                        transform: scale(1.2);
                     }
 
                 }

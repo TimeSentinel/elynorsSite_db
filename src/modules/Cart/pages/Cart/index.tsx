@@ -16,10 +16,10 @@ import "src/modules/Cart/pages/cartPages.css"
 import Confirmation from "src/components/modals/modals.tsx";
 
 const Cart: FC = () => {
-    const state = useContext(ctx).state
     const localState = useContext(ctx).localState;
     const localDispatch = useContext(ctx).localDispatch
     const dialogRef= useRef<HTMLDialogElement>(null);
+    const [total, setTotal] = useState<number>(0)
 
     const emptyCart = () => {
         const confirm = true;
@@ -32,18 +32,17 @@ const Cart: FC = () => {
         }
     }
 
-    const [total, setTotal] = useState<number>(0)
-    useEffect(() => {
-        const activeProducts = state?.products || []
-
-        let cartTotal = 0;
-        Object.keys(localState.shoppingCart).map(id => {
-            cartTotal = cartTotal +
-            ((activeProducts.find(product => product.id === (id)) as ProductInterface)?.price || 0)
-            * localState.shoppingCart[(id)] as number
-        })
-        setTotal(cartTotal)
-    }, [localState, state?.products])
+    // useEffect(() => {
+    //     const activeProducts = state?.products || []
+    //
+    //     let cartTotal = 0;
+    //     Object.keys(localState.shoppingCart).map(id => {
+    //         cartTotal = cartTotal +
+    //         ((activeProducts.find(product => product.id === (id)) as ProductInterface)?.price || 0)
+    //         * localState.shoppingCart[(id)] as number
+    //     })
+    //     setTotal(cartTotal)
+    // }, [localState, state?.products])
 
     return (
         <>
