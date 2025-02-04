@@ -7,11 +7,10 @@ REQ: Vite-React.js+TypeScript, react-router-dom, react-hot-toast,
 ####################################################################################################
 */
 
-import {useContext, useEffect, useRef, useState, FC} from "react";
+import {useContext, useRef, useState, FC, useEffect} from "react";
 import {CartItem} from "src/modules/Cart/containers/Cart";
 import {ctx} from "src/context";
 import toast from "react-hot-toast";
-import {ProductInterface} from 'src/context/reducers/stateReducers.tsx';
 import "src/modules/Cart/pages/cartPages.css"
 import Confirmation from "src/components/modals/modals.tsx";
 
@@ -32,17 +31,16 @@ const Cart: FC = () => {
         }
     }
 
-    // useEffect(() => {
-    //     const activeProducts = state?.products || []
-    //
-    //     let cartTotal = 0;
-    //     Object.keys(localState.shoppingCart).map(id => {
-    //         cartTotal = cartTotal +
-    //         ((activeProducts.find(product => product.id === (id)) as ProductInterface)?.price || 0)
-    //         * localState.shoppingCart[(id)] as number
-    //     })
-    //     setTotal(cartTotal)
-    // }, [localState, state?.products])
+    useEffect(() => {
+        let cartTotal = 0;
+        Object.keys(localState.shoppingCart).map(id => {
+            cartTotal = cartTotal + 0
+            //lookup price of each product * qty
+                //map items
+                    //lookup price of each item * qty
+        })
+        setTotal(cartTotal)
+    }, [localState])
 
     return (
         <>

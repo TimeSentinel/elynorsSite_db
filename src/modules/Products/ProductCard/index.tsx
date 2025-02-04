@@ -104,7 +104,7 @@ const ProductCard: FC = () => {
         console.log(selectedValue)
         localDispatch({
             type: "ADD_TO_CART",
-            payload: {targetid: uuid(), prodid: productID, items: selectedValue, name: targetName, note: targetNote}
+            payload: {targetid: uuid(), prodid: productID, quantity: 1, items: selectedValue, name: targetName, note: targetNote}
         })
         toast.success(productDetails.productname + " added to Cart");
     }

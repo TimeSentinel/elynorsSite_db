@@ -22,7 +22,7 @@ export interface LocalActionInterface {
 interface CartReducerInterface {
     targetid: string;
     prodid: string;
-    // quantity: number;
+    quantity: number;
     items: [
         {
             group: string;
@@ -36,6 +36,7 @@ interface CartReducerInterface {
 interface CartInterface {           // Cart Module
     [targetid: string]: {
         prodid: string;
+        quantity: number;
         items: [{
             group: string;
             value: string;
@@ -71,6 +72,7 @@ const localReducerFn = (state: LocalStateInterface, action: LocalActionInterface
             const newCart = state.shoppingCart
             newCart[(payload as CartReducerInterface).targetid] = {
                 prodid: (payload as CartReducerInterface).prodid,
+                quantity: (payload as CartReducerInterface).quantity,
                 items: (payload as CartReducerInterface).items,
                 name: (payload as CartReducerInterface).name,
                 note: (payload as CartReducerInterface).note
