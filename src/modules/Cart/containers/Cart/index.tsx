@@ -18,16 +18,16 @@ interface CartProps {
 }
 
 const CartItem = ({id}: CartProps) => {
-    const state = useContext(ctx).state
+    // const state = useContext(ctx).state
     const localDispatch = useContext(ctx).localDispatch
     const shoppingCart = useContext(ctx).localState.shoppingCart
 
-    const activeProducts = state?.products || []
+    // const activeProducts = state?.products || []
     let rowTitle: string;
     let rowCategory: string;
     let rowPrice: number;
 
-    const checkRoleExistence = (roleParam: string) => activeProducts.some(({id}) => id == roleParam)
+    // const checkRoleExistence = (roleParam: string) => activeProducts.some(({id}) => id == roleParam)
 
     if (!(checkRoleExistence(id))) {
         // localDispatch({

@@ -8,11 +8,18 @@ REQ: Vite-React.js+TypeScript, react-router-dom, react-hot-toast,
 */
 
 import {useContext, useRef, useState, FC, useEffect} from "react";
-import {CartItem} from "src/modules/Cart/containers/Cart";
+// import {CartItem} from "src/modules/Cart/containers/Cart";
 import {ctx} from "src/context";
 import toast from "react-hot-toast";
 import "src/modules/Cart/pages/cartPages.css"
 import Confirmation from "src/components/modals/modals.tsx";
+
+interface productCostInterface {
+    productprice: number;
+}
+interface itemCostInterface {
+    itemprice: number;
+}
 
 const Cart: FC = () => {
     const localState = useContext(ctx).localState;
@@ -31,16 +38,33 @@ const Cart: FC = () => {
         }
     }
 
+
+    async function fetchProdCost(productID:string): Promise<[productCostInterface]> {
+        const response = await fetch('http://localhost:3001/?query=productcost&id=' + productID);
+        return await response.json();
+    }
+    async function fetchItemCost(itemID:string): Promise<[productCostInterface]> {
+        const response = await fetch('http://localhost:3001/?query=itemcost&id=' + itemID);
+        return await response.json();
+    }
+    console.log(localState.shoppingCart)
     useEffect(() => {
         let cartTotal = 0;
-        Object.keys(localState.shoppingCart).map(id => {
-            cartTotal = cartTotal + 0
-            //lookup price of each product * qty
-                //map items
-                    //lookup price of each item * qty
+        Object.keys(localState.shoppingCart).map(product => {
+            localState.shoppingCart[product].note
+            // product[]
+            // const prodCost:number = fetchProdCost(product.prodid).productprice
+            // //lookup price of each product * qty (productcost id=)
+            // cartTotal = cartTotal + (item.quantity * prodCost)
+            // Object.keys(product.items).map(item => {
+            //     const itemCost:number = fetchItemCost(item.value).itemprice
+            //     //lookup price of each item * qty (itemcost id=)
+            //     cartTotal = cartTotal + (item.quantity * itemCost)
+            // })
         })
         setTotal(cartTotal)
     }, [localState])
+    console.log(total)
 
     return (
         <>
@@ -61,27 +85,27 @@ const Cart: FC = () => {
                 </div>
             </div>
             <hr className="cartLineTop border-medium-color"/>
-            <div className="cartTable border-dark-color">
-                <div className="cartTableHeader text-dark-color border-dark-color">
-                    <div className="cartTableHeaderItem column0 text-alert-color">X</div>
-                    <div className="cartTableHeaderItem column1">Item</div>
-                    <div className="cartTableHeaderItem column2">Category</div>
-                    <div className="cartTableHeaderItem column3">Price</div>
-                    <div className="cartTableHeaderItem column4"></div>
-                    <div className="cartTableHeaderItem column5">Qty</div>
-                    <div className="cartTableHeaderItem column6">Total</div>
-                </div>
-                {Object.keys(localState.shoppingCart).length ? (
-                    <>
-                        {Object.keys(localState.shoppingCart).map(id => (
+            {/*<div className="cartTable border-dark-color">*/}
+            {/*    <div className="cartTableHeader text-dark-color border-dark-color">*/}
+            {/*        <div className="cartTableHeaderItem column0 text-alert-color">X</div>*/}
+            {/*        <div className="cartTableHeaderItem column1">Item</div>*/}
+            {/*        <div className="cartTableHeaderItem column2">Category</div>*/}
+            {/*        <div className="cartTableHeaderItem column3">Price</div>*/}
+            {/*        <div className="cartTableHeaderItem column4"></div>*/}
+            {/*        <div className="cartTableHeaderItem column5">Qty</div>*/}
+            {/*        <div className="cartTableHeaderItem column6">Total</div>*/}
+            {/*    </div>*/}
+            {/*    {Object.keys(localState.shoppingCart).length ? (*/}
+            {/*        <>*/}
+            {/*            {Object.keys(localState.shoppingCart).map(id => (*/}
 
-                            <CartItem id={(id)} key={id}/>
-                        ))}
-                    </>
-                ) : (
-                    <h3>Cart Is Empty</h3>
-                )}
-            </div>
+            {/*                <CartItem id={(id)} key={id}/>*/}
+            {/*            ))}*/}
+            {/*        </>*/}
+            {/*    ) : (*/}
+            {/*        <h3>Cart Is Empty</h3>*/}
+            {/*    )}*/}
+            {/*</div>*/}
 
             <div className="cartTotal  text-very-dark-color">TOTAL = &nbsp;
                 {new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(total) ?? 0}

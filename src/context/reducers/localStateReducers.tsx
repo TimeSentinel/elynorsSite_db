@@ -18,9 +18,7 @@ export interface LocalActionInterface {
     type: string;
     payload: unknown;
 }
-
-interface CartReducerInterface {
-    targetid: string;
+interface CartBase {
     prodid: string;
     quantity: number;
     items: [
@@ -32,18 +30,12 @@ interface CartReducerInterface {
     name: string;
     note: string;
 }
+interface CartReducerInterface extends CartBase {
+    targetid: string;
+}
 
 interface CartInterface {           // Cart Module
-    [targetid: string]: {
-        prodid: string;
-        quantity: number;
-        items: [{
-            group: string;
-            value: string;
-        }];
-        name: string;
-        note: string;
-    }
+    [targetid: string]: CartBase
 }
 
 export const initialLocalState: LocalStateInterface = {
