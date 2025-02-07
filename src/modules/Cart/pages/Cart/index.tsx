@@ -17,6 +17,7 @@ import Confirmation from "src/components/modals/modals.tsx";
 interface productCostInterface {
     productprice: number;
 }
+
 interface itemCostInterface {
     itemprice: number;
 }
@@ -24,7 +25,7 @@ interface itemCostInterface {
 const Cart: FC = () => {
     const localState = useContext(ctx).localState;
     const localDispatch = useContext(ctx).localDispatch
-    const dialogRef= useRef<HTMLDialogElement>(null);
+    const dialogRef = useRef<HTMLDialogElement>(null);
     const [total, setTotal] = useState<number>(0)
 
     const emptyCart = () => {
@@ -39,28 +40,29 @@ const Cart: FC = () => {
     }
 
 
-    async function fetchProdCost(productID:string): Promise<[productCostInterface]> {
+    async function fetchProdCost(productID: string): Promise<[productCostInterface]> {
         const response = await fetch('http://localhost:3001/?query=productcost&id=' + productID);
         return await response.json();
     }
-    async function fetchItemCost(itemID:string): Promise<[productCostInterface]> {
+
+    async function fetchItemCost(itemID: string): Promise<[productCostInterface]> {
         const response = await fetch('http://localhost:3001/?query=itemcost&id=' + itemID);
         return await response.json();
     }
+
     console.log(localState.shoppingCart)
     useEffect(() => {
         let cartTotal = 0;
         Object.keys(localState.shoppingCart).map(product => {
-            localState.shoppingCart[product].note
-            // product[]
-            // const prodCost:number = fetchProdCost(product.prodid).productprice
+            const prodCost = fetchProdCost(localState.shoppingCart[product].prodid)
+            console.log(prodCost);
             // //lookup price of each product * qty (productcost id=)
-            // cartTotal = cartTotal + (item.quantity * prodCost)
-            // Object.keys(product.items).map(item => {
+            //cartTotal = cartTotal + (localState.shoppingCart[product].quantity * prodCost)
+             // Object.keys(localState.shoppingCart[product].items).map(item => {
             //     const itemCost:number = fetchItemCost(item.value).itemprice
             //     //lookup price of each item * qty (itemcost id=)
             //     cartTotal = cartTotal + (item.quantity * itemCost)
-            // })
+            //  })
         })
         setTotal(cartTotal)
     }, [localState])
@@ -121,7 +123,7 @@ const Cart: FC = () => {
                 </button>
             </div>
             <Confirmation modalDialog={"Empty cart and remove all items?"} responseText={"Yes"}
-                           responseAction={() => emptyCart()} dialogRef={dialogRef} />
+                          responseAction={() => emptyCart()} dialogRef={dialogRef}/>
         </>
     )
 }
