@@ -40,33 +40,43 @@ const Cart: FC = () => {
     }
 
 
-    async function fetchProdCost(productID: string): Promise<[productCostInterface]> {
+    async function fetchProdCost(productID: string): Promise<[[productCostInterface]]> {
         const response = await fetch('http://localhost:3001/?query=productcost&id=' + productID);
         return await response.json();
     }
 
-    async function fetchItemCost(itemID: string): Promise<[productCostInterface]> {
+    async function fetchItemCost(itemID: string): Promise<[itemCostInterface]> {
         const response = await fetch('http://localhost:3001/?query=itemcost&id=' + itemID);
         return await response.json();
     }
+    // console.log("########## shoppingCart ##########")
+    // console.log(localState.shoppingCart)
+    // console.log("******************************")
 
-    console.log(localState.shoppingCart)
     useEffect(() => {
-        let cartTotal = 0;
+        //setTotal(0)
         Object.keys(localState.shoppingCart).map(product => {
-            const prodCost = fetchProdCost(localState.shoppingCart[product].prodid)
-            console.log(prodCost);
-            // //lookup price of each product * qty (productcost id=)
-            //cartTotal = cartTotal + (localState.shoppingCart[product].quantity * prodCost)
-             // Object.keys(localState.shoppingCart[product].items).map(item => {
+            fetchProdCost(localState.shoppingCart[product].prodid)
+                .then(data => {
+                    return data.map(dataItem => {
+                         return (localState.shoppingCart[product].quantity * dataItem[0].productprice || 0)
+                    })
+                }).then(output => {
+                setTotal(total + output[0])
+                console.log("prodID: " + localState.shoppingCart[product].prodid)
+                console.log("------ output ------")
+                console.log(output[0])
+            } )
+
+
+            // Object.keys(localState.shoppingCart[product].items).map(item => {
             //     const itemCost:number = fetchItemCost(item.value).itemprice
             //     //lookup price of each item * qty (itemcost id=)
             //     cartTotal = cartTotal + (item.quantity * itemCost)
             //  })
         })
-        setTotal(cartTotal)
+        // setTotal(cartTotal)
     }, [localState])
-    console.log(total)
 
     return (
         <>
