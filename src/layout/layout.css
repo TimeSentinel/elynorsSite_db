@@ -88,17 +88,17 @@ PROJECT: elynors;
 /* ------------ Desktop View ------------ */
 @media (min-width: 992px) {
     .sidebar {
-        @apply h-full top-0 left-0;
-        width: 300px;
+        @apply h-full w-2/12 top-0 left-0;
+
     }
 
     .container {
-        @apply w-full relative;
-        margin-left: 300px;
+        @apply w-10/12 relative ml-auto;
+
     }
 
     .footer {
-        @apply h-24 relative w-9/12 ;
+        @apply w-full h-24 relative ;
     }
 }
 
