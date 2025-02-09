@@ -29,7 +29,7 @@ function App() {
   const [localState, localDispatch] = useLocalStorage("LocalStorage")
 
   return (
-      <ctx.Provider value={{ localState, localDispatch}}> {/* state, dispatch, */}
+      <ctx.Provider value={{ localState, localDispatch}}>
         <div className="App">
           <Toaster reverseOrder={true}/>
           <Layout>

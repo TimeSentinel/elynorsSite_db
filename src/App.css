@@ -15,7 +15,7 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
 }
 
 main {
-    @apply w-full h-full mb-36;
+    @apply w-full h-full mb-16;
 }
 
 .App {

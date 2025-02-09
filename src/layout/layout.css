@@ -10,7 +10,7 @@ PROJECT: elynors;
 }
 
 .sidebar {
-
+    position: fixed;
 }
 
 .header {
@@ -39,9 +39,11 @@ PROJECT: elynors;
     .sidebar {
         display: none;
     }
+
     .container {
         @apply w-full;
     }
+
     .footer {
         @apply w-full h-16;
     }
@@ -52,11 +54,13 @@ PROJECT: elynors;
 /* ------------ Mini View ------------ */
 @media (min-width: 568px) and (max-width: 719px) {
     .sidebar {
-        @apply w-4/12 h-full fixed top-0 left-0;
+        @apply w-4/12 h-full top-0 left-0;
     }
+
     .container {
-        @apply  w-8/12 mr-0 ml-auto;
+        @apply w-8/12 mr-0 ml-auto;
     }
+
     .footer {
         @apply h-20 w-8/12 ml-auto;
     }
@@ -67,11 +71,13 @@ PROJECT: elynors;
 /* ------------ Tablet View ------------ */
 @media (min-width: 720px) and (max-width: 991px) {
     .sidebar {
-        @apply w-3/12 h-full fixed top-0 left-0;
+        @apply w-3/12 h-full top-0 left-0;
     }
+
     .container {
-        @apply  w-9/12 ml-auto;
+        @apply w-9/12 ml-auto;
     }
+
     .footer {
         @apply h-24 w-9/12 ml-auto;
     }
@@ -82,13 +88,17 @@ PROJECT: elynors;
 /* ------------ Desktop View ------------ */
 @media (min-width: 992px) {
     .sidebar {
-        @apply w-2/12 h-full fixed top-0 left-0;
+        @apply h-full top-0 left-0;
+        width: 300px;
     }
+
     .container {
-        @apply w-10/12 ml-auto;
+        @apply w-full relative;
+        margin-left: 300px;
     }
+
     .footer {
-        @apply h-24 w-10/12 ml-auto;
+        @apply h-24 relative w-9/12 ;
     }
 }
 

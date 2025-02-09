@@ -25,7 +25,7 @@ interface ItemInterface {
     itemid: string;
     itemname: string;
     itemvalue: string;
-    itemcost: number;
+    itemprice: number;
 }
 
 interface SelectedInterface {
@@ -143,7 +143,7 @@ const ProductCard: FC = () => {
                                                                onChange={handleChange}/>
                                                         {item.itemname}
                                                     </div>
-                                                    <div className="itemCost">${item.itemcost}</div>
+                                                    <div className="itemprice">${item.itemprice}</div>
                                                 </div>
                                             </div>
                                         )

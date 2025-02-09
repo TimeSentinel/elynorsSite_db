@@ -7,18 +7,18 @@ REQ: Vite-React.js+TypeScript, react-router-dom, react-hot-toast,
 ####################################################################################################
 */
 
-import {useContext, useRef, useState, FC, useEffect} from "react";
+import {useContext, useState, FC, useEffect, useRef} from "react";
 // import {CartItem} from "src/modules/Cart/containers/Cart";
 import {ctx} from "src/context";
 import toast from "react-hot-toast";
-import "src/modules/Cart/pages/cartPages.css"
+import "src/modules/Cart/pages/cartPages.css";
 import Confirmation from "src/components/modals/modals.tsx";
 
-interface productCostInterface {
+interface productPriceInterface {
     productprice: number;
 }
 
-interface itemCostInterface {
+interface itemPriceInterface {
     itemprice: number;
 }
 
@@ -40,42 +40,38 @@ const Cart: FC = () => {
     }
 
 
-    async function fetchProdCost(productID: string): Promise<[[productCostInterface]]> {
-        const response = await fetch('http://localhost:3001/?query=productcost&id=' + productID);
+    async function fetchProdCost(productID: string): Promise<[productPriceInterface]> {
+        const response = await fetch('http://localhost:3001/?query=productprice&id=' + productID);
         return await response.json();
     }
 
-    async function fetchItemCost(itemID: string): Promise<[itemCostInterface]> {
-        const response = await fetch('http://localhost:3001/?query=itemcost&id=' + itemID);
+    async function fetchitemprice(itemID: string): Promise<[itemPriceInterface]> {
+        const response = await fetch('http://localhost:3001/?query=itemprice&id=' + itemID);
         return await response.json();
     }
-    // console.log("########## shoppingCart ##########")
-    // console.log(localState.shoppingCart)
-    // console.log("******************************")
 
     useEffect(() => {
-        //setTotal(0)
-        Object.keys(localState.shoppingCart).map(product => {
-            fetchProdCost(localState.shoppingCart[product].prodid)
-                .then(data => {
-                    return data.map(dataItem => {
-                         return (localState.shoppingCart[product].quantity * dataItem[0].productprice || 0)
-                    })
-                }).then(output => {
-                setTotal(total + output[0])
-                console.log("prodID: " + localState.shoppingCart[product].prodid)
-                console.log("------ output ------")
-                console.log(output[0])
-            } )
+        const promises: Promise<number>[] = []
 
+        Object.keys(localState.shoppingCart).forEach(product => {
+            localState.shoppingCart[product].items.forEach(item =>
+                promises.push(fetchitemprice(item.value).then(iData =>
+                    localState.shoppingCart[product].quantity * (iData[0].itemprice || 0)
+                ))
+            )
 
-            // Object.keys(localState.shoppingCart[product].items).map(item => {
-            //     const itemCost:number = fetchItemCost(item.value).itemprice
-            //     //lookup price of each item * qty (itemcost id=)
-            //     cartTotal = cartTotal + (item.quantity * itemCost)
-            //  })
+            promises.push(fetchProdCost(localState.shoppingCart[product].prodid).then(pData =>
+                localState.shoppingCart[product].quantity * (pData[0].productprice || 0)
+            ))
         })
-        // setTotal(cartTotal)
+
+        Promise.all(
+            promises
+        ).then(prices => {
+                setTotal(prices.reduce((partialSum, value) => partialSum + value, 0))
+            }
+        )
+
     }, [localState])
 
     return (
