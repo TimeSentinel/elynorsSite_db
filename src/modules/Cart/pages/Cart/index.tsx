@@ -97,7 +97,7 @@ const Cart: FC = () => {
             <div className="cartTable border-dark-color">
                 <div className="cartTableHeader text-dark-color border-dark-color">
                     <div className="cartTableHeaderItem column0 text-alert-color">X</div>
-                    <div className="cartTableHeaderItem column1 text-alert-color">Edit</div>
+                    <div className="cartTableHeaderItem column1 text-highlight-color">Edit</div>
                     <div className="cartTableHeaderItem column2">Item</div>
                     <div className="cartTableHeaderItem column3">Name</div>
                     <div className="cartTableHeaderItem column4">Price</div>
@@ -111,9 +111,10 @@ const Cart: FC = () => {
                             const itemList =
                                 localState.shoppingCart[product].items.map(item => item.value)
                             return (
-                                    < CartItem prodid={localState.shoppingCart[product].prodid}
-                                               items={itemList}
-                                               key={localState.shoppingCart[product].prodid}/>
+                                < CartItem cartid={product}
+                                           prodid={localState.shoppingCart[product].prodid}
+                                           items={itemList}
+                                           key={localState.shoppingCart[product].prodid}/>
                             )
                         })}
                     </>

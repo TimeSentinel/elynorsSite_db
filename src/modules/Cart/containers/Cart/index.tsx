@@ -9,53 +9,34 @@ REQ: Vite-React.js+TypeScript, react-router-dom, react-hot-toast,
 
 import "./Cart.css"
 import {useContext} from "react";
-import {ProductInterface} from 'src/context/reducers/stateReducers.tsx';
 import {ctx} from "src/context";
 import toast from "react-hot-toast";
 
 interface CartProps {
+    cartid: string;
     prodid: string;
     items: string[];
 }
 
-const CartItem = ({prodid, items}: CartProps) => {
+const CartItem = ({cartid, prodic, items}: CartProps) => {
     const localDispatch = useContext(ctx).localDispatch
     const shoppingCart = useContext(ctx).localState.shoppingCart
 
-    let rowTitle: string;
-    let rowCategory: string;
-    let rowPrice: number;
+    let rowTitle: string = "NOT VALID";
+    let rowPrice: number = 0;
 
-    // const checkRoleExistence = (roleParam: string) => activeProducts.some(({id}) => id == roleParam)
-
-    if (!(checkRoleExistence(id))) {
-        // localDispatch({
-        //     type: "REMOVE_ITEM",
-        //     payload: {id: id, quantity: 0}
-        // })
-        rowTitle = "Item no longer available";
-        rowCategory = "N/A";
-        rowPrice = 0;
-    } else {
-        const product: ProductInterface = activeProducts.find(
-            product => product.id === (id)
-        ) as ProductInterface || {id: "0", title: "Item no longer available", category: "N/A", price: 0}
-        rowTitle = product?.title || "Item no longer available";
-        rowCategory = product?.category || "N/A";
-        rowPrice = product?.price || 0;
-    }
 
     const addClick = (row: string) => {
         if (!(row in shoppingCart)) {
             localDispatch({
                 type: "ADD_TO_CART",
-                payload: {id: row, quantity: 1}
+                payload: {targetid: row, quantity: 1}
             })
         } else {
-            const curCount = shoppingCart[row] || 0
+            const curCount = shoppingCart[row].quantity || 0
             localDispatch({
                 type: "UPDATE_CART",
-                payload: {id: row, quantity: (curCount + 1)}
+                payload: {targetid: row, quantity: (curCount + 1)}
             })
         }
     }
@@ -63,48 +44,75 @@ const CartItem = ({prodid, items}: CartProps) => {
     const minusClick = (row: string) => {
         if (!(row in shoppingCart)) {
             toast.error("Failed to Reduce Quantity!")
-        } else if (shoppingCart[row] === 1) {
+        } else if (shoppingCart[row].quantity === 1) {
             localDispatch({
                 type: "REMOVE_ITEM",
-                payload: {id: row, quantity: 0}
+                payload: {targetid: row, quantity: 0}
             })
         } else {
-            const curCount = shoppingCart[row] || 0
+            const curCount = shoppingCart[row].quantity || 0
             localDispatch({
                 type: "UPDATE_CART",
-                payload: {id: row, quantity: (curCount - 1)}
+                payload: {targetid: row, quantity: (curCount - 1)}
             })
         }
     }
-
+    console.log(cartid)
     return (
-        <div className="cartRow border-medium-color" key={id}>
-            <div className="cartDelete">
-                <button onClick={() => localDispatch({type: "REMOVE_ITEM", payload: {id}})}>X
-                </button>
+        <div className="cartRow border-medium-color" key={cartid}>
+            <div className="mainRow">
+                <div className="cartDelete">
+                    <button onClick={() => localDispatch({type: "REMOVE_ITEM", payload: {cartid}})}>X
+                    </button>
+                </div>
+                <div className="cartEdit">
+                    <button className="text-highlight-color border-highlight-color background-light-shade"
+                            onClick={() => console.log("EDIT")}>EDIT
+                    </button>
+                </div>
+                <div className="cartTitle text-very-dark-color">
+                    {rowTitle ?? ""}
+                </div>
+                <div className="cartCategory text-dark-color">{shoppingCart[cartid].name}</div>
+                <div className="cartPrice  text-very-dark-color">
+                    {new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(rowPrice) ?? 0}
+                </div>
+                <div className="column4"></div>
+                <div className="cartQtyCol  text-very-dark-color">
+                    <button className="cartInc background-light-color text-dark-color border-dark-color"
+                            onClick={() => addClick(cartid)}>+
+                    </button>
+                    <div className="cartQty">{shoppingCart[cartid].quantity | 0}</div>
+                    <button className="cartDec background-light-color text-dark-color border-dark-color"
+                            onClick={() => minusClick(cartid)}>-
+                    </button>
+                </div>
+
+
+                <div className="cartLineTotal  text-very-dark-color">
+                    {new Intl.NumberFormat('en-US', {
+                        style: 'currency',
+                        currency: 'USD'
+                    }).format(((rowPrice) * (shoppingCart[cartid].quantity))) ?? 0}
+                </div>
             </div>
-            <div className="cartTitle text-very-dark-color">
-                {rowTitle ?? ""}
-            </div>
-            <div className="cartCategory text-dark-color">{rowCategory ?? ""}</div>
-            <div className="cartPrice  text-very-dark-color">
-                {new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(rowPrice) ?? 0}
-            </div>
-            <div className="column4"></div>
-            <div className="cartQtyCol  text-very-dark-color">
-                <button className="cartInc background-light-color text-dark-color border-dark-color"
-                        onClick={() => addClick(id)}>+</button>
-                <div className="cartQty">{shoppingCart[id] | 0}</div>
-                <button className="cartDec background-light-color text-dark-color border-dark-color" onClick={() => minusClick(id)}>-</button>
-            </div>
-            <div className="cartLineTotal  text-very-dark-color">
-                {new Intl.NumberFormat('en-US', {
-                    style: 'currency',
-                    currency: 'USD'
-                }).format(((rowPrice) * (shoppingCart[id]))) ?? 0}
-            </div>
+            {shoppingCart[cartid].items.map((item) => (
+                <div className="itemRow">
+                    <div className="itemFiller"></div>
+                    <div className="itemData text-bright-color">
+                        <div className="itemName" key={item.value}>
+                            {item.value}
+                        </div>
+                        <div className="itemPrice">
+                            {new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(1) ?? 0}
+                        </div>
+                    </div>
+                    <div className="itemFiller"></div>
+                </div>
+            ))}
         </div>
-    )
+
+)
 }
 
 export {CartItem}

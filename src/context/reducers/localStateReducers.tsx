@@ -75,21 +75,21 @@ const localReducerFn = (state: LocalStateInterface, action: LocalActionInterface
             }
         }
 
-        // case "UPDATE_CART": {                   // Cart Module
-        //     const newCart = state.shoppingCart
-        //     // if ((payload as CartReducerInterface).prodid in newCart) {
-        //     //     newCart[(payload as CartReducerInterface).prodid] = (payload as CartReducerInterface).quantity;
-        //     // } else {
-        //     //     newCart[(payload as CartReducerInterface).prodid] = 1;
-        //     // }
-        //     return {
-        //         ...state,
-        //         shoppingCart: (newCart as CartInterface)
-        //     }
-        // }
+        case "UPDATE_CART": {                   // Cart Module
+            const newCart = state.shoppingCart
+            if ((payload as CartReducerInterface).targetid in newCart) {
+                newCart[(payload as CartReducerInterface).targetid].quantity = (payload as CartReducerInterface).quantity;
+            } else {
+                newCart[(payload as CartReducerInterface).targetid].quantity = 1;
+            }
+            return {
+                ...state,
+                shoppingCart: (newCart as CartInterface)
+            }
+        }
         case "REMOVE_ITEM": {                   // Cart Module
             const newCart = state.shoppingCart
-            delete newCart[(payload as CartReducerInterface).prodid]
+            delete newCart[(payload as CartReducerInterface).targetid]
             return {
                 ...state,
                 shoppingCart: (newCart as CartInterface)

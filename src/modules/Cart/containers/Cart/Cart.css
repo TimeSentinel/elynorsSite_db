@@ -10,58 +10,98 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
 .cartRow {
     @apply border-b-2 pt-1;
 
-    .cartDelete {
-        @apply h-fit my-1 p-0 ;
+    .mainRow {
+        @apply flex w-full;
 
-        button {
-            @apply relative -ml-1 w-fit p-1 text-center font-bold text-sm rounded-none;
-            @apply border-2 border-red-500 text-red-500 bg-red-200;
+        .cartDelete {
+            @apply h-fit my-1 p-0 ;
+
+            button {
+                @apply relative  w-fit p-1 text-center font-bold text-xs rounded-none;
+                @apply border-2 border-red-500 text-red-500 bg-red-200;
+            }
+
+            button:hover {
+                @apply border-red-200 text-red-100 bg-red-600;
+                @apply shadow-xl shadow-red-700;
+                transform: scale(1.2);
+            }
         }
 
-        button:hover {
-            @apply border-red-200 text-red-100 bg-red-600;
-            @apply shadow-xl shadow-red-700;
-            transform: scale(1.2);
+        .cartEdit {
+            @apply h-fit my-1 px-1 text-center;
+
+            button {
+                @apply relative  w-fit p-1 text-center font-bold text-xs rounded-none;
+                @apply border-2 rounded-md ;
+            }
+
+            button:hover {
+                @apply border-yellow-200 text-yellow-100 bg-yellow-600;
+                @apply shadow-xl shadow-yellow-700;
+                transform: scale(1.2);
+            }
+        }
+        .cartTitle {
+            @apply overflow-hidden;
+        }
+        .cartCategory {
+            @apply text-left italic text-sm overflow-hidden;
+        }
+
+        .cartPrice {
+            @apply text-right font-light;
+        }
+
+
+        .cartQtyCol {
+            @apply flex h-11 content-around;
+
+            .cartQty {
+                @apply w-1/3 text-center font-semibold ;
+            }
+
+            button {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .cartInc:hover {
+                @apply bg-green-100 border-green-500 text-green-700;
+                @apply shadow-xl shadow-green-700;
+                transform: scale(1.1);
+            }
+
+            .cartDec:hover {
+                @apply bg-red-100 border-red-500 text-red-700;
+                @apply shadow-xl shadow-red-700;
+                transform: scale(1.1);
+            }
+        }
+
+        .cartLineTotal {
+            @apply text-right font-semibold text-lg;
         }
     }
 
-    .cartCategory {
-        @apply text-center italic text-sm;
-    }
+    .itemRow {
+        @apply flex w-full h-4 my-0 py-0;
 
-    .cartPrice {
-        @apply text-right font-light;
-    }
-
-
-    .cartQtyCol {
-        @apply flex h-11 content-around;
-
-        .cartQty {
-            @apply w-1/3 text-center font-semibold ;
+        .itemFiller {
+            @apply w-1/4 h-6;
         }
 
-        button {
-            font-family: Arial, Helvetica, sans-serif;
-        }
+        .itemData {
+            @apply flex w-3/4 text-left text-xs font-light;
 
-        .cartInc:hover {
-            @apply bg-green-100 border-green-500 text-green-700;
-            @apply shadow-xl shadow-green-700;
-            transform: scale(1.1);
-        }
+            .itemName {
+                @apply w-2/3;
+            }
 
-        .cartDec:hover {
-            @apply bg-red-100 border-red-500 text-red-700;
-            @apply shadow-xl shadow-red-700;
-            transform: scale(1.1);
+            .itemPrice {
+                @apply w-1/3;
+            }
         }
     }
-
-    .cartLineTotal {
-        @apply text-right font-semibold text-lg;
-    }
-
 }
 
 
@@ -156,38 +196,45 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
 /* ------------ Desktop View ------------ */
 @media (min-width: 992px) {
     .cartRow {
-        @apply flex flex-row h-fit px-2 justify-between content-between;
 
-        .cartDelete {
-            @apply w-6 px-1;
-        }
+        .mainRow {
+            @apply flex flex-row h-fit px-2 justify-between content-between;
 
-        .cartTitle {
-            @apply w-80 font-bold pl-2;
-        }
-
-        .cartCategory {
-            @apply w-32;
-        }
-
-        .cartPrice {
-            @apply w-36;
-        }
-
-        .column4 {
-            @apply w-12;
-        }
-
-        .cartQtyCol {
-            @apply w-32;
-
-            button {
-                @apply w-1/3 h-4/5 mx-2 my-1 text-center font-bold border-2;
+            .cartDelete {
+                @apply w-6 px-1;
             }
-        }
 
-        .cartLineTotal {
-            @apply w-32;
+            .cartEdit {
+                @apply w-16 px-1;
+            }
+
+            .cartTitle {
+                @apply w-5/12 font-semibold pl-2;
+            }
+
+            .cartCategory {
+                @apply w-2/12 text-left;
+            }
+
+            .cartPrice {
+                @apply w-1/12 text-right;
+            }
+
+            .column4 {
+                @apply w-12;
+            }
+
+            .cartQtyCol {
+                @apply w-2/12;
+
+                button {
+                    @apply w-1/3 h-4/5 mx-2 text-center font-bold border-2;
+                }
+            }
+
+            .cartLineTotal {
+                @apply w-24 text-right;
+            }
         }
     }
 }
