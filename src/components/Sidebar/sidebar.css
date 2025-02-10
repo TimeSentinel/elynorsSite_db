@@ -17,7 +17,7 @@ PROJECT: elynors;
 }
 
 h2 {
-    @apply underline font-bold text-2xl;
+    @apply font-bold text-2xl;
 }
 .navbar {
     @apply h-2/4 min-h-72 py-8;

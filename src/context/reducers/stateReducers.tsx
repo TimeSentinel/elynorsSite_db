@@ -6,6 +6,10 @@ REQ: Vite-React.js+TypeScript, react-router-dom, react-hot-toast,
 ####################################################################################################
 */
 
+// --------------- DEBUG ---------------
+const debug = false;
+
+
 export interface StateInterface { // Menu Module
     style: {
         cssStyle: string;
@@ -19,21 +23,11 @@ export interface ActionInterface {
     payload: unknown;
 }
 
-// export interface ProductInterface {  // Menu Module
-//     id: string;
-//     type: string;
-//     category: string;
-//     title: string;
-//     description: string;
-//     price: number;
-//     image: string;
-// }
-
 export const initialState: StateInterface = {
     style: {
         cssStyle: "Default",        // Themes Module
         siteTitle: "Fine Dining",   // Themes Module
-        siteTagline: ""             // Themes Module
+        siteTagline: "You will feel like the most important guest in the room."             // Themes Module
     }
 }
 
@@ -41,8 +35,8 @@ export const reducerFn = (state: StateInterface, action: ActionInterface) => {
     const {type, payload} = action
     switch (type) {
         case "UPDATE_STYLE":
-            console.log("---- payload ----")
-            console.log(payload)// Menu Module
+            if (debug) console.log("---- payload ----")
+            if (debug) console.log(payload)// Menu Module
             return {
                 ...state,
                 style: (payload as StateInterface)

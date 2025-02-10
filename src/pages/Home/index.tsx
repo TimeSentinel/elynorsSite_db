@@ -8,17 +8,19 @@ REQ: Vite-React.js+TypeScript, react-router-dom, react-hot-toast,
 */
 
 import "src/pages/pages.css"
-import diningRoom from "src/assets/diningroom1.jpg"
+import {ctx} from "src/context";
+import {useContext} from "react";
 
 function Home() {
-
+    const envVars = useContext(ctx).state.style
 
     return (
         <div className="mainPage background-light-color text-dark-color">
             <div>
                 <div className="bodyHead">
-                    {/*<h1 className=" text-very-dark-color">Elynor's Fine Dining</h1>*/}
-                    <h2 className=" text-dark-color">You will feel like the most important guest in the room.</h2>
+                    <h2 className=" text-dark-color">
+                        {envVars.siteTagline || "You will feel like the most important guest in the room."}
+                    </h2>
                 </div>
                 <hr className="hrDivider border-medium-color"/>
                 <div className="bodyMain">
@@ -27,7 +29,7 @@ function Home() {
                     <p>Fine food and superior service are our number one priorities. </p>
                     <br/>
                     <div className="imageCard text-medium-color">
-                        <img src={diningRoom} alt="dining room" className="border-dark-color" />
+                        <div className="hero border-dark-color" ></div>
 
                         <p>Our beautiful dining room in Vancouver, WA.</p>
                     </div>

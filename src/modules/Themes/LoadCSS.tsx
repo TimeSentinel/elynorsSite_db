@@ -69,6 +69,7 @@ const LoadCSS = ({themeID}: CSSProps) => {
             `p { ${curTheme.p}; } ` +
             // ------------------------- Settings -------------------------
             `.logo { background-image: url(${curTheme.logourl}); }` +
+            `.hero { background-image: url(${curTheme.heroimage}); }` +
             // ---------------------- Border Colors ----------------------
             `.border-faint-color { border-color: ${curTheme.faintcolor} }` +
             `.border-bright-color { border-color: ${curTheme.brightcolor} }` +

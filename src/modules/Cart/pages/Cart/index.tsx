@@ -13,6 +13,7 @@ import {ctx} from "src/context";
 import toast from "react-hot-toast";
 import "src/modules/Cart/pages/cartPages.css";
 import Confirmation from "src/components/modals/modals.tsx";
+import {CartItem} from "src/modules/Cart/containers/Cart";
 
 interface productPriceInterface {
     productprice: number;
@@ -93,28 +94,34 @@ const Cart: FC = () => {
                 </div>
             </div>
             <hr className="cartLineTop border-medium-color"/>
-            {/*<div className="cartTable border-dark-color">*/}
-            {/*    <div className="cartTableHeader text-dark-color border-dark-color">*/}
-            {/*        <div className="cartTableHeaderItem column0 text-alert-color">X</div>*/}
-            {/*        <div className="cartTableHeaderItem column1">Item</div>*/}
-            {/*        <div className="cartTableHeaderItem column2">Category</div>*/}
-            {/*        <div className="cartTableHeaderItem column3">Price</div>*/}
-            {/*        <div className="cartTableHeaderItem column4"></div>*/}
-            {/*        <div className="cartTableHeaderItem column5">Qty</div>*/}
-            {/*        <div className="cartTableHeaderItem column6">Total</div>*/}
-            {/*    </div>*/}
-            {/*    {Object.keys(localState.shoppingCart).length ? (*/}
-            {/*        <>*/}
-            {/*            {Object.keys(localState.shoppingCart).map(id => (*/}
-
-            {/*                <CartItem id={(id)} key={id}/>*/}
-            {/*            ))}*/}
-            {/*        </>*/}
-            {/*    ) : (*/}
-            {/*        <h3>Cart Is Empty</h3>*/}
-            {/*    )}*/}
-            {/*</div>*/}
-
+            <div className="cartTable border-dark-color">
+                <div className="cartTableHeader text-dark-color border-dark-color">
+                    <div className="cartTableHeaderItem column0 text-alert-color">X</div>
+                    <div className="cartTableHeaderItem column1 text-alert-color">Edit</div>
+                    <div className="cartTableHeaderItem column2">Item</div>
+                    <div className="cartTableHeaderItem column3">Name</div>
+                    <div className="cartTableHeaderItem column4">Price</div>
+                    <div className="cartTableHeaderItem column5"></div>
+                    <div className="cartTableHeaderItem column6">Qty</div>
+                    <div className="cartTableHeaderItem column7">Total</div>
+                </div>
+                {Object.keys(localState.shoppingCart).length ? (
+                    <>
+                        {Object.keys(localState.shoppingCart).map(product => {
+                            const itemList =
+                                localState.shoppingCart[product].items.map(item => item.value)
+                            return (
+                                    < CartItem prodid={localState.shoppingCart[product].prodid}
+                                               items={itemList}
+                                               key={localState.shoppingCart[product].prodid}/>
+                            )
+                        })}
+                    </>
+                ) : (
+                    <h3>Cart Is Empty</h3>
+                )
+                }
+            </div>
             <div className="cartTotal  text-very-dark-color">TOTAL = &nbsp;
                 {new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(total) ?? 0}
             </div>
@@ -128,11 +135,12 @@ const Cart: FC = () => {
                 }>Place Order
                 </button>
             </div>
-            <Confirmation modalDialog={"Empty cart and remove all items?"} responseText={"Yes"}
-                          responseAction={() => emptyCart()} dialogRef={dialogRef}/>
+            <Confirmation modalDialog={"Empty cart and remove all items?"}
+                          responseText={"Yes"}
+                          responseAction={() => emptyCart()}
+                          dialogRef={dialogRef}/>
+
         </>
     )
 }
-
-
 export default Cart;

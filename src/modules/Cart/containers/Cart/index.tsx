@@ -14,15 +14,14 @@ import {ctx} from "src/context";
 import toast from "react-hot-toast";
 
 interface CartProps {
-    id: string;
+    prodid: string;
+    items: string[];
 }
 
-const CartItem = ({id}: CartProps) => {
-    // const state = useContext(ctx).state
+const CartItem = ({prodid, items}: CartProps) => {
     const localDispatch = useContext(ctx).localDispatch
     const shoppingCart = useContext(ctx).localState.shoppingCart
 
-    // const activeProducts = state?.products || []
     let rowTitle: string;
     let rowCategory: string;
     let rowPrice: number;
@@ -45,7 +44,6 @@ const CartItem = ({id}: CartProps) => {
         rowCategory = product?.category || "N/A";
         rowPrice = product?.price || 0;
     }
-
 
     const addClick = (row: string) => {
         if (!(row in shoppingCart)) {

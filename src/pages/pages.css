@@ -48,10 +48,10 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
     /*@apply border-2 rounded-lg;*/
     /*@apply shadow-xl shadow-gray-500;*/
 
-    img {
+    .hero {
         @apply w-full h-5/6 mb-4 mx-auto;
         @apply border-2 rounded-xl shadow-md shadow-gray-700;
-        object-fit: fill;
+        @apply bg-contain;
     }
 
     p {

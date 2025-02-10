@@ -99,29 +99,26 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
             @apply font-bold;
         }
 
-        .column0 {
+        .column0, .column1 {
             @apply font-bold ;
         }
 
-        .column1 {
+        .column2 {
             @apply pl-3;
         }
 
-        .column2 {
+        .column3 {
             @apply px-2 text-center;
         }
 
-        .column3 {
+        .column4, .column7 {
             @apply text-right;
-        }
-
-        .column5 {
-            @apply text-center;
         }
 
         .column6 {
-            @apply text-right;
+            @apply text-center;
         }
+
 
     }
 }
@@ -132,7 +129,8 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
     .cartFooter button {
         @apply w-1/2 font-normal text-sm;
     }
-    .cartRight button{
+
+    .cartRight button {
         @apply w-3/6 font-normal text-sm;
     }
 
@@ -140,31 +138,27 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
         @apply flex w-full border-b-2 px-2 pt-1 justify-between content-between;
         @apply text-sm font-semibold;
 
-        .column0 {
+        .column0, .column1 {
             @apply w-4;
         }
 
-        .column1 {
+        .column2 {
             @apply w-64;
         }
 
-        .column2 {
+        .column3, .column5 {
             @apply hidden;
-        }
-
-        .column3 {
-            @apply w-24;
         }
 
         .column4 {
-            @apply hidden;
-        }
-
-        .column5 {
-            @apply w-32;
+            @apply w-24;
         }
 
         .column6 {
+            @apply w-32;
+        }
+
+        .column7 {
             @apply w-28;
         }
     }
@@ -177,37 +171,35 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
     .cartRight button {
         @apply w-1/3 font-normal ;
     }
+
     .cartFooter button {
         @apply w-1/3 text-lg;
     }
+
     .cartTableHeader {
         @apply flex w-full border-b-2 px-2 pt-1 justify-between content-between;
 
-        .column0 {
+        .column0, .column1 {
             @apply w-6 px-1;
         }
 
-        .column1 {
+        .column2 {
             @apply w-80;
         }
 
-        .column2 {
+        .column3, .column5 {
             @apply hidden;
-        }
-
-        .column3 {
-            @apply w-24 mr-2;
         }
 
         .column4 {
-            @apply hidden;
-        }
-
-        .column5 {
-            @apply w-32;
+            @apply w-24 mr-2;
         }
 
         .column6 {
+            @apply w-32;
+        }
+
+        .column7 {
             @apply w-28;
         }
     }
@@ -220,6 +212,7 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
     .cartRight button, .cartFooter button {
         @apply w-1/4;
     }
+
     .cartFooter button {
         @apply text-lg shadow-sm shadow-green-600;
     }
@@ -227,33 +220,26 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
     .cartTableHeader {
         @apply flex w-full border-b-2 px-2 pt-1 justify-between content-between;
 
-        .column0 {
+        .column0, .column1 {
             @apply w-6 px-1;
         }
 
-        .column1 {
+        .column2 {
             @apply w-80;
         }
 
-        .column2 {
+        .column3, .column6, .column7 {
             @apply w-32;
-        }
-
-        .column3 {
-            @apply w-36;
         }
 
         .column4 {
-            @apply w-12;
+            @apply w-36;
         }
 
         .column5 {
-            @apply w-32;
+            @apply w-12;
         }
 
-        .column6 {
-            @apply w-32;
-        }
     }
 }
 
