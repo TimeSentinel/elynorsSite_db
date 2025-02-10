@@ -72,7 +72,7 @@ function Navigation() {
                                 <button className={
                                     item.enabled === "no" ? "level1 disabled text-medium-shade" :
                                         location.pathname === item.link
-                                            ? "level1 Selected text-bright-color background-dark-color"
+                                            ? "level1 Selected text-bright-color background-dark-color border-bright-color"
                                             : "level1 enabled text-dark-color "
                                 }
                                         onClick={() => item.enabled === "yes" && navClick(item.link)}>
@@ -88,7 +88,7 @@ function Navigation() {
                                                 <button className={
                                                     item2.enabled === "no" ? "level1 disabled text-medium-shade" :
                                                         location.pathname === item2.link
-                                                            ? "level1 Selected text-bright-color background-dark-color"
+                                                            ? "level1 Selected text-bright-color background-dark-color border-medium-color"
                                                             : "level1 enabled text-dark-color "
                                                 }
                                                         onClick={() => item2.enabled === "yes" && navClick(item2.link)}>

@@ -9,23 +9,28 @@ import './header.css'
 import {useNavigate} from "react-router";
 import CartCount from "../../modules/Cart/components/cartCount/CartCount.tsx";
 import Hamburger from "../Navigation/Hamburger.tsx";
+import {useContext} from "react";
+import {ctx} from "src/context";
 
 
 
 function Header() {
     const navigate = useNavigate();
+    const envVars = useContext(ctx).state.style
+
 
     return (
         <div className="titleRow">
             <div className="headerLeft">
                 <div className="logo"></div>
+                <h1 className="pageTitle">Elynor's {envVars.siteTitle}</h1>
             </div>
             <div className="hamburgerMenu">
-                <Hamburger />
+            <Hamburger />
             </div>
-            <div className="headerCenter text-medium-color">
+            <div className="headerCenter text-very-dark-color">
                 <span className="location"></span>
-                <span className="pageTitle">Elynor's Fine Dining</span>
+
             </div>
             <div className="headerRight">
                 <div className="rightCorner"></div>

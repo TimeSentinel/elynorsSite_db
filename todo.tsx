@@ -7,7 +7,7 @@ PROJECT: elynors;
 todo: after adding to cart, go back to menu???;
 todo: cart item quantity;
 todo: shopping cart display;
-todo: css color schemes;
+todo: css hero image;
 todo: meal pictures;
 
 

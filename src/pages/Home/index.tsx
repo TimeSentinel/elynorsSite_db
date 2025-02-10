@@ -17,7 +17,7 @@ function Home() {
         <div className="mainPage background-light-color text-dark-color">
             <div>
                 <div className="bodyHead">
-                    <h1 className=" text-very-dark-color">Elynor's Fine Dining</h1>
+                    {/*<h1 className=" text-very-dark-color">Elynor's Fine Dining</h1>*/}
                     <h2 className=" text-dark-color">You will feel like the most important guest in the room.</h2>
                 </div>
                 <hr className="hrDivider border-medium-color"/>
@@ -26,7 +26,7 @@ function Home() {
 
                     <p>Fine food and superior service are our number one priorities. </p>
                     <br/>
-                    <div className="imageCard border-dark-color background-medium-color text-soft-color">
+                    <div className="imageCard text-medium-color">
                         <img src={diningRoom} alt="dining room" className="border-dark-color" />
 
                         <p>Our beautiful dining room in Vancouver, WA.</p>

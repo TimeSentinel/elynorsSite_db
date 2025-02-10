@@ -10,7 +10,7 @@ accompanies index.tsx
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Charm:wght@400;700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Zen+Dots&display=swap');
 
 .ThemeSelector {
-    @apply block bg-transparent text-left;
+    @apply block bg-transparent text-left mt-3;
     select {
         @apply bg-gray-300 cursor-pointer ;
         @apply text-gray-950 leading-tight font-sans;

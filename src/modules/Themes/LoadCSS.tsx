@@ -7,7 +7,8 @@ PROJECT: elynors;
 
 
 import useSWR from "swr";
-import {useRef} from "react";
+import {useContext, useEffect, useRef} from "react";
+import {ctx} from "src/context";
 
 interface CSSProps {
     themeID: string;
@@ -17,6 +18,7 @@ const LoadCSS = ({themeID}: CSSProps) => {
     let cssStyle: string = ""
     const errorMsg = useRef<string>("");
     const query = `http://localhost:3002/theme/${themeID}`;
+    const dispatch = useContext(ctx).dispatch
 
     const fetcher =
         ({url, init}: { url: RequestInfo | URL, init?: RequestInit }) =>
@@ -29,11 +31,29 @@ const LoadCSS = ({themeID}: CSSProps) => {
         isValidating: themeValidate
     } = useSWR({url: query, init: {method: "GET"}}, fetcher, {revalidateOnFocus: false})
 
+    useEffect(() => {
+        if (data !== undefined) {
+            const curTheme = data[0]
+
+        dispatch({
+            type: "UPDATE_STYLE",
+            payload: {
+                cssStyle: curTheme.themename || "Default",
+                siteTitle: curTheme.sitetitle || "Fine Dining",
+                siteTagline: curTheme.sitetagline || "Eat Here"
+            }
+        })
+        }
+
+    },[data, dispatch]);
+
     if (themeLoading || themeValidate) return <div className="loading">Loading theme elements \ | /</div>;
     if (themeError) errorMsg.current = "Failed to load the theme elements";
 
+
     if (data !== undefined) {
         const curTheme = data[0]
+
 
         cssStyle =
             `body { ${curTheme.body};
