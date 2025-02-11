@@ -60,7 +60,6 @@ const Cart: FC = () => {
                     localState.shoppingCart[product].quantity * (iData[0].itemprice || 0)
                 ))
             )
-
             promises.push(fetchProdCost(localState.shoppingCart[product].prodid).then(pData =>
                 localState.shoppingCart[product].quantity * (pData[0].productprice || 0)
             ))
@@ -111,10 +110,12 @@ const Cart: FC = () => {
                             const itemList =
                                 localState.shoppingCart[product].items.map(item => item.value)
                             return (
+                                <div key={localState.shoppingCart[product].prodid}>
                                 < CartItem cartid={product}
                                            prodid={localState.shoppingCart[product].prodid}
                                            items={itemList}
                                            key={localState.shoppingCart[product].prodid}/>
+                                </div>
                             )
                         })}
                     </>

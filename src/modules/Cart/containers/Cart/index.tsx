@@ -8,7 +8,7 @@ REQ: Vite-React.js+TypeScript, react-router-dom, react-hot-toast,
 */
 
 import "./Cart.css"
-import {useContext} from "react";
+import {useContext, useEffect, useState} from "react";
 import {ctx} from "src/context";
 import toast from "react-hot-toast";
 
@@ -18,12 +18,64 @@ interface CartProps {
     items: string[];
 }
 
-const CartItem = ({cartid, prodic, items}: CartProps) => {
+interface CartProductInterface {
+    productname: string;
+    productprice: number;
+}
+
+interface CartItemInterface {
+    itemid: string;
+    itemname: string;
+    itemprice: number;
+}
+
+
+const CartItem = ({cartid, prodid, items}: CartProps) => {
     const localDispatch = useContext(ctx).localDispatch
     const shoppingCart = useContext(ctx).localState.shoppingCart
+    const [rowTitle, setRowTitle] = useState("NOT VALID");
+    const [rowPrice, setRowPrice] = useState(0);
+    const [rowItems, setRowItems] = useState<CartItemInterface[]>([]);
+    const [lineTotal, setLineTotal] = useState(0);
 
-    let rowTitle: string = "NOT VALID";
-    let rowPrice: number = 0;
+    async function fetchCartProduct(productID: string): Promise<[CartProductInterface]> {
+        const response = await fetch('http://localhost:3001/?query=cartProduct&id=' + productID);
+        return await response.json();
+    }
+
+    // async function fetchCartItem(itemID: string): Promise<[CartItemInterface]> {
+    async function fetchCartItem(itemID: string) {
+        const response = await fetch('http://localhost:3001/?query=cartItem&id=' + itemID);
+        return await response.json();
+    }
+
+    useEffect(() => {
+        let bacon: CartItemInterface[] = []
+        let lineSum = 0;
+        // const promises: Promise<[CartItemInterface]>[] = []
+        const promises: any[] = []
+
+        fetchCartProduct(prodid).then(prodData => {
+                setRowTitle(prodData[0].productname)
+                setRowPrice(prodData[0].productprice)
+            }
+        )
+        items.forEach(item => promises.push(fetchCartItem(item)))
+
+        Promise.all(promises).then(stuff => {
+            stuff.map(thing => {
+                bacon = [...bacon, thing[0]]
+                console.log("itemproccccc", typeof (thing[0].itemprice))
+
+                // lineSum += thing[0].itemprice
+            });
+            setRowItems(bacon)
+            setLineTotal(lineSum + rowPrice)
+            console.log("linesum", lineSum)
+            console.log("rowprice", rowPrice)
+        })
+
+    }, [items, prodid])
 
 
     const addClick = (row: string) => {
@@ -57,7 +109,7 @@ const CartItem = ({cartid, prodic, items}: CartProps) => {
             })
         }
     }
-    console.log(cartid)
+
     return (
         <div className="cartRow border-medium-color" key={cartid}>
             <div className="mainRow">
@@ -93,26 +145,31 @@ const CartItem = ({cartid, prodic, items}: CartProps) => {
                     {new Intl.NumberFormat('en-US', {
                         style: 'currency',
                         currency: 'USD'
-                    }).format(((rowPrice) * (shoppingCart[cartid].quantity))) ?? 0}
+                    }).format(((lineTotal) * (shoppingCart[cartid].quantity))) ?? 0}
                 </div>
             </div>
-            {shoppingCart[cartid].items.map((item) => (
-                <div className="itemRow">
-                    <div className="itemFiller"></div>
-                    <div className="itemData text-bright-color">
-                        <div className="itemName" key={item.value}>
-                            {item.value}
+            {(rowItems !== null) && rowItems.map((item) => {
+                return (
+                    <div className="itemRow" key={item.itemid}>
+                        <div className="itemFiller"></div>
+                        <div className="itemData text-bright-color ">
+                            <div className="itemName border-soft-color">
+                                {item.itemname}
+                            </div>
+                            <div className="itemPrice border-soft-color">
+                                {new Intl.NumberFormat('en-US', {
+                                    style: 'currency',
+                                    currency: 'USD'
+                                }).format(item.itemprice) ?? 0}
+                            </div>
                         </div>
-                        <div className="itemPrice">
-                            {new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(1) ?? 0}
-                        </div>
+                        {/*<div className="itemFiller"></div>*/}
                     </div>
-                    <div className="itemFiller"></div>
-                </div>
-            ))}
+                )
+            })}
         </div>
 
-)
+    )
 }
 
 export {CartItem}

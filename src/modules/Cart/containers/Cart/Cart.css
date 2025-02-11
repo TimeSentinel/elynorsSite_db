@@ -87,18 +87,21 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
         @apply flex w-full h-4 my-0 py-0;
 
         .itemFiller {
-            @apply w-1/4 h-6;
+            @apply w-2/5 h-6;
         }
 
         .itemData {
-            @apply flex w-3/4 text-left text-xs font-light;
+            @apply flex w-2/5 text-xs font-light;
+
 
             .itemName {
-                @apply w-2/3;
+                @apply w-2/5 text-left overflow-hidden ;
+                /*@apply border-dotted border-b-2;*/
             }
 
             .itemPrice {
-                @apply w-1/3;
+                @apply w-1/5 text-right;
+                /*@apply border-dotted border-b-2;*/
             }
         }
     }
