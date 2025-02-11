@@ -65,14 +65,13 @@ const CartItem = ({cartid, prodid, items}: CartProps) => {
         Promise.all(promises).then(stuff => {
             stuff.map(thing => {
                 bacon = [...bacon, thing[0]]
-                console.log("itemproccccc", typeof (thing[0].itemprice))
-
-                // lineSum += thing[0].itemprice
+                lineSum += parseFloat(thing[0].itemprice) || 0
             });
             setRowItems(bacon)
-            setLineTotal(lineSum + rowPrice)
+            setLineTotal(lineSum + parseFloat(rowPrice))
             console.log("linesum", lineSum)
             console.log("rowprice", rowPrice)
+            console.log("both", lineTotal)
         })
 
     }, [items, prodid])
