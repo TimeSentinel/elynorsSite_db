@@ -69,14 +69,14 @@ PROJECT: elynors;
             }
 
             .productRight {
-                @apply w-2/12 min-w-32 text-right  float-right;
+                @apply w-2/12 min-w-32 float-right;
 
                 .productPrice {
-                    @apply w-full pr-2 text-right font-semibold text-xl;
+                    @apply w-full pr-2 text-center font-semibold text-xl;
                 }
 
                 .productDetails {
-                    @apply mt-2 text-right;
+                    @apply mt-2 text-center;
                     button {
                         @apply w-fit h-fit m-2 px-2 py-1;
                         @apply border-2 rounded-md;
