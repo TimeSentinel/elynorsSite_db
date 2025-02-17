@@ -23,7 +23,7 @@ function Header() {
         <div className="titleRow">
             <div className="headerLeft">
                 <div className="logo"></div>
-                <h1 className="pageTitle">Elynor's {envVars.siteTitle}</h1>
+                <h1 className="pageTitle text-dark-color">Elynor's {envVars.siteTitle}</h1>
             </div>
             <div className="hamburgerMenu">
             <Hamburger />
