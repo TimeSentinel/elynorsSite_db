@@ -44,14 +44,14 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
 
 /* ###################### HOME ###################### */
 .imageCard {
-    @apply w-7/12 mx-auto h-96 text-center;
+    @apply mx-auto text-center;
     /*@apply border-2 rounded-lg;*/
     /*@apply shadow-xl shadow-gray-500;*/
 
     .hero {
-        @apply w-full h-5/6 mb-4 mx-auto;
+        @apply mb-4 mx-auto;
         @apply border-2 rounded-xl shadow-md shadow-gray-700;
-        @apply bg-contain;
+        @apply bg-cover bg-no-repeat;
     }
 
     p {
@@ -138,7 +138,7 @@ tr:nth-child(even) {
 
 /* ########################### Media Selector ########################### */
 /* ------------ Mobile View ------------ */
-@media (max-width: 667px) {
+@media (max-width: 718px) {
     .bodyHead, .bodyMain, .bodyFoot {
         @apply w-full;
     }
@@ -163,12 +163,18 @@ tr:nth-child(even) {
         @apply w-full;
     }
 
+    .imageCard {
+        @apply w-9/12 h-72;
+        .hero {
+            @apply w-full h-5/6;
+        }
+    }
 }
 
 /* ------------ End Mobile ------------ */
 
 /* ------------ Tablet View ------------ */
-@media (min-width: 668px) and (max-width: 991px) {
+@media (min-width: 719px) and (max-width: 991px) {
     .bodyHead, .bodyMain, .bodyFoot {
         @apply w-11/12;
     }
@@ -195,6 +201,13 @@ tr:nth-child(even) {
 
     .contactCard {
         @apply w-full;
+    }
+
+    .imageCard {
+        @apply w-7/12 h-72;
+        .hero {
+            @apply w-full h-5/6;
+        }
     }
 }
 
@@ -228,6 +241,14 @@ tr:nth-child(even) {
 
     .contactCard {
         @apply w-full;
+    }
+
+    .imageCard {
+        @apply w-7/12 h-96;
+
+        .hero {
+            @apply w-full h-5/6;
+        }
     }
 }
 

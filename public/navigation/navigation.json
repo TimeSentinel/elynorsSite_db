@@ -5,66 +5,57 @@
       "title": "Home",
       "link": "/",
       "alt": "Elynor's Home Page",
-      "enabled" : "yes",
-      "level2" : []
+      "enabled": "yes",
+      "level2": []
     },
     {
       "title": "Menu",
       "link": "/menu",
       "alt": "Browse our delightful selections",
-      "enabled" : "yes",
-      "level2" : []
+      "enabled": "yes",
+      "level2": []
     },
     {
       "title": "Reservation",
       "link": "/reservation",
       "alt": "Make reservations for dinner",
-      "enabled" : "no",
-      "level2" : []
+      "enabled": "no",
+      "level2": []
     },
     {
       "title": "About",
       "link": "/about",
       "alt": "Learn more about us",
-      "enabled" : "yes",
-      "level2" : []
+      "enabled": "yes",
+      "level2": []
     },
     {
       "title": "Contact",
       "link": "/contact",
       "alt": "Get ahold of us",
-      "enabled" : "no",
-      "level2" : []
+      "enabled": "no",
+      "level2": []
     },
     {
-      "title": "Media",
-      "link": "#",
-      "alt": "Learn more about us and what we do!",
-      "enabled" : "yes",
-      "level2" : [
-        {
-          "title": "News/Blog",
-          "link": "/news",
-          "alt": "Find recipes, tips and news!",
-          "enabled" : "no",
-          "level3" : []
-        },
-        {
-          "title": "Gallery",
-          "link": "/gallery",
-          "alt": "Photos of events, dishes, and our establishment",
-          "enabled" : "yes",
-          "level3" : []
-        }
-      ]
+      "title": "News/Blog",
+      "link": "/news",
+      "alt": "Find recipes, tips and news!",
+      "enabled": "no",
+      "level2": []
     },
-
+    {
+      "title": "Gallery",
+      "link": "/gallery",
+      "alt": "Photos of events, dishes, and our establishment",
+      "enabled": "yes",
+      "level2": []
+    },
     {
       "title": "Cart",
       "link": "/cart",
       "alt": "See and edit your shopping cart",
-      "enabled" : "yes",
-      "level2" : []
+      "enabled": "yes",
+      "level2": []
     }
   ]
 }

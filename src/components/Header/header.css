@@ -50,17 +50,21 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
         @apply w-full h-24 pt-1;
 
         .headerLeft {
-            @apply w-4/6 mr-auto pl-8;
-
+            @apply w-1/3 mr-auto pl-8;
+            .pageTitle {
+                display: none;
+            }
             .logo {
+
                 @apply bg-no-repeat bg-contain;
                 @apply cursor-pointer;
                 @apply w-32 h-20 ml-2;
+
             }
         }
 
         .hamburgerMenu {
-            @apply w-1/3 mx-auto;
+            @apply w-48;
         }
 
         .headerCenter {
@@ -68,7 +72,7 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
         }
 
         .headerRight {
-            @apply w-1/2 h-full pr-8;
+            @apply w-1/3 h-full pr-8;
 
             .cartCorner {
                 @apply w-10;
@@ -88,7 +92,10 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
         @apply h-24 px-2 pt-2;
 
         .headerLeft {
-            display: none;
+            @apply w-9/12;
+            .pageTitle {
+                @apply font-semibold text-center text-xl;
+            }
         }
 
         .hamburgerMenu {
@@ -96,6 +103,8 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
         }
 
         .headerCenter {
+            display: none;
+            /*
             @apply w-10/12 h-full pl-2 ml-2;
 
             .location {
@@ -105,13 +114,13 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
             .pageTitle {
                 @apply text-center text-2xl;
             }
+            */
         }
 
         .headerRight {
-            @apply w-1/12 h-full mr-4;
-
+            @apply w-3/12 h-full mr-4;
             .cartCorner {
-                @apply w-28;
+                @apply w-full;
             }
         }
     }
@@ -127,7 +136,7 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
     }
 
     .headerLeft {
-        @apply flex w-6/12 h-full;
+        @apply flex w-9/12 h-full px-4;
 
         .pageTitle {
             @apply font-semibold text-center text-3xl;
@@ -143,21 +152,22 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
     }
 
     .headerCenter {
+        display: none;
+        /*
         @apply w-4/12 h-full pl-2 text-center;
         font-size: 1.8em;
 
         .location {
             @apply font-light text-center text-4xl;
         }
-
+        */
 
     }
 
     .headerRight {
-        @apply w-2/12 h-full mr-4;
-
+        @apply flex w-3/12 h-full mr-4;
         .rightCorner {
-            @apply block h-20 w-10;
+            @apply block h-10 w-10;
         }
 
         .cartCorner {
@@ -178,7 +188,7 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
 
 
     .headerLeft {
-        @apply w-6/12 h-full;
+        @apply w-9/12 h-full;
 
         .pageTitle {
             @apply font-bold text-left pl-4 mx-auto;
@@ -195,13 +205,14 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
     }
 
     .headerCenter {
+        display: none;
+        /*
         @apply w-3/12 h-full mx-auto pl-2;
 
         .location {
             @apply font-light text-3xl;
         }
-
-
+         */
     }
 
     .headerRight {

@@ -8,19 +8,20 @@ PROJECT: elynors;
 @apply relative h-full border-r-2 px-2 pt-4;
 
     .logo {
-        @apply h-48 mx-auto bg-no-repeat bg-contain bg-center;
+        @apply h-48 mx-auto mb-8 bg-no-repeat bg-contain bg-center;
         @apply cursor-pointer;
     }
 }
 .sideHeader {
-    @apply h-16 pt-4 text-center align-middle;
+    display:none;
+    /*@apply h-8 pt-4 text-center align-middle;*/
 }
 
 h2 {
     @apply font-bold text-2xl;
 }
 .navbar {
-    @apply h-2/4 min-h-72 py-8;
+    @apply h-2/4 min-h-96 py-8;
     @apply font-light text-lg;
 }
 

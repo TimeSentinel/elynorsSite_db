@@ -2,7 +2,7 @@
 ################################### Restaurant Functional Module ###################################
 /modules/Gallery/gallery.css    ::: gallery style sheet
 REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
-(c)2024 Lance Stubblefield
+(c)2024, 2025 Lance Stubblefield
 ####################################################################################################
 */
 
@@ -11,12 +11,11 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
     @apply border-2;
 
     .photoCard {
-        @apply border-2 m-2 p-4 rounded-xl;
+        @apply border-2 my-2 p-4 rounded-xl;
         @apply shadow-lg shadow-gray-500;
-        height: 460px;
 
         .galleryImage {
-            @apply w-11/12 mx-auto h-48;
+            @apply mx-auto;
 
             img {
                 @apply w-full h-full;
@@ -56,10 +55,15 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
     }
 
     .photoCardContainer {
-        @apply w-full h-full px-2;
+        @apply w-full h-full;
     }
+
     .photoCard {
-        @apply w-11/12 mx-auto;
+        @apply w-9/12 h-72 mx-auto;
+
+        .galleryImage {
+            @apply w-9/12 h-32;
+        }
     }
 }
 
@@ -75,7 +79,11 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
     }
 
     .photoCard {
-        @apply w-full;
+        @apply w-full h-80 overflow-scroll;
+
+        .galleryImage {
+            @apply w-11/12 h-32;
+        }
     }
 }
 
@@ -92,7 +100,11 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
     }
 
     .photoCard {
-        @apply w-full;
+        @apply w-full h-80 overflow-scroll;
+
+        .galleryImage {
+            @apply w-11/12 h-36;
+        }
     }
 }
 
@@ -110,7 +122,11 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
     }
 
     .photoCard {
-        @apply w-full;
+        @apply w-full h-full;
+
+        .galleryImage {
+            @apply w-11/12 h-48;
+        }
     }
 }
 

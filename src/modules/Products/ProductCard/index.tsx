@@ -8,7 +8,7 @@ PROJECT: elynors;
 import './productCard.css'
 import {ChangeEvent, FC, useContext, useEffect, useState} from "react";
 import useSWR from "swr";
-import {useParams} from "react-router";
+import {useNavigate, useParams} from "react-router";
 import toast from "react-hot-toast";
 import {ctx} from "src/context";
 import uuid from 'react-uuid';
@@ -40,6 +40,7 @@ const ProductCard: FC = () => {
     const [selectedValue, setSelectedValue] = useState<SelectedInterface[]>([])
     const [targetName, setTargetName] = useState("")
     const [targetNote, setTargetNote] = useState("")
+    const navigate = useNavigate();
 
     const fetcher =
         ({url, init}: { url: RequestInfo | URL, init?: RequestInit }) =>
@@ -107,6 +108,7 @@ const ProductCard: FC = () => {
             payload: {targetid: uuid(), prodid: productID, quantity: 1, items: selectedValue, name: targetName, note: targetNote}
         })
         toast.success(productDetails.productname + " added to Cart");
+            navigate('/menu');
     }
 
     return (

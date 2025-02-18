@@ -74,12 +74,11 @@ function Hamburger() {
 
         <div className="hamburger">
             <div className="menuRow">
-                <div className="filler"></div>
                 <div id="hamburgerIcon"
                      onClick={toggleMain}>
-                    <div className="iconBar background-dark-color"></div>
-                    <div className="iconBar background-dark-color"></div>
-                    <div className="iconBar background-dark-color"></div>
+                    <div className="iconBar background-dark-color border-very-dark-color"></div>
+                    <div className="iconBar background-dark-color border-very-dark-color"></div>
+                    <div className="iconBar background-dark-color border-very-dark-color"></div>
                 </div>
             </div>
             {displayMain && (

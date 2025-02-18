@@ -13,7 +13,6 @@ import {useContext} from "react";
 import {ctx} from "src/context";
 
 
-
 function Header() {
     const navigate = useNavigate();
     const envVars = useContext(ctx).state.style
@@ -26,11 +25,10 @@ function Header() {
                 <h1 className="pageTitle text-dark-color">Elynor's {envVars.siteTitle}</h1>
             </div>
             <div className="hamburgerMenu">
-            <Hamburger />
+                <Hamburger/>
             </div>
             <div className="headerCenter text-very-dark-color">
                 <span className="location"></span>
-
             </div>
             <div className="headerRight">
                 <div className="rightCorner"></div>

@@ -5,39 +5,37 @@ PROJECT: elynors;
 (c) 2025 Lance Stubblefield 
 --------------------------------------- */
 .navbar {
-    @apply m-0 p-0;
+    @apply mx-4 my-0 p-0;
 
     .level1 {
-        @apply text-left font-bold px-2;
+        @apply ml-4 text-left font-bold px-2;
 
         overflow: hidden;
     }
 
     .level2 {
-        @apply text-left cursor-pointer font-semibold;
+        @apply ml-2 text-left cursor-pointer font-semibold;
         overflow: hidden;
     }
 }
 
 
 .hamburger {
-    @apply w-full;
+    @apply w-1/2 mx-auto;
+
     .menuRow {
-        @apply flex w-full;
-        .filler {
-            @apply w-6/12;
-        }
+        @apply flex ;
 
         #hamburgerIcon {
-            @apply h-20 w-6/12 rounded-lg ;
-            @apply p-1 ml-2 mb-2;
+            @apply h-20 w-32 mx-auto;
             @apply cursor-pointer;
-            .iconBar {
-                @apply w-full h-1/6 my-2;
-                @apply shadow-xl shadow-gray-500;
-            }
-            transform: rotate(10deg)
 
+            .iconBar {
+                @apply w-11/12 h-1/6 my-2 rounded-sm;
+                @apply border-2 shadow-xl shadow-gray-500;
+            }
+
+            transform: rotate(15deg)
         }
     }
 
@@ -47,16 +45,20 @@ PROJECT: elynors;
     }
 
 }
+
 .hamburgerUL {
     @apply absolute left-0 h-fit w-full;
+
     li {
         @apply block h-10 w-full text-center font-semibold;
         @apply border-b-2;
+
         button {
             @apply w-full h-full;
         }
     }
 }
+
 .hidden {
     display: none;
 }

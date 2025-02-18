@@ -9,18 +9,19 @@ REQ: Vite-React.js+TypeScript, react-router-dom, react-hot-toast,
 // --------------- DEBUG ---------------
 const debug = false;
 
+export interface StyleInterface {
+    cssStyle: string;
+    siteTitle: string;
+    siteTagline: string;
+}
 
 export interface StateInterface { // Menu Module
-    style: {
-        cssStyle: string;
-        siteTitle: string;
-        siteTagline: string;
-    }
+    style: StyleInterface;
 }
 
 export interface ActionInterface {
     type: string;
-    payload: unknown;
+    payload: StyleInterface;
 }
 
 export const initialState: StateInterface = {
@@ -38,10 +39,9 @@ export const reducerFn = (state: StateInterface, action: ActionInterface) => {
             if (debug) console.log("---- payload ----")
             if (debug) console.log(payload)// Menu Module
             return {
-                ...state,
-                style: (payload as StateInterface)
+                // ...state,
+                style: (payload as StyleInterface)
             }
-
         default:
             return state
     }

@@ -50,28 +50,23 @@ const CartItem = ({cartid, prodid, items}: CartProps) => {
     }
 
     useEffect(() => {
-        let bacon: CartItemInterface[] = []
+        let itemsList: CartItemInterface[] = []
         let lineSum = 0;
         // const promises: Promise<[CartItemInterface]>[] = []
-        const promises: any[] = []
 
         fetchCartProduct(prodid).then(prodData => {
                 setRowTitle(prodData[0].productname)
                 setRowPrice(prodData[0].productprice)
             }
         )
-        items.forEach(item => promises.push(fetchCartItem(item)))
 
-        Promise.all(promises).then(stuff => {
-            stuff.map(thing => {
-                bacon = [...bacon, thing[0]]
-                lineSum += parseFloat(thing[0].itemprice) || 0
+        Promise.all(items.map(item => fetchCartItem(item))).then(products => {
+            products.map(items => {
+                itemsList = [...itemsList, items[0]]
+                lineSum += parseFloat(items[0].itemprice) || 0
             });
-            setRowItems(bacon)
-            setLineTotal(lineSum + parseFloat(rowPrice))
-            console.log("linesum", lineSum)
-            console.log("rowprice", rowPrice)
-            console.log("both", lineTotal)
+            setRowItems(itemsList)
+            setLineTotal(lineSum + parseFloat(rowPrice.toString()))
         })
 
     }, [items, prodid])
@@ -117,7 +112,7 @@ const CartItem = ({cartid, prodid, items}: CartProps) => {
                     </button>
                 </div>
                 <div className="cartEdit">
-                    <button className="text-highlight-color border-highlight-color background-light-shade"
+                    <button className="text-highlight-color border-highlight-color background-medium-shade"
                             onClick={() => console.log("EDIT")}>EDIT
                     </button>
                 </div>
@@ -147,25 +142,25 @@ const CartItem = ({cartid, prodid, items}: CartProps) => {
                     }).format(((lineTotal) * (shoppingCart[cartid].quantity))) ?? 0}
                 </div>
             </div>
-            {(rowItems !== null) && rowItems.map((item) => {
-                return (
-                    <div className="itemRow" key={item.itemid}>
-                        <div className="itemFiller"></div>
-                        <div className="itemData text-bright-color ">
-                            <div className="itemName border-soft-color">
-                                {item.itemname}
-                            </div>
-                            <div className="itemPrice border-soft-color">
-                                {new Intl.NumberFormat('en-US', {
-                                    style: 'currency',
-                                    currency: 'USD'
-                                }).format(item.itemprice) ?? 0}
+            <div className="itemContainer">
+                {(rowItems !== null) && rowItems.map((item) => {
+                    return (
+                        <div className="itemRow" key={item.itemid}>
+                            <div className="itemData background-light-shade border-light-color">
+                                <div className="itemName text-medium-color border-soft-color">
+                                    {item.itemname}
+                                </div>
+                                <div className="itemPrice text-bright-color ">
+                                    {(item.itemprice != 0) ? new Intl.NumberFormat('en-US', {
+                                        style: 'currency',
+                                        currency: 'USD'
+                                    }).format(item.itemprice) ?? 0 : ''}
+                                </div>
                             </div>
                         </div>
-                        {/*<div className="itemFiller"></div>*/}
-                    </div>
-                )
-            })}
+                    )
+                })}
+            </div>
         </div>
 
     )

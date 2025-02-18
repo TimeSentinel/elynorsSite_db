@@ -42,8 +42,8 @@ function Gallery() {
         <div className="gallery background-light-color border-medium-color">
             {photos?.map((photo: galleryInterface, i) => {
                 return (
-                    <div className="photoCardContainer">
-                        <div className="photoCard border-medium-color background-soft-color" key={i}>
+                    <div className="photoCardContainer" key={i}>
+                        <div className="photoCard border-medium-color background-soft-color" >
                             <div className="galleryImage">
                                 <img src={photo.imagePath} alt={photo.imageAlt} className="border-medium-color" />
                             </div>

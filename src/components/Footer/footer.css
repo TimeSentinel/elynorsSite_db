@@ -6,7 +6,7 @@ PROJECT: elynors;
 --------------------------------------- */
 
 .footerContainer {
-    @apply flex w-full h-full border-t-2;
+    @apply flex h-full border-t-2;
 }
 
 
@@ -16,6 +16,7 @@ PROJECT: elynors;
     .footerCenter {
         @apply font-light text-xs;
         @apply w-5/12 h-full pt-2 ;
+
     }
 
     .footerLeft {
@@ -55,11 +56,11 @@ PROJECT: elynors;
     }
 
     .footerLeft {
-        @apply w-5/12 ;
+        @apply w-4/12 ;
     }
 
     .footerRight {
-        @apply w-2/12;
+        @apply w-3/12;
     }
 }
 

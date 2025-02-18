@@ -38,9 +38,10 @@ const LoadCSS = ({themeID}: CSSProps) => {
         dispatch({
             type: "UPDATE_STYLE",
             payload: {
-                cssStyle: curTheme.themename || "Default",
-                siteTitle: curTheme.sitetitle || "Fine Dining",
-                siteTagline: curTheme.sitetagline || "Eat Here"
+                    cssStyle: curTheme.themename || "Default",
+                    siteTitle: curTheme.sitetitle || "Fine Dining",
+                    siteTagline: curTheme.sitetagline || "Eat Here"
+
             }
         })
         }
