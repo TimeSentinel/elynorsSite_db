@@ -112,7 +112,7 @@ const CartItem = ({cartid, prodid, items}: CartProps) => {
                     </button>
                 </div>
                 <div className="cartEdit">
-                    <button className="text-highlight-color border-highlight-color background-medium-shade"
+                    <button className="text-light-color border-medium-color background-medium-shade"
                             onClick={() => console.log("EDIT")}>EDIT
                     </button>
                 </div>
@@ -150,7 +150,7 @@ const CartItem = ({cartid, prodid, items}: CartProps) => {
                                 <div className="itemName text-medium-color border-soft-color">
                                     {item.itemname}
                                 </div>
-                                <div className="itemPrice text-bright-color ">
+                                <div className="itemPrice text-medium-color ">
                                     {(item.itemprice != 0) ? new Intl.NumberFormat('en-US', {
                                         style: 'currency',
                                         currency: 'USD'

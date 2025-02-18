@@ -96,7 +96,7 @@ const Cart: FC = () => {
             <div className="cartTable border-dark-color">
                 <div className="cartTableHeader text-dark-color border-dark-color">
                     <div className="cartTableHeaderItem column0 text-alert-color">X</div>
-                    <div className="cartTableHeaderItem column1 text-highlight-color">Edit</div>
+                    <div className="cartTableHeaderItem column1 text-medium-color">Edit</div>
                     <div className="cartTableHeaderItem column2">Item</div>
                     <div className="cartTableHeaderItem column3">Name</div>
                     <div className="cartTableHeaderItem column4">Price</div>

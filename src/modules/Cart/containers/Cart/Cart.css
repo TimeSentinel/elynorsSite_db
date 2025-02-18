@@ -14,7 +14,7 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
         @apply flex w-full;
 
         .cartDelete {
-            @apply h-fit my-1 p-0 ;
+            @apply h-fit -ml-2 my-1 p-0 ;
 
             button {
                 @apply relative  w-fit p-1 text-center font-bold text-xs rounded-none;
@@ -48,7 +48,7 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
         }
 
         .cartCategory {
-            @apply text-left italic text-sm overflow-hidden;
+            @apply mx-0.5 text-left italic text-xs overflow-hidden;
         }
 
         .cartPrice {
@@ -93,11 +93,11 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
                 @apply border-2;
 
                 .itemName {
-                    @apply w-fit pl-2 text-left overflow-hidden text-nowrap ;
+                    @apply w-fit pl-2 text-left overflow-hidden text-nowrap italic font-normal;
                 }
 
                 .itemPrice {
-                    @apply w-fit px-2 text-right;
+                    @apply w-fit px-2 text-right font-semibold;
                 }
             }
         }
