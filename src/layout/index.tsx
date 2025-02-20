@@ -20,16 +20,16 @@ const Layout = ({children}: Props) => {
 
     return (
         <main>
-            <div className="container">
-                <div className="sidebar"><Sidebar/></div>
-                <div className="mainBody background-light-color">
-                    <div className="header border-soft-color background-light-color"><Header/></div>
-                    <div className="pageData">
+            <div className="layoutContainer">
+                <div className="layoutSidebar"><Sidebar/></div>
+                <div className="layoutBody background-light-color">
+                    <div className="layoutHeader border-soft-color background-light-color"><Header/></div>
+                    <div className="layoutContent">
                         <section>
                             {children}
                         </section>
                     </div>
-                    <div className="footer"><Footer/></div>
+                    <div className="layoutFooter"><Footer/></div>
                 </div>
             </div>
         </main>

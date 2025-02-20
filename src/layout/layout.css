@@ -5,47 +5,52 @@ PROJECT: elynors;
 (c) 2025 Lance Stubblefield 
 --------------------------------------- */
 
-.container {
-    @apply flex flex-wrap w-full h-full;
-}
+main {
+    @apply w-full p-0 m-0;
 
-.sidebar {
-    position: fixed;
-}
+    .layoutContainer {
+        @apply w-full h-full p-0 m-0 ;
 
-.header {
-    @apply h-32 p-2 m-0;
-}
+        .layoutSidebar {
+            @apply fixed h-full top-0 left-0;
+        }
 
-.mainBody {
-    @apply w-full h-full;
+        .layoutBody {
+            @apply h-full z-10;
 
-    .pageData {
-        @apply w-full min-h-64;
+            .layoutHeader {
+                @apply w-full h-32 p-2 m-0;
+            }
 
+            .layoutContent {
+                @apply w-full min-h-64;
+            }
+
+            .layoutFooter {
+                @apply w-full fixed mt-4 bottom-0 text-center align-middle;
+                opacity: 0.9;
+            }
+
+        }
     }
-
-    .footer {
-        @apply fixed mt-4 bottom-0 text-center align-middle;
-        opacity: 0.8;
-    }
-
 }
 
 
 /* ########################### Media Selector ########################### */
 /* ------------ Mobile View ------------ */
 @media (max-width: 567px) {
-    .sidebar {
-        display: none;
-    }
+    .layoutContainer {
+        .layoutSidebar {
+            display: none;
+        }
 
-    .container {
-        @apply w-full;
-    }
+        .layoutBody {
+            @apply w-full;
 
-    .footer {
-        @apply w-full h-16;
+            .layoutFooter {
+                @apply h-16;
+            }
+        }
     }
 }
 
@@ -53,16 +58,18 @@ PROJECT: elynors;
 
 /* ------------ Mini View ------------ */
 @media (min-width: 568px) and (max-width: 719px) {
-    .sidebar {
-        @apply w-4/12 h-full top-0 left-0;
-    }
+    .layoutContainer {
+        .layoutSidebar {
+            @apply w-4/12 ;
+        }
 
-    .container {
-        @apply w-8/12 mr-0 ml-auto;
-    }
+        .layoutBody {
+            @apply w-8/12 mr-0 ml-auto;
 
-    .footer {
-        @apply h-20 w-8/12 ml-auto;
+            .layoutFooter {
+                @apply h-20 ;
+            }
+        }
     }
 }
 
@@ -70,16 +77,19 @@ PROJECT: elynors;
 
 /* ------------ Tablet View ------------ */
 @media (min-width: 720px) and (max-width: 991px) {
-    .sidebar {
-        @apply w-3/12 h-full top-0 left-0;
-    }
+    .layoutContainer {
+        .layoutSidebar {
+            width: 20%;
+        }
 
-    .container {
-        @apply w-9/12 ml-auto;
-    }
+        .layoutBody {
+            @apply ml-auto;
+            width: 80%;
 
-    .footer {
-        @apply h-24 w-9/12 ml-auto;
+            .layoutFooter {
+                @apply w-full h-24 ;
+            }
+        }
     }
 }
 
@@ -87,18 +97,19 @@ PROJECT: elynors;
 
 /* ------------ Desktop View ------------ */
 @media (min-width: 992px) {
-    .sidebar {
-        @apply h-full w-3/12 top-0 left-0;
+    .layoutContainer {
 
-    }
+        .layoutSidebar {
+            width: 20%;
+        }
 
-    .container {
-        @apply w-9/12 relative ml-auto;
+        .layoutBody {
+            margin-left: 20%;
 
-    }
-
-    .footer {
-        @apply w-9/12 h-24 relative ;
+            .layoutFooter {
+                @apply h-24 ;
+            }
+        }
     }
 }
 

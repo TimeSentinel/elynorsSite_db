@@ -15,7 +15,7 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
 
 
 /* ################################ Header ################################ */
-.header {
+.layoutHeader {
     @apply align-text-bottom border-b-4;
 
     .titleRow {
@@ -42,7 +42,7 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
 /* ########################### Media Selector ########################### */
 /* ------------ Small View ------------ */
 @media (max-width: 567px) {
-    .header {
+    .layoutHeader {
         @apply m-0 h-fit;
     }
 
@@ -84,7 +84,7 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
 /* ------------ End small ------------ */
 
 @media (min-width: 568px) and (max-width: 667px) {
-    .header {
+    .layoutHeader {
         @apply m-0 h-fit;
     }
 
@@ -130,7 +130,7 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
 
 /* ------------ Tablet View ------------ */
 @media (min-width: 668px) and (max-width: 991px) {
-    .header {
+    .layoutHeader {
         @apply m-1;
         height: 110px;
     }
@@ -181,7 +181,7 @@ REQ: TailwindCSS, PostCSS, PostCSS-Custom-Properties
 
 /* ------------ Desktop View ------------ */
 @media (min-width: 992px) {
-    .header {
+    .layoutHeader {
         @apply m-2;
         height: 120px;
     }
