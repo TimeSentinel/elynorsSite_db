@@ -12,6 +12,7 @@ import {ctx} from "src/context";
 import './themes.css';
 import useSWR from "swr";
 import LoadCSS from "src/modules/Themes/LoadCSS.tsx";
+import {API_HOST} from "../../env.ts"
 
 //region vv---------- INTERFACES ----------vv
 interface themeListDataInterface {
@@ -25,18 +26,18 @@ function ThemeSelector(): React.JSX.Element {
     //region vv---------- INITIALIZATION ----------vv
     const cssUUID = useContext(ctx).localState.cssUUID;
     const localDispatch = useContext(ctx).localDispatch
-
     const errorMsg = useRef<string>("");
 
     const fetcher =
         ({url, init}: { url: RequestInfo | URL, init?: RequestInit }) =>
             fetch(url, init).then((res) => res.json());
+
     const {
         data: themeList,
         error: listError,
         isLoading: listLoading,
         isValidating: listValidate
-    } = useSWR({url: "http://localhost:3002/themes", init: {method: "GET"}}, fetcher, {revalidateOnFocus: false});
+    } = useSWR({url: API_HOST + "/themes", init: {method: "GET"}}, fetcher, {revalidateOnFocus: false});
     if (listError) errorMsg.current = "Failed to load the theme list"
     if (listValidate || listLoading) return (<div className="loading">Loading theme list...</div>)
 

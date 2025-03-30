@@ -11,6 +11,7 @@ import "./Cart.css"
 import {useContext, useEffect, useState} from "react";
 import {ctx} from "src/context";
 import toast from "react-hot-toast";
+import {API_HOST} from "../../../../env.ts";
 
 interface CartProps {
     cartid: string;
@@ -39,13 +40,13 @@ const CartItem = ({cartid, prodid, items}: CartProps) => {
     const [lineTotal, setLineTotal] = useState(0);
 
     async function fetchCartProduct(productID: string): Promise<[CartProductInterface]> {
-        const response = await fetch('http://localhost:3001/?query=cartProduct&id=' + productID);
+        const response = await fetch(API_HOST + "/?query=cartProduct&id=" + productID);
         return await response.json();
     }
 
     // async function fetchCartItem(itemID: string): Promise<[CartItemInterface]> {
     async function fetchCartItem(itemID: string) {
-        const response = await fetch('http://localhost:3001/?query=cartItem&id=' + itemID);
+        const response = await fetch(API_HOST + "/?query=cartItem&id=" + itemID);
         return await response.json();
     }
 

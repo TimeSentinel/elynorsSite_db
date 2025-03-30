@@ -9,6 +9,7 @@ PROJECT: elynors;
 import useSWR from "swr";
 import {useContext, useEffect, useRef} from "react";
 import {ctx} from "src/context";
+import {API_HOST} from "../../env.ts";
 
 interface CSSProps {
     themeID: string;
@@ -17,7 +18,7 @@ interface CSSProps {
 const LoadCSS = ({themeID}: CSSProps) => {
     let cssStyle: string = ""
     const errorMsg = useRef<string>("");
-    const query = `http://localhost:3002/theme/${themeID}`;
+    const query = API_HOST + `/theme/${themeID}`;
     const dispatch = useContext(ctx).dispatch
 
     const fetcher =

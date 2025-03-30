@@ -7,6 +7,7 @@ PROJECT: elynors;
 import useSWR from "swr";
 import "./products.css"
 import {useNavigate} from "react-router";
+import {API_HOST} from "../../env.ts";
 
 interface ProductInteface {
     productid: string;
@@ -41,17 +42,17 @@ function ProductsMenu() {
         data: products,
         error: prodError,
         isValidating: prodValidate,
-    } = useSWR({url: "http://localhost:3001/?query=products", init: {method: "GET"}}, fetcher, {revalidateOnFocus: false});
+    } = useSWR({url: API_HOST + "/?query=products", init: {method: "GET"}}, fetcher, {revalidateOnFocus: false});
     const {
         data: categories,
         error: catError,
         isValidating: catValidate,
-    } = useSWR({url: "http://localhost:3001/?query=categories", init: {method: "GET"}}, fetcher, {revalidateOnFocus: false});
+    } = useSWR({url: API_HOST + "/?query=categories", init: {method: "GET"}}, fetcher, {revalidateOnFocus: false});
     const {
         data: subcats,
         error: subError,
         isValidating: subValidate,
-    } = useSWR({url: "http://localhost:3001/?query=subcats", init: {method: "GET"}}, fetcher, {revalidateOnFocus: false});
+    } = useSWR({url: API_HOST + "/?query=subcats", init: {method: "GET"}}, fetcher, {revalidateOnFocus: false});
     if (prodValidate || catValidate || subValidate) return <div className="loading">Loading menu items...</div>;
     if (prodError) return <div className="failed">Failed to load the products</div>;
     if (catError) return <div className="failed">Failed to load the categories</div>;
