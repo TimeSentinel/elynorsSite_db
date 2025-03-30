@@ -9,7 +9,7 @@ PROJECT: elynors;
 import useSWR from "swr";
 import {useContext, useEffect, useRef} from "react";
 import {ctx} from "src/context";
-import {API_HOST} from "../../env.ts";
+import {API_HOST} from "../../assets/env.ts";
 
 interface CSSProps {
     themeID: string;

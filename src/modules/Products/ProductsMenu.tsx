@@ -7,7 +7,7 @@ PROJECT: elynors;
 import useSWR from "swr";
 import "./products.css"
 import {useNavigate} from "react-router";
-import {API_HOST} from "../../env.ts";
+import {API_HOST} from "../../assets/env.ts";
 
 interface ProductInteface {
     productid: string;

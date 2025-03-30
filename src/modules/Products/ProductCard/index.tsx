@@ -12,7 +12,7 @@ import {useNavigate, useParams} from "react-router";
 import toast from "react-hot-toast";
 import {ctx} from "src/context";
 import uuid from 'react-uuid';
-import {API_HOST} from "../../../env.ts";
+import {API_HOST} from "../../../assets/env.ts";
 
 interface OptionInterface {
     optid: string;

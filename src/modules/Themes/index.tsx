@@ -12,7 +12,7 @@ import {ctx} from "src/context";
 import './themes.css';
 import useSWR from "swr";
 import LoadCSS from "src/modules/Themes/LoadCSS.tsx";
-import {API_HOST} from "../../env.ts"
+import {API_HOST} from "../../assets/env.ts"
 
 //region vv---------- INTERFACES ----------vv
 interface themeListDataInterface {

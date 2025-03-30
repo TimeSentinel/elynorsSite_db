@@ -11,7 +11,7 @@ import "./Cart.css"
 import {useContext, useEffect, useState} from "react";
 import {ctx} from "src/context";
 import toast from "react-hot-toast";
-import {API_HOST} from "../../../../env.ts";
+import {API_HOST} from "../../../../assets/env.ts";
 
 interface CartProps {
     cartid: string;
